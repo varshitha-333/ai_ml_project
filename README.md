@@ -63,7 +63,7 @@ Follow these exact steps to run the `Qwen/Qwen2.5-7B-Instruct` model on Google C
 
 ### Step 4: Run Cell 2 (Start FastAPI & Expose Ngrok Tunnel)
 1. Get a free Ngrok auth token from [ngrok.com](https://ngrok.com) (or use your existing token).
-2. Paste your token into Cell 2 where prompted: `ngrok.set_auth_token("YOUR_NGROK_TOKEN")`.
+2. Paste your token into Cell 2 where prompted: `ngrok.set_auth_token("YOUR_NGROK_AUTHTOKEN_HERE")`.
 3. Click **Run** on **Cell 2**.
 4. Cell 2 will start Uvicorn and print your live public Ngrok HTTPS URL:
    ```text
@@ -75,10 +75,13 @@ Follow these exact steps to run the `Qwen/Qwen2.5-7B-Instruct` model on Google C
 
 ### Step 5: Copy Ngrok URL into your `.env` File
 1. Copy the `https://xxxx-xxxx-xxxx.ngrok-free.dev` URL printed in Cell 2.
-2. Open your local `.env` file in VS Code or text editor and update:
+2. Create `.env` from `.env.example` using terminal:
+   - **PowerShell (Windows)**: `Copy-Item .env.example .env`
+   - **Git Bash / Linux**: `cp .env.example .env`
+3. Open your local `.env` file in VS Code or text editor and update:
    ```bash
    BACKEND_MODE=remote
-   INFERENCE_URL=https://xxxx-xxxx-xxxx.ngrok-free.dev
+   INFERENCE_URL=https://xxxx-xxxx-xxxx.ngrok-free.dev # Replace with your live Ngrok URL from Google Colab Cell 2
    ```
 
 ---
@@ -149,6 +152,19 @@ The repository evaluates performance across two distinct benchmark datasets:
 ---
 
 ## 🚀 8. Setup & Execution Guide
+
+### Configure Environment File (`.env`)
+First, copy `.env.example` to create `.env`:
+
+**PowerShell (Windows)**:
+```powershell
+Copy-Item .env.example .env
+```
+
+**Git Bash / Linux / macOS**:
+```bash
+cp .env.example .env
+```
 
 ### Run Preprocessing Pipeline
 ```bash
