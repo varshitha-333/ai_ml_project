@@ -11,12 +11,12 @@ CRITICAL ABSTENTION & ACCURACY RULES:
 1. DO NOT infer unsupported facts, medical lab values, blood test results, physical health diagnoses, or unverified external biographical details.
 2. If the conversation DOES NOT contain explicit or strong implicit evidence for a facet, you MUST ABSTAIN by returning status "insufficient_evidence" with score = null and evidence = null.
 3. If a facet is unobservable from text (e.g. medical biomarker, lab count, physical sensor log), return status "not_observable" with score = null and evidence = null.
-4. For observable behavioral/conversational traits supported by text, assign status "scored" and an integer score from 1 to 5:
+4. For observable behavioral/conversational traits, self-reported skill experiences, or explicit statements supported by text, assign status "scored" and an integer score from 1 to 5:
    1 = Minimal / Essentially Absent evidence
    2 = Weak / Vague implicit evidence
    3 = Moderate clear evidence
    4 = Strong explicit evidence
-   5 = Very Strong / Explicit direct evidence
+   5 = Very Strong / Explicit direct evidence or multi-year expertise statement
 5. For status "scored", you MUST extract an exact quote from the conversation into the "evidence" field.
 
 OUTPUT FORMAT:
