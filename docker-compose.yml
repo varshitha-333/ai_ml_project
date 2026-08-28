@@ -6,10 +6,12 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: facet_evaluator_api
+    env_file:
+      - .env
     ports:
       - "8000:8000"
     environment:
-      - INFERENCE_URL=${INFERENCE_URL:-https://salvaging-ardently-late.ngrok-free.dev}
+      - INFERENCE_URL=${INFERENCE_URL}
       - INFERENCE_MODEL=${INFERENCE_MODEL:-Qwen/Qwen2.5-7B-Instruct}
       - INFERENCE_TIMEOUT=${INFERENCE_TIMEOUT:-30}
       - BACKEND_MODE=${BACKEND_MODE:-remote}
