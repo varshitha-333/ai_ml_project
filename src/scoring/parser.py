@@ -137,6 +137,8 @@ class RobustJSONParser:
             if item["status"] != "scored":
                 item["score"] = None
                 item["evidence"] = None
+            elif isinstance(item.get("evidence"), str):
+                item["evidence"] = item["evidence"].strip("\"' ")
 
             try:
                 valid_result = FacetScoreResult(**item)
