@@ -57,7 +57,7 @@ def test_direct_colab():
     except Exception as err:
         elapsed_ms = int((time.time() - t0) * 1000)
         print(f"    [FAIL] Direct Colab Health failed ({err}) (latency: {elapsed_ms}ms)")
-        print("    👉 Check if your Google Colab cell is active and Ngrok tunnel is running.\n")
+        print("    [NOTE] Check if your Google Colab cell is active and Ngrok tunnel is running.\n")
         return
 
     # Step 2: Direct POST /v1/chat/completions to Colab Qwen Model
