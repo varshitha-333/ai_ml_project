@@ -151,12 +151,12 @@ The repository evaluates performance across two distinct benchmark datasets:
 
 ---
 
-## 🚀 8. Setup & Execution Guide (Docker Primary Zero-Setup)
+## 🚀 8. Setup & Execution Guide (Docker-First Workflow)
 
-Docker automatically handles installing Python dependencies, configuring FastAPI, and building preprocessed facet indexes inside the container.
+*(Note: Docker automatically installs all backend dependencies and builds preprocessed facet indexes inside the container. Running Docker Compose first guarantees a zero-setup start!)*
 
 ### Step 1: Configure Environment File (`.env`)
-Copy `.env.example` to create `.env`:
+First, copy `.env.example` to create `.env`:
 
 **PowerShell (Windows)**:
 ```powershell
@@ -169,35 +169,29 @@ cp .env.example .env
 ```
 *(Open `.env` and set `INFERENCE_URL` to your live Ngrok URL from Google Colab Cell 2)*
 
-### Step 2: Run Dockerized FastAPI Backend (Primary Zero-Setup Entry Point)
-Run Docker Compose — Docker automatically installs all requirements and starts the API engine:
+### Step 2: Run Dockerized FastAPI Backend (Zero-Setup Entry Point)
+Build and start the containerized engine:
 ```powershell
 docker-compose up --build
 ```
-*(Starts FastAPI backend engine on `http://localhost:8000`. Docker takes care of dependency installation automatically!)*
+*(Starts FastAPI backend engine on `http://localhost:8000`. Docker automatically handles dependency installation and data initialization!)*
 
 ---
 
-### 🧪 Step 3: Run Evaluation Tests (Optional / Local Execution)
-If you wish to run evaluation scripts or Pytest directly on your host machine:
+### Step 3: Run Evaluation Benchmark Tests
+Execute test scripts against the live GPU/Docker backend:
 
 ```bash
-# 1. Install local dependencies (only required for direct local python runs)
-pip install -r requirements.txt
-
-# 2. Run Preprocessing Pipeline
-python scripts/run_preprocessing.py
-
-# 3. Run Full Pytest Suite (41 Tests)
+# 1. Run Full Pytest Suite (41 Tests)
 pytest tests/ -v
 
-# 4. Verify live Colab GPU HTTP connectivity
+# 2. Verify Live Colab GPU HTTP Connectivity
 python scripts/test_direct_colab.py
 
-# 5. Run 10-Case Real Inference Smoke Test
+# 3. Run 10-Case Real Inference Smoke Test
 python scripts/test_docker_10_cases.py
 
-# 6. Run 150-Case Full Benchmark (Remote Real Qwen Mode)
+# 4. Run 150-Case Full Benchmark (Remote Real Qwen Mode)
 python scripts/run_150_validation.py --backend remote --retrieval-k 30
 ```
 
