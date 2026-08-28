@@ -1,0 +1,48 @@
+{
+  "dataset_metadata": {
+    "source_file": "Facets Assignment.csv",
+    "total_records": 399,
+    "processed_records": 399
+  },
+  "data_quality_metrics": {
+    "total_rows": 399,
+    "valid_rows": 333,
+    "header_rows": 30,
+    "number_prefix_stripped": 31,
+    "encoding_repaired": 2,
+    "camelcase_reformatted": 3,
+    "malformed_suspicious_rows": 0,
+    "duplicates": 0
+  },
+  "observability_metrics": {
+    "conversation_observable_count": 253,
+    "conversation_observable_pct": 63.41,
+    "unobservable_count": 146,
+    "unobservable_pct": 36.59
+  },
+  "distribution_metrics": {
+    "facet_type_distribution": {
+      "conversational_trait": 253,
+      "external_biographical": 37,
+      "esoteric_spiritual": 32,
+      "header_label": 30,
+      "medical_biomarker": 20,
+      "cognitive_skill_test": 15,
+      "psychological_trait": 12
+    },
+    "sensitivity_distribution": {
+      "low": 278,
+      "sensitive_personal": 69,
+      "medium": 20,
+      "clinical_medical": 20,
+      "high": 12
+    },
+    "quality_flag_distribution": {
+      "valid": 333,
+      "number_prefix_stripped": 31,
+      "header_row": 30,
+      "camelcase_reformatted": 3,
+      "encoding_repaired": 2
+    }
+  }
+}
