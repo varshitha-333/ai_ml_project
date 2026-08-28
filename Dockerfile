@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PORT=8000
 ENV BACKEND_MODE=remote
-ENV INFERENCE_URL=https://salvaging-ardently-late.ngrok-free.dev
+ENV INFERENCE_URL=https://your-ngrok-subdomain.ngrok-free.dev
 
 WORKDIR /app
 
@@ -27,7 +27,6 @@ RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/wh
 COPY src/ ./src/
 COPY data/ ./data/
 COPY scripts/ ./scripts/
-COPY .env.example .env
 
 # Expose FastAPI application port
 EXPOSE 8000

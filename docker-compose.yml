@@ -12,8 +12,9 @@ services:
       - "8000:8000"
     environment:
       - INFERENCE_URL=${INFERENCE_URL}
-      - INFERENCE_MODEL=${INFERENCE_MODEL:-Qwen/Qwen2.5-7B-Instruct}
-      - INFERENCE_TIMEOUT=${INFERENCE_TIMEOUT:-30}
+      - MODEL_NAME=${MODEL_NAME:-Qwen/Qwen2.5-7B-Instruct}
       - BACKEND_MODE=${BACKEND_MODE:-remote}
+      - TOP_K=${TOP_K:-30}
+      - BATCH_SIZE=${BATCH_SIZE:-30}
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173}
     restart: unless-stopped
