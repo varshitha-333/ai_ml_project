@@ -29,7 +29,11 @@ class RetrievalPipeline:
         Loads enriched facet catalog and fits retrieval index.
         """
         if not self.data_path.exists():
-            raise FileNotFoundError(f"Enriched dataset not found at {self.data_path}. Run preprocessing first.")
+            print(f"[WARN] Enriched dataset not found at {self.data_path}. Automatically running preprocessing pipeline...")
+            from src.preprocessing.pipeline import FacetPreprocessingPipeline
+            raw_csv = self.data_path.parent.parent / "raw" / "Facets Assignment.csv"
+            pipeline = FacetPreprocessingPipeline(raw_csv_path=raw_csv, output_json_path=self.data_path)
+            pipeline.run()
 
         with open(self.data_path, "r", encoding="utf-8") as f:
             documents = json.load(f)
