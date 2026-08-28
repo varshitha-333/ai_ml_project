@@ -1,0 +1,245 @@
+{
+  "summary_metrics": {
+    "total_evaluated_pairs": 21,
+    "status_accuracy_pct": 61.9,
+    "score_mae": 0.0,
+    "score_exact_match_pct": 100.0,
+    "abstention_precision_pct": 55.56,
+    "abstention_recall_pct": 100.0,
+    "abstention_f1_pct": 71.43,
+    "false_scoring_unsupported_count": 0
+  },
+  "detailed_evaluations": [
+    {
+      "conversation_id": "CONV_001",
+      "category": "clear_evidence",
+      "facet_id": "FACET_001",
+      "facet_name": "Risktaking",
+      "expected_status": "scored",
+      "predicted_status": "scored",
+      "expected_score": 4,
+      "predicted_score": 4,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_001",
+      "category": "clear_evidence",
+      "facet_id": "FACET_015",
+      "facet_name": "Adventure-Seeking Behavior",
+      "expected_status": "scored",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": 4,
+      "predicted_score": null,
+      "status_correct": false
+    },
+    {
+      "conversation_id": "CONV_001",
+      "category": "clear_evidence",
+      "facet_id": "FACET_005",
+      "facet_name": "Common-sense",
+      "expected_status": "scored",
+      "predicted_status": "scored",
+      "expected_score": 1,
+      "predicted_score": 1,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_001",
+      "category": "clear_evidence",
+      "facet_id": "FACET_006",
+      "facet_name": "Hesitation",
+      "expected_status": "insufficient_evidence",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_002",
+      "category": "ambiguous_evidence",
+      "facet_id": "FACET_001",
+      "facet_name": "Risktaking",
+      "expected_status": "scored",
+      "predicted_status": "scored",
+      "expected_score": 4,
+      "predicted_score": 4,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_002",
+      "category": "ambiguous_evidence",
+      "facet_id": "FACET_006",
+      "facet_name": "Hesitation",
+      "expected_status": "insufficient_evidence",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_003",
+      "category": "contradictory_evidence",
+      "facet_id": "FACET_201",
+      "facet_name": "Dauntlessness",
+      "expected_status": "scored",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": 2,
+      "predicted_score": null,
+      "status_correct": false
+    },
+    {
+      "conversation_id": "CONV_003",
+      "category": "contradictory_evidence",
+      "facet_id": "FACET_268",
+      "facet_name": "Fearfulness: Fear of physical dangers",
+      "expected_status": "scored",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": 4,
+      "predicted_score": null,
+      "status_correct": false
+    },
+    {
+      "conversation_id": "CONV_004",
+      "category": "quoted_text",
+      "facet_id": "FACET_006",
+      "facet_name": "Hesitation",
+      "expected_status": "insufficient_evidence",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_005",
+      "category": "sarcasm",
+      "facet_id": "FACET_003",
+      "facet_name": "Acidity",
+      "expected_status": "scored",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": 5,
+      "predicted_score": null,
+      "status_correct": false
+    },
+    {
+      "conversation_id": "CONV_005",
+      "category": "sarcasm",
+      "facet_id": "FACET_337",
+      "facet_name": "Civility",
+      "expected_status": "scored",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": 1,
+      "predicted_score": null,
+      "status_correct": false
+    },
+    {
+      "conversation_id": "CONV_006",
+      "category": "code_switching",
+      "facet_id": "FACET_114",
+      "facet_name": "Slothfulness",
+      "expected_status": "scored",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": 4,
+      "predicted_score": null,
+      "status_correct": false
+    },
+    {
+      "conversation_id": "CONV_006",
+      "category": "code_switching",
+      "facet_id": "FACET_075",
+      "facet_name": "Hardworking",
+      "expected_status": "insufficient_evidence",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_007",
+      "category": "low_evidence",
+      "facet_id": "FACET_001",
+      "facet_name": "Risktaking",
+      "expected_status": "insufficient_evidence",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_007",
+      "category": "low_evidence",
+      "facet_id": "FACET_337",
+      "facet_name": "Civility",
+      "expected_status": "scored",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": 3,
+      "predicted_score": null,
+      "status_correct": false
+    },
+    {
+      "conversation_id": "CONV_008",
+      "category": "medical_hallucination_trap",
+      "facet_id": "FACET_125",
+      "facet_name": "Parathyroid-hormone level",
+      "expected_status": "not_observable",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_008",
+      "category": "medical_hallucination_trap",
+      "facet_id": "FACET_032",
+      "facet_name": "FSH level",
+      "expected_status": "not_observable",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_009",
+      "category": "biographical_hallucination_trap",
+      "facet_id": "FACET_299",
+      "facet_name": "Commute time/day",
+      "expected_status": "not_observable",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_009",
+      "category": "biographical_hallucination_trap",
+      "facet_id": "FACET_239",
+      "facet_name": "Passport-stamps count",
+      "expected_status": "not_observable",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_010",
+      "category": "unsupported_inference_case",
+      "facet_id": "FACET_175",
+      "facet_name": "Depression (DEP)",
+      "expected_status": "not_observable",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": null,
+      "predicted_score": null,
+      "status_correct": true
+    },
+    {
+      "conversation_id": "CONV_010",
+      "category": "unsupported_inference_case",
+      "facet_id": "FACET_017",
+      "facet_name": "Moroseness",
+      "expected_status": "scored",
+      "predicted_status": "insufficient_evidence",
+      "expected_score": 3,
+      "predicted_score": null,
+      "status_correct": false
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+[
+  {
+    "conversation_id": "CONV_001",
+    "conversation_text": "I am taking a wild risk by going skydiving without a backup parachute!",
+    "category": "clear_evidence",
+    "annotations": [
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "expected_status": "scored",
+        "expected_score": 4,
+        "human_rationale": "Explicit direct evidence of taking extreme skydiving risk."
+      },
+      {
+        "facet_id": "FACET_015",
+        "facet": "Adventure-Seeking Behavior",
+        "expected_status": "scored",
+        "expected_score": 4,
+        "human_rationale": "Direct evidence of extreme adventure-seeking behavior."
+      },
+      {
+        "facet_id": "FACET_005",
+        "facet": "Common-sense",
+        "expected_status": "scored",
+        "expected_score": 1,
+        "human_rationale": "Demonstrates lack of common-sense by skipping safety parachute."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "expected_status": "insufficient_evidence",
+        "expected_score": null,
+        "human_rationale": "No evidence of reluctance or hesitation."
+      }
+    ]
+  },
+  {
+    "conversation_id": "CONV_002",
+    "conversation_text": "I submitted my resignation letter without having another job lined up, hoping things work out.",
+    "category": "ambiguous_evidence",
+    "annotations": [
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "expected_status": "scored",
+        "expected_score": 4,
+        "human_rationale": "High professional risk taking by resigning without backup employment."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "expected_status": "insufficient_evidence",
+        "expected_score": null,
+        "human_rationale": "Resigning shows action; no explicit hesitation expressed."
+      }
+    ]
+  },
+  {
+    "conversation_id": "CONV_003",
+    "conversation_text": "I claim to be fearless and dauntless, yet my knees were knocking in sheer terror when the light turned off.",
+    "category": "contradictory_evidence",
+    "annotations": [
+      {
+        "facet_id": "FACET_201",
+        "facet": "Dauntlessness",
+        "expected_status": "scored",
+        "expected_score": 2,
+        "human_rationale": "Contradictory claim vs expressed fear results in low/weak score."
+      },
+      {
+        "facet_id": "FACET_268",
+        "facet": "Fearfulness: Fear of physical dangers",
+        "expected_status": "scored",
+        "expected_score": 4,
+        "human_rationale": "Expressed physical terror in the dark."
+      }
+    ]
+  },
+  {
+    "conversation_id": "CONV_004",
+    "conversation_text": "My manager told me 'you are exhibiting hesitation in team meetings', but I disagree with that assessment.",
+    "category": "quoted_text",
+    "annotations": [
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "expected_status": "insufficient_evidence",
+        "expected_score": null,
+        "human_rationale": "Quoted manager opinion rejected by speaker; insufficient direct evidence of speaker's hesitation."
+      }
+    ]
+  },
+  {
+    "conversation_id": "CONV_005",
+    "conversation_text": "Oh sure, I'd just LOVE to stay past midnight fixing your typos for free again!",
+    "category": "sarcasm",
+    "annotations": [
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "expected_status": "scored",
+        "expected_score": 5,
+        "human_rationale": "Explicit sarcastic acidity."
+      },
+      {
+        "facet_id": "FACET_337",
+        "facet": "Civility",
+        "expected_status": "scored",
+        "expected_score": 1,
+        "human_rationale": "Sarcastic hostility indicates low civility."
+      }
+    ]
+  },
+  {
+    "conversation_id": "CONV_006",
+    "conversation_text": "I was feeling super tired and con flojera today, so I just stayed in bed all afternoon.",
+    "category": "code_switching",
+    "annotations": [
+      {
+        "facet_id": "FACET_114",
+        "facet": "Slothfulness",
+        "expected_status": "scored",
+        "expected_score": 4,
+        "human_rationale": "Code-switching phrase 'con flojera' means laziness/slothfulness in bed."
+      },
+      {
+        "facet_id": "FACET_075",
+        "facet": "Hardworking",
+        "expected_status": "insufficient_evidence",
+        "expected_score": null,
+        "human_rationale": "No evidence of hardworking behavior."
+      }
+    ]
+  },
+  {
+    "conversation_id": "CONV_007",
+    "conversation_text": "Could you please pass me the salt from across the table?",
+    "category": "low_evidence",
+    "annotations": [
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "expected_status": "insufficient_evidence",
+        "expected_score": null,
+        "human_rationale": "Standard polite request contains zero behavioral trait evidence."
+      },
+      {
+        "facet_id": "FACET_337",
+        "facet": "Civility",
+        "expected_status": "scored",
+        "expected_score": 3,
+        "human_rationale": "Polite phrasing ('please') shows moderate civility."
+      }
+    ]
+  },
+  {
+    "conversation_id": "CONV_008",
+    "conversation_text": "I have been having frequent headaches and feeling thirsty all the time.",
+    "category": "medical_hallucination_trap",
+    "annotations": [
+      {
+        "facet_id": "FACET_125",
+        "facet": "Parathyroid-hormone level",
+        "expected_status": "not_observable",
+        "expected_score": null,
+        "human_rationale": "Medical lab biomarker; unobservable from dialogue text."
+      },
+      {
+        "facet_id": "FACET_032",
+        "facet": "FSH level",
+        "expected_status": "not_observable",
+        "expected_score": null,
+        "human_rationale": "Medical hormone level; unobservable from dialogue text."
+      }
+    ]
+  },
+  {
+    "conversation_id": "CONV_009",
+    "conversation_text": "I spent two hours stuck in terrible bumper-to-bumper traffic on Highway 101 today.",
+    "category": "biographical_hallucination_trap",
+    "annotations": [
+      {
+        "facet_id": "FACET_299",
+        "facet": "Commute time/day",
+        "expected_status": "not_observable",
+        "expected_score": null,
+        "human_rationale": "External tracking metric; system must abstain from verifying hardware log count."
+      },
+      {
+        "facet_id": "FACET_239",
+        "facet": "Passport-stamps count",
+        "expected_status": "not_observable",
+        "expected_score": null,
+        "human_rationale": "External biographical log metric; unobservable."
+      }
+    ]
+  },
+  {
+    "conversation_id": "CONV_010",
+    "conversation_text": "I am feeling really blue and down in the dumps today because it's raining outside.",
+    "category": "unsupported_inference_case",
+    "annotations": [
+      {
+        "facet_id": "FACET_175",
+        "facet": "Depression (DEP)",
+        "expected_status": "not_observable",
+        "expected_score": null,
+        "human_rationale": "Clinical psychiatric scale; system must not infer clinical depression from rainy day moodiness."
+      },
+      {
+        "facet_id": "FACET_017",
+        "facet": "Moroseness",
+        "expected_status": "scored",
+        "expected_score": 3,
+        "human_rationale": "Expressed gloomy/blue mood about weather."
+      }
+    ]
+  }
+]
