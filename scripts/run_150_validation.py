@@ -76,7 +76,7 @@ def run_150_validation():
 
     print(f"\nInitializing production FacetEvaluatorPipeline (top_k={args.retrieval_k}, backend={backend_mode_str})...")
     t_init_start = time.time()
-    pipeline = FacetEvaluatorPipeline(backend=backend, top_k=args.retrieval_k, batch_size=10)
+    pipeline = FacetEvaluatorPipeline(backend=backend, top_k=args.retrieval_k, batch_size=args.retrieval_k)
     pipeline.initialize()
     init_duration = round(time.time() - t_init_start, 2)
 
