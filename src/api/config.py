@@ -20,8 +20,8 @@ class APISettings(BaseModel):
     """
     Typed API Settings configuration class.
     """
-    model_name: str = os.getenv("INFERENCE_MODEL", os.getenv("MODEL_NAME", "Qwen/Qwen2.5-14B-Instruct-AWQ")).strip('"\'')
-    inference_url: str = os.getenv("INFERENCE_URL", "http://localhost:8000").strip('"\'')
+    model_name: str = os.getenv("MODEL_NAME", os.getenv("INFERENCE_MODEL", "Qwen/Qwen2.5-7B-Instruct")).strip('"\'')
+    inference_url: str = os.getenv("INFERENCE_URL", "https://salvaging-ardently-late.ngrok-free.dev").strip('"\'')
     inference_timeout: int = int(os.getenv("INFERENCE_TIMEOUT", "30"))
     embedding_model: str = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2").strip('"\'')
     top_k: int = int(os.getenv("TOP_K", "30"))
