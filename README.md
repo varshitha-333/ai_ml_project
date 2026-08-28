@@ -151,10 +151,12 @@ The repository evaluates performance across two distinct benchmark datasets:
 
 ---
 
-## 🚀 8. Setup & Execution Guide
+## 🚀 8. Setup & Execution Guide (Docker Primary Zero-Setup)
 
-### Configure Environment File (`.env`)
-First, copy `.env.example` to create `.env`:
+Docker automatically handles installing Python dependencies, configuring FastAPI, and building preprocessed facet indexes inside the container.
+
+### Step 1: Configure Environment File (`.env`)
+Copy `.env.example` to create `.env`:
 
 **PowerShell (Windows)**:
 ```powershell
@@ -165,43 +167,48 @@ Copy-Item .env.example .env
 ```bash
 cp .env.example .env
 ```
+*(Open `.env` and set `INFERENCE_URL` to your live Ngrok URL from Google Colab Cell 2)*
 
-### Run Preprocessing Pipeline
-```bash
-python scripts/run_preprocessing.py
-```
-
-### Run Full Pytest Suite (41 Tests)
-```bash
-pytest tests/ -v
-```
-
-### Run Direct Colab GPU Test
-```bash
-python scripts/test_direct_colab.py
-```
-
-### Run 10-Case Real Inference Test
-```bash
-python scripts/test_docker_10_cases.py
-```
-
-### Run 150-Case External Validation (Remote Real Qwen Mode)
-```bash
-python scripts/run_150_validation.py --backend remote --retrieval-k 30
-```
-
-### Run Dockerized Backend
+### Step 2: Run Dockerized FastAPI Backend (Primary Zero-Setup Entry Point)
+Run Docker Compose — Docker automatically installs all requirements and starts the API engine:
 ```powershell
 docker-compose up --build
 ```
+*(Starts FastAPI backend engine on `http://localhost:8000`. Docker takes care of dependency installation automatically!)*
 
-### Run Next.js Frontend Console
+---
+
+### 🧪 Step 3: Run Evaluation Tests (Optional / Local Execution)
+If you wish to run evaluation scripts or Pytest directly on your host machine:
+
+```bash
+# 1. Install local dependencies (only required for direct local python runs)
+pip install -r requirements.txt
+
+# 2. Run Preprocessing Pipeline
+python scripts/run_preprocessing.py
+
+# 3. Run Full Pytest Suite (41 Tests)
+pytest tests/ -v
+
+# 4. Verify live Colab GPU HTTP connectivity
+python scripts/test_direct_colab.py
+
+# 5. Run 10-Case Real Inference Smoke Test
+python scripts/test_docker_10_cases.py
+
+# 6. Run 150-Case Full Benchmark (Remote Real Qwen Mode)
+python scripts/run_150_validation.py --backend remote --retrieval-k 30
+```
+
+### Step 4: Run Next.js Frontend Console
+In a new terminal:
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
+*(Launches UI demo console on `http://localhost:3000`)*
 
 ---
 
