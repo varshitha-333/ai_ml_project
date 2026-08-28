@@ -93,7 +93,7 @@ class InferenceClient:
                 {"role": "user", "content": user_prompt}
             ],
             "temperature": 0.0,
-            "max_tokens": 180
+            "max_tokens": 500
         }
         data = json.dumps(payload).encode("utf-8")
 

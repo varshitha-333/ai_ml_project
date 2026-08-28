@@ -41,11 +41,17 @@ class RobustJSONParser:
 
     def clean_json_syntax(self, json_str: str) -> str:
         """
-        Repairs common LLM JSON syntax errors such as trailing commas.
+        Repairs common LLM JSON syntax errors such as trailing commas and unclosed arrays.
         """
+        json_str = json_str.strip()
         # Remove trailing commas before closing brackets
         json_str = re.sub(r',\s*([\]\}])', r'\1', json_str)
-        # Fix unescaped single quotes in keys/values if simple
+        
+        # Repair unclosed array if cut off mid-output
+        if json_str.startswith("[") and not json_str.endswith("]"):
+            last_brace = json_str.rfind("}")
+            if last_brace != -1:
+                json_str = json_str[:last_brace + 1] + "]"
         return json_str
 
     def is_refusal_response(self, raw_text: str) -> bool:
@@ -94,11 +100,11 @@ class RobustJSONParser:
                 raw_items = [raw_items]
         except json.JSONDecodeError as err:
             logs.append(f"JSONDecodeError: {err}. Attempting regex item extraction...")
-            # Fallback item regex
-            item_matches = re.findall(r'\{[^{}]*?"facet_id"\s*:\s*".*?"[^{}]*?\}', cleaned_json, re.DOTALL)
-            for m in item_matches:
+            # Extract individual JSON objects safely
+            matches = re.finditer(r'\{(?:\s*"[a-zA-Z0-9_]+"\s*:\s*(?:"(?:\\.|[^"\\])*"|true|false|null|-?\d+(?:\.\d+)?)\s*,?\s*)+\}', cleaned_json)
+            for m in matches:
                 try:
-                    raw_items.append(json.loads(self.clean_json_syntax(m)))
+                    raw_items.append(json.loads(self.clean_json_syntax(m.group(0))))
                 except Exception:
                     pass
 
