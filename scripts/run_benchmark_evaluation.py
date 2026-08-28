@@ -26,7 +26,7 @@ def run_benchmark_evaluation():
     with open(ref_path, "r", encoding="utf-8") as f:
         reference_data = json.load(f)
 
-    pipeline = FacetEvaluatorPipeline(backend=MockInferenceBackend(), top_k=10)
+    pipeline = FacetEvaluatorPipeline(top_k=30, batch_size=10)
     pipeline.initialize()
 
     total_annotations = 0

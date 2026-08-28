@@ -1,13 +1,13 @@
 {
   "summary_metrics": {
     "total_evaluated_pairs": 21,
-    "status_accuracy_pct": 61.9,
+    "status_accuracy_pct": 52.38,
     "score_mae": 0.0,
     "score_exact_match_pct": 100.0,
-    "abstention_precision_pct": 55.56,
-    "abstention_recall_pct": 100.0,
-    "abstention_f1_pct": 71.43,
-    "false_scoring_unsupported_count": 0
+    "abstention_precision_pct": 50.0,
+    "abstention_recall_pct": 90.0,
+    "abstention_f1_pct": 64.29,
+    "false_scoring_unsupported_count": 1
   },
   "detailed_evaluations": [
     {
@@ -27,10 +27,10 @@
       "facet_id": "FACET_015",
       "facet_name": "Adventure-Seeking Behavior",
       "expected_status": "scored",
-      "predicted_status": "insufficient_evidence",
+      "predicted_status": "scored",
       "expected_score": 4,
-      "predicted_score": null,
-      "status_correct": false
+      "predicted_score": 4,
+      "status_correct": true
     },
     {
       "conversation_id": "CONV_001",
@@ -38,10 +38,10 @@
       "facet_id": "FACET_005",
       "facet_name": "Common-sense",
       "expected_status": "scored",
-      "predicted_status": "scored",
+      "predicted_status": "insufficient_evidence",
       "expected_score": 1,
-      "predicted_score": 1,
-      "status_correct": true
+      "predicted_score": null,
+      "status_correct": false
     },
     {
       "conversation_id": "CONV_001",
@@ -49,10 +49,10 @@
       "facet_id": "FACET_006",
       "facet_name": "Hesitation",
       "expected_status": "insufficient_evidence",
-      "predicted_status": "insufficient_evidence",
+      "predicted_status": "scored",
       "expected_score": null,
-      "predicted_score": null,
-      "status_correct": true
+      "predicted_score": 4,
+      "status_correct": false
     },
     {
       "conversation_id": "CONV_002",
@@ -60,10 +60,10 @@
       "facet_id": "FACET_001",
       "facet_name": "Risktaking",
       "expected_status": "scored",
-      "predicted_status": "scored",
+      "predicted_status": "insufficient_evidence",
       "expected_score": 4,
-      "predicted_score": 4,
-      "status_correct": true
+      "predicted_score": null,
+      "status_correct": false
     },
     {
       "conversation_id": "CONV_002",

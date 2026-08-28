@@ -2,11 +2,11 @@
 
 ## 1. Executive Summary & Benchmark Metrics
 - **Total Reference Pairs Evaluated**: `21`
-- **Overall Status Classification Accuracy**: `61.9%`
-- **Abstention Precision**: `55.56%`
-- **Abstention Recall**: `100.0%`
-- **Abstention F1 Score**: `71.43%`
-- **False Scoring Rate on Unsupported Facets**: `0` instances
+- **Overall Status Classification Accuracy**: `52.38%`
+- **Abstention Precision**: `50.0%`
+- **Abstention Recall**: `90.0%`
+- **Abstention F1 Score**: `64.29%`
+- **False Scoring Rate on Unsupported Facets**: `1` instances
 - **Score Mean Absolute Error (MAE)**: `0.0` (on scored reference cases)
 - **Score Exact Match Percentage**: `100.0%`
 

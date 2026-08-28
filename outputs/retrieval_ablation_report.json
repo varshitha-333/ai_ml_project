@@ -1,20 +1,20 @@
 {
   "bm25_only": {
     "recall_at_5_pct": 19.05,
-    "recall_at_10_pct": 23.81,
+    "recall_at_10_pct": 30.95,
     "recall_at_30_pct": 50.0,
-    "avg_latency_ms": 0.85
+    "avg_latency_ms": 0.78
   },
   "dense_only": {
     "recall_at_5_pct": 0.0,
     "recall_at_10_pct": 0.0,
     "recall_at_30_pct": 0.0,
-    "avg_latency_ms": 0.08
+    "avg_latency_ms": 0.0
   },
   "hybrid_rrf": {
     "recall_at_5_pct": 19.05,
-    "recall_at_10_pct": 23.81,
+    "recall_at_10_pct": 30.95,
     "recall_at_30_pct": 50.0,
-    "avg_latency_ms": 1.1
+    "avg_latency_ms": 0.81
   }
 }

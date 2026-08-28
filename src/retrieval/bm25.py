@@ -29,11 +29,16 @@ class BM25Indexer:
     @staticmethod
     def _tokenize(text: str) -> List[str]:
         """
-        Simple regex tokenizer for lowercased alphanumeric words.
+        Robust tokenizer splitting camelCase, hyphens, underscores, and trailing symbols.
         """
         if not text:
             return []
-        return re.findall(r'\b[a-z0-9]+\b', text.lower())
+        # Split camelCase: "HonestyHumility" -> "Honesty Humility"
+        expanded_text = re.sub(r'([a-z])([A-Z])', r'\1 \2', text)
+        raw_tokens = re.findall(r'\b[a-z0-9]+\b', expanded_text.lower())
+        # Include original concatenated lowercase token if different
+        orig_tokens = re.findall(r'\b[a-z0-9]+\b', text.lower())
+        return list(dict.fromkeys(raw_tokens + orig_tokens))
 
     def fit(self, documents: List[Dict[str, Any]]) -> "BM25Indexer":
         """
