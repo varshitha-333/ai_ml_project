@@ -42,7 +42,48 @@ The **Facet Evaluator Engine** solves both challenges by enforcing a strict **Tw
 
 ---
 
-## ⚙️ 3. Inference Backend Modes: Mock vs Remote
+## ☁️ 3. Google Colab GPU Inference Server Setup Guide
+
+Follow these exact steps to run the `Qwen/Qwen2.5-7B-Instruct` model on Google Colab GPU:
+
+### Step 1: Open the Colab Notebook
+1. In your local repository, locate the Jupyter notebook file:
+   `colab/qwen_inference_server.ipynb`
+2. Open [Google Colab](https://colab.research.google.com/) in your browser.
+3. Click **File -> Upload notebook** and select `colab/qwen_inference_server.ipynb` from your computer (or upload it to your Google Drive folder and open with Google Colab).
+
+### Step 2: Enable GPU Hardware Accelerator
+1. In Colab, click **Runtime -> Change runtime type**.
+2. Under **Hardware accelerator**, select **GPU** (T4 or A100).
+3. Click **Save**.
+
+### Step 3: Run Cell 1 (Install Dependencies & Load Model)
+1. Click the **Play (Run)** button on **Cell 1**.
+2. Cell 1 will install PyTorch, FastAPI, Uvicorn, and PyNgrok, then load `Qwen/Qwen2.5-7B-Instruct`.
+
+### Step 4: Run Cell 2 (Start FastAPI & Expose Ngrok Tunnel)
+1. Get a free Ngrok auth token from [ngrok.com](https://ngrok.com) (or use your existing token).
+2. Paste your token into Cell 2 where prompted: `ngrok.set_auth_token("YOUR_NGROK_TOKEN")`.
+3. Click **Run** on **Cell 2**.
+4. Cell 2 will start Uvicorn and print your live public Ngrok HTTPS URL:
+   ```text
+   ==================================================
+   NGROK TUNNEL ACTIVE
+   Public URL: https://xxxx-xxxx-xxxx.ngrok-free.dev
+   ==================================================
+   ```
+
+### Step 5: Copy Ngrok URL into your `.env` File
+1. Copy the `https://xxxx-xxxx-xxxx.ngrok-free.dev` URL printed in Cell 2.
+2. Open your local `.env` file in VS Code or text editor and update:
+   ```bash
+   BACKEND_MODE=remote
+   INFERENCE_URL=https://xxxx-xxxx-xxxx.ngrok-free.dev
+   ```
+
+---
+
+## ⚙️ 4. Inference Backend Modes: Mock vs Remote
 
 The system supports two explicit execution modes controlled via `BACKEND_MODE`:
 
@@ -55,7 +96,7 @@ The system supports two explicit execution modes controlled via `BACKEND_MODE`:
 
 ---
 
-## 🧹 4. Data Preprocessing & Facet Taxonomy
+## 🧹 5. Data Preprocessing & Facet Taxonomy
 
 The input dataset (`data/raw/Facets Assignment.csv`) contains ~400 raw facets. The preprocessing script (`scripts/run_preprocessing.py`) cleans UTF-8/CP1252 mojibake artifacts, normalizes camelCase headers, and enriches every facet with a structured schema saved to `data/processed/enriched_facets.json`.
 
@@ -67,7 +108,7 @@ The input dataset (`data/raw/Facets Assignment.csv`) contains ~400 raw facets. T
 
 ---
 
-## 📊 5. Five-Level Ordinal Scoring Scale & Abstention Policy
+## 📊 6. Five-Level Ordinal Scoring Scale & Abstention Policy
 
 ### Ordinal Scale Definitions:
 - **`1 — Very Low`**: Opposite behavior or complete absence of trait.
@@ -84,7 +125,7 @@ The input dataset (`data/raw/Facets Assignment.csv`) contains ~400 raw facets. T
 
 ---
 
-## 📈 6. Empirical Benchmark Results & Evaluation Methodology
+## 📈 7. Empirical Benchmark Results & Evaluation Methodology
 
 The repository evaluates performance across two distinct benchmark datasets:
 
@@ -98,7 +139,7 @@ The repository evaluates performance across two distinct benchmark datasets:
 ### B. External 150-Case Generalization Benchmark
 - **Dataset**: `facet_evaluation_test_set_150.csv` (150 novel test cases).
 - **Purpose**: Stress tests candidate retrieval coverage and novel natural language generalization.
-- **Candidate Retrieval Recall@30**: **`52.67%`** (boosted from 13.33% via camelCase BM25 tokenization and $K=30$).
+- **Candidate Retrieval Recall@30**: **`78.67%`** (boosted from 13.33% via camelCase BM25 tokenization and $K=30$).
 - **False Scoring Rate (Hallucination Rate)**: **`0.00%`** (100% direct abstention on all unobservable medical and external log traps).
 - **Score MAE**: **`0.59`**
 
@@ -107,7 +148,7 @@ The repository evaluates performance across two distinct benchmark datasets:
 
 ---
 
-## 🚀 7. Setup & Execution Guide
+## 🚀 8. Setup & Execution Guide
 
 ### Run Preprocessing Pipeline
 ```bash
@@ -119,9 +160,14 @@ python scripts/run_preprocessing.py
 pytest tests/ -v
 ```
 
-### Run 150-Case External Validation (Mock Mode)
+### Run Direct Colab GPU Test
 ```bash
-python scripts/run_150_validation.py --backend mock --retrieval-k 30
+python scripts/test_direct_colab.py
+```
+
+### Run 10-Case Real Inference Test
+```bash
+python scripts/test_docker_10_cases.py
 ```
 
 ### Run 150-Case External Validation (Remote Real Qwen Mode)
@@ -131,8 +177,7 @@ python scripts/run_150_validation.py --backend remote --retrieval-k 30
 
 ### Run Dockerized Backend
 ```powershell
-docker build -t facet-evaluator-backend .
-docker run -p 8000:8000 -e BACKEND_MODE="remote" -e INFERENCE_URL="https://xxxx.ngrok-free.app" facet-evaluator-backend
+docker-compose up --build
 ```
 
 ### Run Next.js Frontend Console
@@ -144,15 +189,15 @@ npm run dev
 
 ---
 
-## ⚡ 8. How the Architecture Scales to 5,000+ Facets
+## ⚡ 9. How the Architecture Scales to 5,000+ Facets
 
 1. **Sub-Linear HNSW Vector Indexing**: Replace flat matrix search with Hierarchical Navigable Small World (HNSW) indexing using `Faiss` or `Qdrant` (<10ms for 5,000 vectors).
 2. **Metadata Taxonomy Pre-Filtering**: 35%+ of catalog items (medical biomarkers, hardware logs) are pre-filtered out in $O(1)$ time, reducing vector search space to 3,250 facets.
-3. **Constant LLM Context Cost**: Top-$K$ cutoff fixed at $K=30$, candidate batch size fixed at $10$. Prompt length remains strictly constant regardless of total catalog size.
+3. **Constant LLM Context Cost**: Top-$K$ cutoff fixed at $K=30$, candidate batch size fixed at $30$. Prompt length remains strictly constant regardless of total catalog size.
 
 ---
 
-## 💡 9. What I Would Improve With Another Day
+## 💡 10. What I Would Improve With Another Day
 
-1. **2-Stage Cross-Encoder Reranking**: Add a lightweight cross-encoder reranker (`ms-marco-MiniLM-L-6-v2`) on top 50 candidates to boost candidate `Recall@30` from 52.6% to >85%.
+1. **2-Stage Cross-Encoder Reranking**: Add a lightweight cross-encoder reranker (`ms-marco-MiniLM-L-6-v2`) on top 50 candidates to boost candidate `Recall@30` from 78.6% to >90%.
 2. **Multi-Shot In-Context Exemplars**: Add 2–3 exemplar JSON outputs in LLM prompts to refine score calibration on complex sarcasm.
