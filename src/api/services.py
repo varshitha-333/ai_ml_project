@@ -38,15 +38,18 @@ class PipelineService:
 
     def _initialize_backend(self):
         mode = self.settings.backend_mode.lower()
-        if mode == "remote":
-            return RemoteInferenceClientBackend(client=self.client)
-        elif mode == "huggingface":
+        if mode == "huggingface":
             return HuggingFaceInferenceBackend(
                 model_id=self.settings.model_name,
                 load_in_4bit=True
             )
-        else:
+        elif mode == "mock":
+            print("[WARN] Using MockInferenceBackend for explicit unit test override.")
             return MockInferenceBackend()
+        else:
+            # Default production path: Remote HTTP Inference to Colab Qwen model
+            print(f"[SERVICE] Selected REMOTE InferenceBackend for endpoint: {self.settings.inference_url}")
+            return RemoteInferenceClientBackend(client=self.client)
 
     def initialize(self):
         if not self.is_initialized:

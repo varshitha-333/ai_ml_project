@@ -16,10 +16,10 @@ class APISettings(BaseModel):
     inference_timeout: int = int(os.getenv("INFERENCE_TIMEOUT", "30"))
     embedding_model: str = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
     top_k: int = int(os.getenv("TOP_K", "10"))
-    batch_size: int = int(os.getenv("BATCH_SIZE", "5"))
+    batch_size: int = int(os.getenv("BATCH_SIZE", "10"))
     allowed_origins_raw: str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173")
     log_level: str = os.getenv("LOG_LEVEL", "INFO")
-    backend_mode: str = os.getenv("BACKEND_MODE", "mock")  # 'mock', 'remote', 'huggingface'
+    backend_mode: str = os.getenv("BACKEND_MODE", "remote")  # 'remote', 'huggingface', 'mock'
 
     @property
     def allowed_origins(self) -> List[str]:

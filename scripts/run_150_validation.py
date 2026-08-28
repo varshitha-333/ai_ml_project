@@ -34,7 +34,7 @@ def load_facet_catalog():
 
 def run_150_validation():
     parser = argparse.ArgumentParser(description="150-Case External Validation Runner")
-    parser.add_argument("--backend", choices=["mock", "remote"], default="mock", help="Inference backend mode (mock or remote)")
+    parser.add_argument("--backend", choices=["mock", "remote"], default="remote", help="Inference backend mode (default: remote)")
     parser.add_argument("--retrieval-k", type=int, choices=[10, 20, 30], default=30, help="Retrieval candidate depth K")
     parser.add_argument("--limit", type=int, default=150, help="Maximum number of test cases to evaluate")
     parser.add_argument("--run-ablation", action="store_true", help="Run retrieval candidate depth ablation")
