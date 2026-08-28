@@ -1,14 +1,17 @@
-# 150-Case External Validation Report
+# External 150-Case Validation Report
 
-**Execution Timestamp**: 2026-08-28 06:04:25 UTC
+**Execution Timestamp**: 2026-08-28 06:21:19 UTC
 **Backend Mode**: `MOCK` (MockInferenceBackend)
 **Model Name**: `Qwen/Qwen2.5-7B-Instruct (Mock)`
 **Retrieval K**: `30`
 **Total Dataset Cases**: `150`
 
+> [!NOTE]
+> **Mode Notice**: `MOCK` mode active. Mock results are NOT model-quality measurements.
+
 ---
 
-## 1. Executive Summary
+## 1. Summary Metrics
 
 ```text
 BACKEND MODE: MOCK
@@ -16,47 +19,51 @@ MODEL: Qwen/Qwen2.5-7B-Instruct (Mock)
 RETRIEVAL K: 30
 TOTAL CASES: 150
 MODEL CALLS: 110
-ABSTENTIONS: 118
-SCORED: 32
+ABSTENTIONS: 112
+SCORED: 38
 INFERENCE ERRORS: 0
-AVERAGE LATENCY: 0.0s
-MEDIAN LATENCY: 0.0s
-P95 LATENCY: 0.0s
+AVERAGE LATENCY: 0.02s
+MEDIAN LATENCY: 0.02s
+P95 LATENCY: 0.05s
 
-Status accuracy: 24.67%
-Score exact accuracy: 9.66%
-Score MAE: 0.59
-Score ±1 accuracy: 21.38%
+Status accuracy: 28.67%
+Score exact accuracy: 8.97%
+Score MAE: 0.68
+Score ±1 accuracy: 25.52%
 
-Abstention precision: 4.24%
+Abstention precision: 4.46%
 Abstention recall: 100.0%
-Abstention F1: 8.14%
+Abstention F1: 8.54%
 
 False scoring rate: 0.0%
 Hallucination false scoring rate: 0.0%
 
 Recall@1: 36.0%
-Recall@5: 37.33%
-Recall@10: 40.67%
-Recall@20: 48.0%
-Recall@30: 52.67%
+Recall@5: 48.67%
+Recall@10: 60.0%
+Recall@20: 69.33%
+Recall@30: 78.67%
 ```
 
 ---
 
-## 2. Retrieval Candidate Depth Ablation (K=10 vs K=20 vs K=30)
+## 2. Structured Failure Summary
 
-| Candidate Depth K | Recall@1 | Recall@5 | Recall@10 | Recall@20 | Recall@30 | Avg Latency |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| K=10 | 9.33% | 10.67% | 14.0% | 14.0% | 14.0% | 0.76ms |
-| K=20 | 9.33% | 10.67% | 14.0% | 21.33% | 21.33% | 0.8ms |
-| K=30 | 9.33% | 10.67% | 14.0% | 21.33% | 26.67% | 0.79ms |
+```text
+RETRIEVAL MISS:           32
+WRONG SCORING:            26
+INCORRECT ABSTENTION:     0
+FALSE SCORING:            0
+INFERENCE ERROR:          0
+MOCK BACKEND LIMITATION:  39
+ANNOTATION ISSUE:         0
+```
 
 ---
 
 ## 3. Hallucination Trap Test Audit
 
-| Test ID | Facet | Conversation | Expected Status | Predicted Status | Outcome |
+| Case ID | Target Facet | Conversation | Expected Status | Predicted Status | Outcome |
 | :--- | :--- | :--- | :---: | :---: | :---: |
 | `TEST_032` | `FSH level` | *"I do not have a laboratory result available for this value."* | `not_observable` | `not_observable` | **`PASS`** |
 | `TEST_043` | `Pilgrimage participation count` | *"I don't have records showing how many pilgrimages this person attended."* | `not_observable` | `not_observable` | **`PASS`** |
@@ -66,6 +73,6 @@ Recall@30: 52.67%
 
 ---
 
-## 4. Overall Assessment
+## 4. Final System Verdict
 
 **System Classification Verdict**: **`NEEDS IMPROVEMENT`**

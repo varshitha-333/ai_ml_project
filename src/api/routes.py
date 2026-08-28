@@ -41,6 +41,25 @@ def health_check(service: PipelineService = Depends(get_pipeline_service)):
     )
 
 
+@router.get(
+    "/v1/models",
+    summary="OpenAI-compatible models list endpoint",
+    tags=["System"]
+)
+def get_v1_models(service: PipelineService = Depends(get_pipeline_service)):
+    return {
+        "object": "list",
+        "data": [
+            {
+                "id": service.settings.model_name,
+                "object": "model",
+                "created": 1677610602,
+                "owned_by": "qwen"
+            }
+        ]
+    }
+
+
 @router.post(
     "/evaluate",
     response_model=EvaluateResponse,

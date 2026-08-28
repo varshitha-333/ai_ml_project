@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - INFERENCE_URL=${INFERENCE_URL:-http://localhost:8000}
+      - INFERENCE_URL=${INFERENCE_URL:-https://salvaging-ardently-late.ngrok-free.dev}
       - INFERENCE_MODEL=${INFERENCE_MODEL:-Qwen/Qwen2.5-14B-Instruct-AWQ}
       - INFERENCE_TIMEOUT=${INFERENCE_TIMEOUT:-30}
       - BACKEND_MODE=${BACKEND_MODE:-mock}

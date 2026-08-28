@@ -1,0 +1,151 @@
+test_id,text,expected_facet,expected_status,expected_score
+TEST_001,I signed up for a solo skydiving trip even though I had never tried it before.,Risktaking,scored,5.0
+TEST_002,I usually double-check the consequences before I take a risky decision.,Risktaking,scored,2.0
+TEST_003,He immediately believed the stranger who promised to double his money.,Naivety,scored,5.0
+TEST_004,I asked for proof before believing the claim.,Naivety,scored,1.0
+TEST_005,We voted together and chose the option supported by most of the team.,Democratic Leadership:,scored,5.0
+TEST_006,I tend to pause for a long time before making an important decision.,Hesitation,scored,5.0
+TEST_007,I keep complaining that nothing at work is ever good enough.,Discontentment,scored,5.0
+TEST_008,"Whenever my friend goes out, I keep checking whether they are safe.",Overprotectiveness,scored,5.0
+TEST_009,That was hilarious—I couldn't stop laughing for ten minutes.,Merriness,scored,5.0
+TEST_010,I got so emotional during the movie that I had to take a break.,Emotionalism,scored,4.0
+TEST_011,I started a course because I want to improve my Python skills.,Self-improvement,scored,5.0
+TEST_012,"The sample mean is 18.4, but the median is 12, so the distribution is probably skewed.",Statistical Reasoning,scored,5.0
+TEST_013,I told my teammate firmly that the deadline cannot be moved again.,Assertiveness and control in relationships,scored,4.0
+TEST_014,I quietly changed the plan so that the other person would agree without noticing.,Cunningness,scored,5.0
+TEST_015,Next month I want to try rock climbing and a multi-day trek.,Adventure-Seeking Behavior,scored,5.0
+TEST_016,"After helping customers all day, I feel emotionally drained and have little empathy left.",Compassion Fatigue,scored,5.0
+TEST_017,"Everything feels gloomy lately, and I don't expect much to improve.",Moroseness,scored,5.0
+TEST_018,I have worked mainly on database optimization for six years.,Specialist,scored,5.0
+TEST_019,I prefer to keep my distance at parties rather than join conversations.,Aloofness,scored,5.0
+TEST_020,"I made a mistake, admitted it immediately, and apologized.",Genuine,scored,5.0
+TEST_021,"The project failed twice, but I kept working until I found the bug.",Determinedness,scored,5.0
+TEST_022,I returned the extra change because keeping it would be dishonest.,HonestyHumility:,scored,5.0
+TEST_023,I try to learn what matters to people before building a long-term relationship with them.,Relationship Building Themes:,scored,5.0
+TEST_024,I enjoy difficult problems even when there is no reward for solving them.,Pure Challenge,scored,5.0
+TEST_025,"If 3 out of 5 experiments improve, I would not call that proof without considering the sample size.",Numerical Reasoning Subcomponents:,scored,5.0
+TEST_026,I am comfortable discussing an opinion that is different from mine.,Openness,scored,5.0
+TEST_027,I trust myself to handle a difficult presentation.,SelfEsteem,scored,4.0
+TEST_028,"I sorted the IDs 100A, 20B, 3C by the specified alphanumeric order.",Comparing alphanumeric data,scored,4.0
+TEST_029,I donated part of my bonus to help a colleague who was struggling.,Big-heartedness,scored,5.0
+TEST_030,I keep checking the same lock repeatedly even after I know it is locked.,Compulsive activities,scored,5.0
+TEST_031,Calling someone stupid because they asked a basic question is disrespectful.,Disrespect,scored,4.0
+TEST_032,I do not have a laboratory result available for this value.,FSH level,not_observable,
+TEST_033,I tend to reflect on what I did well and what I should change.,Self Perspective,scored,4.0
+TEST_034,I am desperate to get this job; I would accept almost any condition.,Desperation,scored,5.0
+TEST_035,I like meeting new people and becoming part of a group.,Affiliation Motivation:,scored,5.0
+TEST_036,I can explain what the femur and tibia are and where they are located.,Anatomy knowledge,scored,4.0
+TEST_037,"Fine, do whatever you want. Clearly my opinion doesn't matter anyway.",Passive-Aggressive,scored,5.0
+TEST_038,I feel a deep spiritual emptiness that I cannot easily explain.,Presence of Spiritual Pain,scored,4.0
+TEST_039,I regularly organize community meals through my spiritual group.,Role of Spirituality in Community Involvement,scored,5.0
+TEST_040,I keep my workspace organized and follow a consistent routine.,Structure,scored,5.0
+TEST_041,I chose a train instead of a car because I wanted to reduce my environmental impact.,Sustainable-transport usage,scored,4.0
+TEST_042,I waited until everyone had boarded before taking the last seat.,Chivalrousness,scored,4.0
+TEST_043,I don't have records showing how many pilgrimages this person attended.,Pilgrimage participation count,not_observable,
+TEST_044,"When I meditate, I deliberately notice sounds, sensations, and thoughts without changing them.",Mindfulness facet: Observing,scored,5.0
+TEST_045,"I usually let the other person make the final decision, even when I have a preference.",Submissiveness,scored,4.0
+TEST_046,My current training cycle lasts twelve weeks.,Training-cycle length,scored,5.0
+TEST_047,I notice quickly when someone's tone changes and I become concerned about how they feel.,Sensitiveness,scored,5.0
+TEST_048,I have been feeling anxious or irritated several times every day this week.,Negative Affect Frequency,scored,5.0
+TEST_049,I generated three different ways to solve the same problem.,Innovation and Creativity Components:,scored,5.0
+TEST_050,I set a difficult target and track my progress toward it every week.,Achievement Motivation:,scored,5.0
+TEST_051,I ask teammates for feedback after most presentations.,Feedback-giving frequency,scored,4.0
+TEST_052,I do dance-cardio twice a week.,Dance-cardio sessions,scored,5.0
+TEST_053,I was genuinely excited to start the new project.,Enthusiasm,scored,5.0
+TEST_054,"Honestly, I know the answer is wrong, but I will say it because everyone else expects it.",Psychological construct: Social Desirability tendency,scored,4.0
+TEST_055,I missed the instructions because I was checking messages while the teacher was speaking.,Inattentiveness,scored,5.0
+TEST_056,I had an idea but didn't speak up because I didn't want to challenge the group.,Unassertiveness,scored,5.0
+TEST_057,I decided within five minutes after comparing the two options.,Decision-making decisiveness,scored,5.0
+TEST_058,"Even during a stressful week, I can explain why my daily actions still matter to my long-term goals.",Sense-of-coherence score,scored,4.0
+TEST_059,I think the same rules should apply to my friend and to someone I dislike.,Justice-mindedness,scored,5.0
+TEST_060,I subscribe to several paid software services.,Subscription count,scored,4.0
+TEST_061,I have been feeling persistently hopeless and unable to enjoy things.,Depression Symptoms,scored,5.0
+TEST_062,I can mentally rotate a cube and picture how it looks from another side.,Spatial perception,scored,5.0
+TEST_063,Can you send the file by 5 PM?,Brevity,scored,5.0
+TEST_064,I label every folder and put each document in a predefined location.,Orderliness,scored,5.0
+TEST_065,"My team includes people from several countries, and I enjoy learning from their perspectives.",Multiculturalism,scored,5.0
+TEST_066,I would take a calculated business risk if the possible upside justified it.,Creative risk-taking tendency,scored,4.0
+TEST_067,"The manual process takes an hour, even though a script could finish it in seconds.",Inefficiency,scored,4.0
+TEST_068,"I can explain what DNS, IP addresses, and HTTP do at a basic level.",Network basics,scored,4.0
+TEST_069,I consistently file names in alphabetical order without mixing the entries.,Alphabetical filing skills,scored,5.0
+TEST_070,I prefer to plan my work independently and finish one task before starting another.,Work Styles,scored,4.0
+TEST_071,"The first experiment failed, so I changed the setup and tried again.",Character strength: Perseverance,scored,5.0
+TEST_072,I enjoy friendly competitions and try hard to win.,Competition,scored,5.0
+TEST_073,"I noticed the sequence 2, 4, 8, 16 and predicted the next number.",Logical Sequence Identification,scored,5.0
+TEST_074,I finish my assignments before the deadline even when nobody reminds me.,Hardworking,scored,5.0
+TEST_075,I often act on an impulse before thinking about the consequences.,Emotional-intelligence measure: Impulsiveness,scored,5.0
+TEST_076,I told my manager the truth even though I knew it might hurt my chances.,Dishonesty,scored,1.0
+TEST_077,I prefer claims supported by reproducible evidence rather than personal anecdotes.,Preferred epistemology,scored,5.0
+TEST_078,I can recognize a song from only a few seconds of its melody.,Memory for Sounds,scored,5.0
+TEST_079,"Even after losing, I congratulated the other team sincerely.",Sportsmanship rating,scored,5.0
+TEST_080,I avoided responsibility and insisted someone else should handle a simple task.,Immaturity,scored,4.0
+TEST_081,I read medicine labels carefully and ask a pharmacist when instructions are unclear.,Health-literacy level,scored,5.0
+TEST_082,"I estimated 49 × 21 as about 1,000 before calculating the exact answer.",Estimating Calculations,scored,4.0
+TEST_083,I have no clinical record that would justify diagnosing a sleep disorder from this conversation.,Sleep-disorder diagnosis,not_observable,
+TEST_084,"I combined the customer feedback, error logs, and usage data before recommending a fix.",Synthesis of information,scored,5.0
+TEST_085,I naturally take responsibility when a group needs someone to coordinate the work.,Leadership Potential:,scored,4.0
+TEST_086,I refused to manipulate the results even though it would have made my project look better.,Ethical standards,scored,5.0
+TEST_087,I was full of energy and kept encouraging everyone during the event.,High-spiritedness,scored,5.0
+TEST_088,"Before accepting the claim, I asked what evidence could disprove it.",Critical reasoning,scored,5.0
+TEST_089,"I listen carefully, repeat the main point, and ask a follow-up question.",Listening Skills Subcomponents:,scored,5.0
+TEST_090,We divided the tasks and helped each other when someone got stuck.,Collaboration,scored,5.0
+TEST_091,I can thread a needle without difficulty and control small hand movements precisely.,Precision of Movements,scored,5.0
+TEST_092,I introduced myself to the entire room without feeling uncomfortable.,Social Boldness,scored,5.0
+TEST_093,I can remember and repeat a sequence of spoken numbers after hearing it once.,Auditory memory,scored,5.0
+TEST_094,"I keep my room, calendar, and files organized most of the time.",Organized lifestyle,scored,5.0
+TEST_095,I created a checklist so everyone could participate in the discussion.,Encouraging participation,scored,4.0
+TEST_096,I insisted on following the procedure even though improvising would have been easier.,Selfcontrol,scored,5.0
+TEST_097,I prefer choosing my own goals instead of waiting for someone to tell me what to do.,SelfDirectedness,scored,5.0
+TEST_098,I missed the deadline because I kept delaying the final review.,Meeting Deadlines,scored,1.0
+TEST_099,"I cleaned the dataset, grouped the records, and calculated summary statistics.",Data Analysis,scored,5.0
+TEST_100,I can adapt my explanation depending on whether I am speaking to an engineer or a customer.,Social Interaction Skills,scored,5.0
+TEST_101,I believe I should always be the person in charge of other people's decisions.,Desire to influence others,scored,5.0
+TEST_102,I volunteer at a local food distribution program every month.,Volunteer Work,scored,5.0
+TEST_103,I enjoy solving abstract problems and learning difficult technical concepts.,Intellect,scored,5.0
+TEST_104,I used a formula to calculate the area instead of guessing.,Use of Mathematical Formulas,scored,5.0
+TEST_105,I spoke harshly to the waiter because my order was late.,Coarseness,scored,4.0
+TEST_106,I notice when I am becoming angry and deliberately slow down before replying.,Managing emotions,scored,5.0
+TEST_107,I usually give people the benefit of the doubt until I have evidence otherwise.,Trust in others,scored,5.0
+TEST_108,I was comfortable telling my teammate that I was worried about the project.,Comfort with Vulnerability,scored,5.0
+TEST_109,I often make jokes that are intentionally strange or unconventional.,Quirkiness,scored,4.0
+TEST_110,"When my first solution failed, I used the failure to design a better second approach.",Creative resilience,scored,5.0
+TEST_111,I can process a long list of simple comparisons quickly without losing track.,Rapid cognitive processing,scored,4.0
+TEST_112,I greet new coworkers warmly and try to make them feel comfortable.,Cordiality,scored,5.0
+TEST_113,I use walking meditation rather than sitting meditation because movement helps me focus.,Types of Mindfulness Techniques Used,scored,4.0
+TEST_114,"I compared opportunity cost, incentives, and scarcity before choosing between the two options.",Economic reasoning,scored,5.0
+TEST_115,I followed the group's decision even though I privately disagreed with it.,Conformity,scored,4.0
+TEST_116,I spend time teaching my dog new enrichment games.,Pet-enrichment activities count,scored,5.0
+TEST_117,I often stop to notice the composition and lighting in paintings.,Aesthetic Appreciation,scored,5.0
+TEST_118,"When I am stressed, I prefer someone to listen rather than immediately give me a solution.",Type of Support Preferred (Emotional vs. Practical),scored,5.0
+TEST_119,I can calculate simple percentages mentally without writing them down.,Mental Arithmetic Speed,scored,4.0
+TEST_120,"When someone annoys me, I can usually stay calm instead of snapping.",Patience: Resistance to anger,scored,5.0
+TEST_121,I spend too much time trying to make every small detail flawless.,Flawlessness,scored,5.0
+TEST_122,I believe I can learn the skills needed to build this project.,Self-Efficacy,scored,5.0
+TEST_123,I can write a small Python script to read a CSV and transform its columns.,Computer Skills:,scored,4.0
+TEST_124,I checked the spelling of the report before submitting it.,Spelling Accuracy,scored,5.0
+TEST_125,I keep a consistent bedtime and wake up at roughly the same time each day.,Wake-time consistency,scored,5.0
+TEST_126,I recover quickly after a stressful event and return to my normal routine.,Stress Recovery Ability,scored,5.0
+TEST_127,I can usually troubleshoot a technical problem by isolating variables and checking logs.,Troubleshooting technical issues,scored,5.0
+TEST_128,"I don't have access to this person's IQ test result, so I cannot infer their IQ from this sentence.",Intelligence Quotient (IQ),not_observable,
+TEST_129,I do not have medical records showing whether this person has sleep apnea.,Sleep Apnea,not_observable,
+TEST_130,My passport contains stamps from several countries.,Passport-stamps count,scored,4.0
+TEST_131,I take public transport for most of my weekly commute.,Public-transport km/week,scored,4.0
+TEST_132,I go outside for about two hours most days.,Time outdoors/day (h),scored,5.0
+TEST_133,I usually cook dinner at home instead of ordering food.,Preference for Home-Cooked vs Restaurant Meals,scored,5.0
+TEST_134,I skip breakfast on most weekdays.,Breakfast-skipping frequency,scored,5.0
+TEST_135,I eat packaged snacks several times every day.,Snacking Behavior,scored,5.0
+TEST_136,I rarely eat processed food and usually choose fresh ingredients.,Processed-food frequency,scored,1.0
+TEST_137,I enjoy visiting museums whenever I travel to a new city.,Museum visits/year,scored,5.0
+TEST_138,I have attended choir rehearsals for three years.,Choir participation years,scored,5.0
+TEST_139,I can delegate tasks by matching them to each person's strengths.,Delegation Ability,scored,5.0
+TEST_140,I stay calm and collected when several things go wrong at once.,Collectedness,scored,5.0
+TEST_141,I prefer to consider the surrounding circumstances before judging someone's action.,Reliance on context,scored,5.0
+TEST_142,I am willing to compromise when both sides can gain something.,Tendency Toward Compromise or Confrontation,scored,5.0
+TEST_143,I take the initiative instead of waiting for someone to assign the task.,Initiative,scored,5.0
+TEST_144,"I was scared of the height, but I still completed the climbing exercise safely.",Bravery,scored,4.0
+TEST_145,I tend to avoid situations because I fear physical danger.,Fearfulness: Fear of physical dangers,scored,5.0
+TEST_146,I speak frequently in group discussions and rarely stay silent.,Talkativeness,scored,5.0
+TEST_147,I try to make sure everyone receives a fair share of the resources.,Equitableness,scored,5.0
+TEST_148,I generated twelve possible product ideas during a one-hour brainstorming session.,Ideas generated/day,scored,5.0
+TEST_149,My proposed solution was different from the standard approach used by the team.,Originality,scored,5.0
+TEST_150,I apologized directly instead of making excuses for my mistake.,Frankness,scored,5.0
