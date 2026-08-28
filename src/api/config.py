@@ -21,8 +21,8 @@ class APISettings(BaseModel):
     inference_url: str = os.getenv("INFERENCE_URL", "http://localhost:8000").strip('"\'')
     inference_timeout: int = int(os.getenv("INFERENCE_TIMEOUT", "30"))
     embedding_model: str = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2").strip('"\'')
-    top_k: int = int(os.getenv("TOP_K", "10"))
-    batch_size: int = int(os.getenv("BATCH_SIZE", "10"))
+    top_k: int = int(os.getenv("TOP_K", "30"))
+    batch_size: int = int(os.getenv("BATCH_SIZE", "30"))
     allowed_origins_raw: str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173").strip('"\'')
     log_level: str = os.getenv("LOG_LEVEL", "INFO").strip('"\'')
     backend_mode: str = os.getenv("BACKEND_MODE", "remote").strip('"\'')  # 'remote', 'huggingface', 'mock'

@@ -78,13 +78,15 @@ class DenseVectorIndexer:
 
     def _prepare_text_representation(self, facet: Dict[str, Any]) -> str:
         """
-        Representation C: normalized_facet + facet_type + scoring_definition
-        Provides optimal balance of semantic retrieval quality, simplicity, and context precision.
+        Enriched Representation: normalized_facet + raw_facet + facet_type + scoring_definition + keywords
         """
         name = facet.get("normalized_facet", "")
+        raw_name = facet.get("raw_facet", "")
         ftype = facet.get("facet_type", "conversational_trait")
         desc = facet.get("scoring_definition", "")
-        return f"{name} | Category: {ftype} | Description: {desc}"
+        reason = facet.get("abstention_reason", "")
+        keywords_str = " ".join(facet.get("keywords", []))
+        return f"Facet Name: {name} | Raw Facet: {raw_name} | Category: {ftype} | Definition: {desc} | Keywords: {keywords_str} {reason}"
 
     def fit(self, facet_docs: List[Dict[str, Any]]) -> "DenseVectorIndexer":
         self.facet_docs = facet_docs
