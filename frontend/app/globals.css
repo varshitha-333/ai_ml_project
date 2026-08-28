@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  --background: #080a0d;
+  --foreground: #f3f5f7;
+  --surface: #101318;
+  --surface-elevated: #151a21;
+  --border: rgba(255,255,255,.08);
+  --muted-foreground: #98a2b3;
+  --accent: #4fd1ff;
+  --accent-foreground: #061016;
+  --success: #39d98a;
+  --warning: #f5c451;
+  --danger: #ff667d;
+  --radius: .7rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-sans: 'Inter', 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'SFMono-Regular', 'Roboto Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--background); }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+button, textarea, input { font: inherit; }
+button { cursor: pointer; }
+::selection { background: color-mix(in srgb, var(--accent) 20%, transparent); }
+.signal-line { display: flex; align-items: center; gap: 10px; height: 100%; opacity: .72; }
+.signal-line::before { content: ''; display: block; width: 18%; height: 1px; background: var(--border); }
+.signal-line span { display: block; width: 8px; height: 8px; border: 1px solid var(--accent); border-radius: 999px; }
+.signal-line span:nth-child(2), .signal-line span:nth-child(5) { transform: translateY(-7px); }
+.signal-line span:nth-child(3), .signal-line span:nth-child(6) { transform: translateY(5px); border-color: var(--warning); }
+.signal-line span:nth-child(4) { transform: translateY(-3px); }
+@media (prefers-reduced-motion: no-preference) {
+  .signal-line span, button, aside { transition: all 180ms ease; }
+}
+@media (max-width: 640px) {
+  .signal-line { gap: 6px; }
+  .signal-line span { width: 6px; height: 6px; }
+}
