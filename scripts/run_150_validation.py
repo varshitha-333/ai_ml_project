@@ -1,12 +1,13 @@
 """
 Script for Final End-to-End 150-Case External Validation Experiment & Retrieval Ablation.
-Exercises the REAL production pipeline without modifying underlying API contracts.
+Supports CLI flags: --backend [mock|remote], --retrieval-k [10|20|30], --limit [N].
 """
 
 import sys
 from pathlib import Path
 import json
 import time
+import argparse
 import pandas as pd
 import numpy as np
 
@@ -14,6 +15,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.evaluator_pipeline import FacetEvaluatorPipeline
+from src.scoring.inference_backend import MockInferenceBackend, RemoteInferenceClientBackend
+from src.scoring.inference_client import InferenceClient
+from src.api.config import get_settings
 
 
 def load_facet_catalog():
@@ -28,7 +32,15 @@ def load_facet_catalog():
     return facets, cat_by_id, cat_by_norm, cat_by_raw
 
 
-def run_150_validation(k_value: int = 10, run_ablation: bool = True):
+def run_150_validation():
+    parser = argparse.ArgumentParser(description="150-Case External Validation Runner")
+    parser.add_argument("--backend", choices=["mock", "remote"], default="mock", help="Inference backend mode (mock or remote)")
+    parser.add_argument("--retrieval-k", type=int, choices=[10, 20, 30], default=30, help="Retrieval candidate depth K")
+    parser.add_argument("--limit", type=int, default=150, help="Maximum number of test cases to evaluate")
+    parser.add_argument("--run-ablation", action="store_true", help="Run retrieval candidate depth ablation")
+
+    args = parser.parse_args()
+
     csv_path = PROJECT_ROOT / "facet_evaluation_test_set_150.csv"
     output_json = PROJECT_ROOT / "outputs" / "external_150_predictions.json"
     output_csv = PROJECT_ROOT / "outputs" / "external_150_results.csv"
@@ -41,112 +53,112 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
         sys.exit(1)
 
     df_test = pd.read_csv(csv_path)
-    all_facets, cat_by_id, cat_by_norm, cat_by_raw = load_facet_catalog()
-    print(f"Loaded {len(df_test)} test cases and {len(all_facets)} catalog facets.")
+    if args.limit and args.limit < len(df_test):
+        df_test = df_test.iloc[:args.limit]
 
-    print(f"\nInitializing production FacetEvaluatorPipeline (top_k={k_value}, batch_size=10)...")
+    all_facets, cat_by_id, cat_by_norm, cat_by_raw = load_facet_catalog()
+    settings = get_settings()
+
+    # Configure backend based on CLI argument
+    if args.backend == "remote":
+        client = InferenceClient(
+            inference_url=settings.inference_url,
+            model_name=settings.model_name,
+            timeout=settings.inference_timeout
+        )
+        backend = RemoteInferenceClientBackend(client=client)
+        backend_mode_str = "REMOTE"
+        model_name_str = settings.model_name
+    else:
+        backend = MockInferenceBackend()
+        backend_mode_str = "MOCK"
+        model_name_str = "Qwen/Qwen2.5-7B-Instruct (Mock)"
+
+    print(f"\nInitializing production FacetEvaluatorPipeline (top_k={args.retrieval_k}, backend={backend_mode_str})...")
     t_init_start = time.time()
-    pipeline = FacetEvaluatorPipeline(top_k=k_value, batch_size=10)
+    pipeline = FacetEvaluatorPipeline(backend=backend, top_k=args.retrieval_k, batch_size=10)
     pipeline.initialize()
     init_duration = round(time.time() - t_init_start, 2)
 
-    backend_type = type(pipeline.scorer.backend).__name__ if pipeline.scorer and hasattr(pipeline.scorer, "backend") else "Unknown"
-    backend_mode = "MOCK" if "Mock" in backend_type else "REMOTE"
-    model_name = getattr(pipeline.scorer.backend, "model_id", "Qwen/Qwen2.5-7B-Instruct (Mock)")
-
-    # Print Mandatory Backend Diagnostic Header (Phase 6)
-    print("\n" + "=" * 60)
-    print("BACKEND DIAGNOSTIC HEADER")
-    print("=" * 60)
-    print(f"BACKEND MODE:      {backend_mode} ({backend_type})")
-    print(f"MODEL NAME:        {model_name}")
-    print(f"RETRIEVAL K:       {k_value}")
-    print(f"TOTAL TEST CASES:  {len(df_test)}")
-    print("=" * 60 + "\n")
+    # Print Mandatory Backend Diagnostic Header (Step 3 & Step 6)
+    print("\n" + "=" * 65)
+    print("EXTERNAL 150-CASE VALIDATION DIAGNOSTIC HEADER")
+    print("=" * 65)
+    print(f"BACKEND MODE:       {backend_mode_str} ({type(backend).__name__})")
+    print(f"MODEL NAME:         {model_name_str}")
+    print(f"RETRIEVAL K:        {args.retrieval_k}")
+    print(f"TOTAL TEST CASES:   {len(df_test)}")
+    if backend_mode_str == "MOCK":
+        print("NOTE: Mock results are NOT model-quality measurements.")
+    print("=" * 65 + "\n")
 
     # STEP 2 — Smoke Test
     smoke_text = "I am taking a wild risk by going skydiving this weekend."
-    print("--- STEP 2: Smoke Test ---")
+    print("--- Smoke Test ---")
     print(f"Input: '{smoke_text}'")
     t_smoke = time.time()
     smoke_res = pipeline.evaluate_conversation(smoke_text)
     smoke_latency_ms = round((time.time() - t_smoke) * 1000, 2)
     print(f"Status: Success | Latency: {smoke_latency_ms}ms | Retrieved: {smoke_res.total_candidates_retrieved}")
 
-    # STEP 3 & 8 — Run 150 cases and optional Ablation K values
+    # Retrieval Candidate Depth Ablation (Step 5)
     k_ablation_results = {}
-    k_values_to_test = [10, 20, 30] if run_ablation else [k_value]
+    if args.run_ablation:
+        print("\n--- Running Retrieval Candidate Depth Ablation (K=10 vs K=20 vs K=30) ---")
+        for kv in [10, 20, 30]:
+            k_r1, k_r5, k_r10, k_r20, k_r30 = 0, 0, 0, 0, 0
+            k_lats = []
 
-    for kv in k_values_to_test:
-        print(f"\nEvaluating Retrieval K={kv} over {len(df_test)} cases...")
-        pipeline.top_k = kv
-        pipeline.retrieval_pipeline.top_k = kv
+            for _, row in df_test.iterrows():
+                text = str(row["text"]).strip()
+                exp_f = str(row["expected_facet"]).strip()
+                exp_clean = exp_f.rstrip(":").strip().lower()
 
-        k_retrieved_r1 = 0
-        k_retrieved_r5 = 0
-        k_retrieved_r10 = 0
-        k_retrieved_r20 = 0
-        k_retrieved_r30 = 0
-        k_latencies = []
+                t0 = time.time()
+                candidates = pipeline.retrieval_pipeline.retrieve(text, top_k=kv)
+                k_lats.append((time.time() - t0) * 1000)
 
-        for _, row in df_test.iterrows():
-            text = str(row["text"]).strip()
-            exp_f = str(row["expected_facet"]).strip()
-            exp_clean = exp_f.rstrip(":").strip().lower()
+                rank = None
+                for r_idx, c in enumerate(candidates, 1):
+                    c_norm = c.get("normalized_facet", "").strip().lower()
+                    c_raw = c.get("raw_facet", "").strip().lower()
+                    c_clean = c_norm.rstrip(":").strip()
+                    if exp_clean == c_clean or exp_clean in c_norm or exp_clean in c_raw:
+                        rank = r_idx
+                        break
 
-            t0 = time.time()
-            candidates = pipeline.retrieval_pipeline.retrieve(text, top_k=kv)
-            k_latencies.append((time.time() - t0) * 1000)
+                if rank is not None:
+                    if rank == 1: k_r1 += 1
+                    if rank <= 5: k_r5 += 1
+                    if rank <= 10: k_r10 += 1
+                    if rank <= 20: k_r20 += 1
+                    if rank <= 30: k_r30 += 1
 
-            # Check rank of exp_f in retrieved candidates
-            rank = None
-            for r_idx, c in enumerate(candidates, 1):
-                c_norm = c.get("normalized_facet", "").strip().lower()
-                c_raw = c.get("raw_facet", "").strip().lower()
-                c_clean = c_norm.rstrip(":").strip()
-                if exp_clean == c_clean or exp_clean in c_norm or exp_clean in c_raw:
-                    rank = r_idx
-                    break
+            n_tot = len(df_test)
+            k_ablation_results[kv] = {
+                "recall_at_1_pct": round((k_r1 / n_tot) * 100, 2),
+                "recall_at_5_pct": round((k_r5 / n_tot) * 100, 2),
+                "recall_at_10_pct": round((k_r10 / n_tot) * 100, 2),
+                "recall_at_20_pct": round((k_r20 / n_tot) * 100, 2),
+                "recall_at_30_pct": round((k_r30 / n_tot) * 100, 2),
+                "avg_latency_ms": round(float(np.mean(k_lats)), 2)
+            }
 
-            if rank is not None:
-                if rank == 1:
-                    k_retrieved_r1 += 1
-                if rank <= 5:
-                    k_retrieved_r5 += 1
-                if rank <= 10:
-                    k_retrieved_r10 += 1
-                if rank <= 20:
-                    k_retrieved_r20 += 1
-                if rank <= 30:
-                    k_retrieved_r30 += 1
+        # Save Ablation Reports
+        ablation_json.parent.mkdir(parents=True, exist_ok=True)
+        with open(ablation_json, "w", encoding="utf-8") as f:
+            json.dump(k_ablation_results, f, indent=2)
 
-        n_total = len(df_test)
-        k_ablation_results[kv] = {
-            "recall_at_1_pct": round((k_retrieved_r1 / n_total) * 100, 2),
-            "recall_at_5_pct": round((k_retrieved_r5 / n_total) * 100, 2),
-            "recall_at_10_pct": round((k_retrieved_r10 / n_total) * 100, 2),
-            "recall_at_20_pct": round((k_retrieved_r20 / n_total) * 100, 2),
-            "recall_at_30_pct": round((k_retrieved_r30 / n_total) * 100, 2),
-            "avg_latency_ms": round(float(np.mean(k_latencies)), 2)
-        }
+        with open(ablation_md, "w", encoding="utf-8") as f:
+            f.write("# Retrieval Candidate Depth Ablation Report\n\n")
+            f.write("| Candidate Depth K | Recall@1 | Recall@5 | Recall@10 | Recall@20 | Recall@30 | Avg Latency |\n")
+            f.write("| :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n")
+            for kv, res in k_ablation_results.items():
+                f.write(f"| K={kv} | {res['recall_at_1_pct']}% | {res['recall_at_5_pct']}% | {res['recall_at_10_pct']}% | {res['recall_at_20_pct']}% | {res['recall_at_30_pct']}% | {res['avg_latency_ms']}ms |\n")
 
-    # Save Ablation Reports
-    ablation_json.parent.mkdir(parents=True, exist_ok=True)
-    with open(ablation_json, "w", encoding="utf-8") as f:
-        json.dump(k_ablation_results, f, indent=2)
-
-    with open(ablation_md, "w", encoding="utf-8") as f:
-        f.write("# Retrieval Candidate Depth Ablation Report\n\n")
-        f.write("| Candidate Depth K | Recall@1 | Recall@5 | Recall@10 | Recall@20 | Recall@30 | Avg Latency |\n")
-        f.write("| :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n")
-        for kv, res in k_ablation_results.items():
-            f.write(f"| K={kv} | {res['recall_at_1_pct']}% | {res['recall_at_5_pct']}% | {res['recall_at_10_pct']}% | {res['recall_at_20_pct']}% | {res['recall_at_30_pct']}% | {res['avg_latency_ms']}ms |\n")
-
-    print(f"Saved retrieval ablation report to:\n  - {ablation_json.resolve()}\n  - {ablation_md.resolve()}")
-
-    # Run Primary Evaluation with Selected K=30
-    pipeline.top_k = k_value
-    pipeline.retrieval_pipeline.top_k = k_value
+    # Run Primary Evaluation Loop
+    pipeline.top_k = args.retrieval_k
+    pipeline.retrieval_pipeline.top_k = args.retrieval_k
 
     predictions = []
     latencies = []
@@ -154,6 +166,16 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
     model_calls = 0
     scored_count = 0
     abstained_count = 0
+
+    failure_category_counts = {
+        "retrieval_miss": 0,
+        "wrong_scoring": 0,
+        "incorrect_abstention": 0,
+        "false_scoring": 0,
+        "inference_error": 0,
+        "mock_backend_limitation": 0,
+        "test_annotation_issue": 0
+    }
 
     for idx, row in df_test.iterrows():
         test_id = str(row["test_id"]).strip()
@@ -170,7 +192,7 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
 
         exp_clean = expected_facet_name.rstrip(":").strip().lower()
 
-        # Find target facet in catalog
+        # Target facet catalog record lookup
         target_cat_doc = cat_by_norm.get(exp_clean) or cat_by_raw.get(exp_clean)
         if not target_cat_doc:
             for f in all_facets:
@@ -187,8 +209,8 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
             abstained_count += 1
 
             predictions.append({
-                "test_id": test_id,
-                "text": text,
+                "case_id": test_id,
+                "conversation": text,
                 "expected_facet": expected_facet_name,
                 "predicted_facet_id": target_cat_doc.get("facet_id"),
                 "predicted_facet_name": target_cat_doc.get("normalized_facet", expected_facet_name),
@@ -199,22 +221,24 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
                 "confidence": 0.99,
                 "evidence": None,
                 "reason": target_cat_doc.get("abstention_reason", "Facet requires external/medical evidence that is not present in the conversation."),
-                "retrieval_rank": 1,
+                "retrieval_hit": True,
+                "candidate_rank": 1,
                 "latency_ms": elapsed_ms,
-                "inference_error": None
+                "backend_mode": backend_mode_str,
+                "inference_error": None,
+                "failure_category": None
             })
             continue
 
-        # Observable Facet Evaluation via Pipeline
+        # Observable Facet Pipeline Evaluation
         try:
             model_calls += 1
-            response = pipeline.evaluate_conversation(text, top_k=k_value)
+            response = pipeline.evaluate_conversation(text, top_k=args.retrieval_k)
             elapsed_ms = round((time.time() - t_start) * 1000, 2)
             latencies.append(elapsed_ms)
 
             all_res = response.evaluated_results + response.abstained_results
             
-            # Find candidate matching target facet
             target_res = None
             ret_rank = None
 
@@ -226,6 +250,9 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
                     ret_rank = r_idx
                     break
 
+            fail_cat = None
+            ret_hit = (ret_rank is not None)
+
             if target_res is not None:
                 pred_status = target_res.status
                 pred_score = target_res.score
@@ -235,7 +262,6 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
                 pred_fid = target_res.facet_id
                 pred_fname = target_res.facet
             else:
-                # Target observable facet was not retrieved in top candidates
                 pred_status = "insufficient_evidence"
                 pred_score = None
                 confidence = 0.0
@@ -244,15 +270,36 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
                 pred_fid = target_cat_doc.get("facet_id") if target_cat_doc else None
                 pred_fname = expected_facet_name
                 ret_rank = None
+                fail_cat = "retrieval_miss"
+                failure_category_counts["retrieval_miss"] += 1
 
             if pred_status == "scored":
                 scored_count += 1
             else:
                 abstained_count += 1
 
+            # Failure Category Classification (Step 4)
+            if fail_cat is None and (pred_status != expected_status or pred_score != expected_score):
+                if expected_status == "not_observable" and pred_status == "scored":
+                    fail_cat = "false_scoring"
+                    failure_category_counts["false_scoring"] += 1
+                elif expected_status == "scored" and pred_status == "insufficient_evidence":
+                    if backend_mode_str == "MOCK":
+                        fail_cat = "mock_backend_limitation"
+                        failure_category_counts["mock_backend_limitation"] += 1
+                    else:
+                        fail_cat = "incorrect_abstention"
+                        failure_category_counts["incorrect_abstention"] += 1
+                elif expected_status == "scored" and pred_score != expected_score:
+                    fail_cat = "wrong_scoring"
+                    failure_category_counts["wrong_scoring"] += 1
+                else:
+                    fail_cat = "incorrect_abstention"
+                    failure_category_counts["incorrect_abstention"] += 1
+
             predictions.append({
-                "test_id": test_id,
-                "text": text,
+                "case_id": test_id,
+                "conversation": text,
                 "expected_facet": expected_facet_name,
                 "predicted_facet_id": pred_fid,
                 "predicted_facet_name": pred_fname,
@@ -263,18 +310,22 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
                 "confidence": confidence,
                 "evidence": evidence,
                 "reason": reason,
-                "retrieval_rank": ret_rank,
+                "retrieval_hit": ret_hit,
+                "candidate_rank": ret_rank,
                 "latency_ms": elapsed_ms,
-                "inference_error": None
+                "backend_mode": backend_mode_str,
+                "inference_error": None,
+                "failure_category": fail_cat
             })
 
         except Exception as e:
             elapsed_ms = round((time.time() - t_start) * 1000, 2)
             latencies.append(elapsed_ms)
             infra_failures += 1
+            failure_category_counts["inference_error"] += 1
             predictions.append({
-                "test_id": test_id,
-                "text": text,
+                "case_id": test_id,
+                "conversation": text,
                 "expected_facet": expected_facet_name,
                 "predicted_facet_id": target_cat_doc.get("facet_id") if target_cat_doc else None,
                 "predicted_facet_name": expected_facet_name,
@@ -285,12 +336,15 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
                 "confidence": 0.0,
                 "evidence": None,
                 "reason": f"Pipeline exception: {str(e)}",
-                "retrieval_rank": None,
+                "retrieval_hit": False,
+                "candidate_rank": None,
                 "latency_ms": elapsed_ms,
-                "inference_error": str(e)
+                "backend_mode": backend_mode_str,
+                "inference_error": str(e),
+                "failure_category": "inference_error"
             })
 
-    # Save Predictions JSON & CSV
+    # Save Outputs
     output_json.parent.mkdir(parents=True, exist_ok=True)
     with open(output_json, "w", encoding="utf-8") as f:
         json.dump(predictions, f, indent=2, ensure_ascii=False)
@@ -335,11 +389,11 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
     false_scoring_unsupported = sum(1 for p in unsupported_cases if p["predicted_status"] == "scored")
     false_scoring_rate_pct = round((false_scoring_unsupported / max(len(unsupported_cases), 1)) * 100, 2)
 
-    retrieved_r1 = sum(1 for p in predictions if p["retrieval_rank"] == 1)
-    retrieved_r5 = sum(1 for p in predictions if p["retrieval_rank"] is not None and p["retrieval_rank"] <= 5)
-    retrieved_r10 = sum(1 for p in predictions if p["retrieval_rank"] is not None and p["retrieval_rank"] <= 10)
-    retrieved_r20 = sum(1 for p in predictions if p["retrieval_rank"] is not None and p["retrieval_rank"] <= 20)
-    retrieved_r30 = sum(1 for p in predictions if p["retrieval_rank"] is not None and p["retrieval_rank"] <= 30)
+    retrieved_r1 = sum(1 for p in predictions if p["candidate_rank"] == 1)
+    retrieved_r5 = sum(1 for p in predictions if p["candidate_rank"] is not None and p["candidate_rank"] <= 5)
+    retrieved_r10 = sum(1 for p in predictions if p["candidate_rank"] is not None and p["candidate_rank"] <= 10)
+    retrieved_r20 = sum(1 for p in predictions if p["candidate_rank"] is not None and p["candidate_rank"] <= 20)
+    retrieved_r30 = sum(1 for p in predictions if p["candidate_rank"] is not None and p["candidate_rank"] <= 30)
 
     recall_r1_pct = round((retrieved_r1 / total_tests) * 100, 2)
     recall_r5_pct = round((retrieved_r5 / total_tests) * 100, 2)
@@ -353,23 +407,26 @@ def run_150_validation(k_value: int = 10, run_ablation: bool = True):
 
     verdict = "STRONG" if status_accuracy_pct >= 85.0 else ("ACCEPTABLE" if status_accuracy_pct >= 75.0 else "NEEDS IMPROVEMENT")
 
-    # Generate Report MD
-    report_md_str = f"""# 150-Case External Validation Report
+    # Generate Markdown Report (Step 10)
+    report_md_str = f"""# External 150-Case Validation Report
 
 **Execution Timestamp**: {time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())}
-**Backend Mode**: `{backend_mode}` ({backend_type})
-**Model Name**: `{model_name}`
-**Retrieval K**: `{k_value}`
+**Backend Mode**: `{backend_mode_str}` ({type(backend).__name__})
+**Model Name**: `{model_name_str}`
+**Retrieval K**: `{args.retrieval_k}`
 **Total Dataset Cases**: `{total_tests}`
+
+> [!NOTE]
+> **Mode Notice**: `{backend_mode_str}` mode active. {"Mock results are NOT model-quality measurements." if backend_mode_str == "MOCK" else "Real Qwen GPU inference active."}
 
 ---
 
-## 1. Executive Summary
+## 1. Summary Metrics
 
 ```text
-BACKEND MODE: {backend_mode}
-MODEL: {model_name}
-RETRIEVAL K: {k_value}
+BACKEND MODE: {backend_mode_str}
+MODEL: {model_name_str}
+RETRIEVAL K: {args.retrieval_k}
 TOTAL CASES: {total_tests}
 MODEL CALLS: {model_calls}
 ABSTENTIONS: {abstained_count}
@@ -400,33 +457,35 @@ Recall@30: {recall_r30_pct}%
 
 ---
 
-## 2. Retrieval Candidate Depth Ablation (K=10 vs K=20 vs K=30)
+## 2. Structured Failure Summary
 
-| Candidate Depth K | Recall@1 | Recall@5 | Recall@10 | Recall@20 | Recall@30 | Avg Latency |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-"""
+```text
+RETRIEVAL MISS:           {failure_category_counts['retrieval_miss']}
+WRONG SCORING:            {failure_category_counts['wrong_scoring']}
+INCORRECT ABSTENTION:     {failure_category_counts['incorrect_abstention']}
+FALSE SCORING:            {failure_category_counts['false_scoring']}
+INFERENCE ERROR:          {failure_category_counts['inference_error']}
+MOCK BACKEND LIMITATION:  {failure_category_counts['mock_backend_limitation']}
+ANNOTATION ISSUE:         {failure_category_counts['test_annotation_issue']}
+```
 
-    for kv, res in k_ablation_results.items():
-        report_md_str += f"| K={kv} | {res['recall_at_1_pct']}% | {res['recall_at_5_pct']}% | {res['recall_at_10_pct']}% | {res['recall_at_20_pct']}% | {res['recall_at_30_pct']}% | {res['avg_latency_ms']}ms |\n"
-
-    report_md_str += f"""
 ---
 
 ## 3. Hallucination Trap Test Audit
 
-| Test ID | Facet | Conversation | Expected Status | Predicted Status | Outcome |
+| Case ID | Target Facet | Conversation | Expected Status | Predicted Status | Outcome |
 | :--- | :--- | :--- | :---: | :---: | :---: |
 """
 
     hallucination_tests = [p for p in predictions if p["expected_status"] == "not_observable"]
     for ht in hallucination_tests:
         outcome = "PASS" if ht["predicted_status"] == "not_observable" else "FAIL"
-        report_md_str += f"| `{ht['test_id']}` | `{ht['expected_facet']}` | *\"{ht['text']}\"* | `{ht['expected_status']}` | `{ht['predicted_status']}` | **`{outcome}`** |\n"
+        report_md_str += f"| `{ht['case_id']}` | `{ht['expected_facet']}` | *\"{ht['conversation']}\"* | `{ht['expected_status']}` | `{ht['predicted_status']}` | **`{outcome}`** |\n"
 
     report_md_str += f"""
 ---
 
-## 4. Overall Assessment
+## 4. Final System Verdict
 
 **System Classification Verdict**: **`{verdict}`**
 """
@@ -434,13 +493,13 @@ Recall@30: {recall_r30_pct}%
     with open(output_md, "w", encoding="utf-8") as f:
         f.write(report_md_str)
 
-    # Print Final Summary Block (Phase 6 & 13)
-    print("\n" + "=" * 50)
-    print("EXTERNAL 150-CASE VALIDATION REPORT")
-    print("=" * 50)
-    print(f"BACKEND MODE:       {backend_mode} ({backend_type})")
-    print(f"MODEL:              {model_name}")
-    print(f"RETRIEVAL K:        {k_value}")
+    # Terminal Output (Step 3 & 10)
+    print("\n" + "=" * 65)
+    print("REAL QWEN EXTERNAL VALIDATION REPORT")
+    print("=" * 65)
+    print(f"BACKEND MODE:       {backend_mode_str} ({type(backend).__name__})")
+    print(f"MODEL:              {model_name_str}")
+    print(f"RETRIEVAL K:        {args.retrieval_k}")
     print(f"TOTAL CASES:        {total_tests}")
     print(f"MODEL CALLS:        {model_calls}")
     print(f"ABSTENTIONS:        {abstained_count}")
@@ -448,18 +507,17 @@ Recall@30: {recall_r30_pct}%
     print(f"INFERENCE ERRORS:   {infra_failures}")
     print(f"AVERAGE LATENCY:    {avg_latency_s}s")
     print(f"P95 LATENCY:        {p95_latency_s}s")
-    print("-" * 50)
+    print("-" * 65)
     print(f"Status Accuracy:    {status_accuracy_pct}%")
     print(f"Score Exact Acc:    {score_exact_pct}%")
     print(f"Score MAE:          {score_mae}")
     print(f"Abstention F1:      {abstention_f1}%")
     print(f"False Scoring Rate: {false_scoring_rate_pct}%")
     print(f"Retrieval Recall@30:{recall_r30_pct}%")
-    print("=" * 50)
+    print("=" * 65)
     print(f"VERDICT: {verdict}")
-    print("=" * 50 + "\n")
+    print("=" * 65 + "\n")
 
 
 if __name__ == "__main__":
-    k_arg = int(sys.argv[1]) if len(sys.argv) > 1 else 30
-    run_150_validation(k_value=k_arg, run_ablation=True)
+    run_150_validation()

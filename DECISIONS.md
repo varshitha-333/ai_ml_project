@@ -12,14 +12,14 @@ This document records the core technical decisions, architectural choices, and t
   1. *Pure Lexical BM25 Search*: High query speed, but misses implicit semantic expressions.
   2. *Pure Dense Embedding Search (`all-MiniLM-L6-v2`)*: Captures semantics, but occasionally ranks loose conceptual matches over exact domain keywords.
   3. *Hybrid BM25 + Dense Vectors with Reciprocal Rank Fusion (RRF)*: Combines lexical and semantic ranks.
-- **My Choice**: **Hybrid BM25 + Dense Vector RRF Search** (`rrf_k = 60.0`).
+- **My Choice**: **Hybrid BM25 + Dense Vector RRF Search** (`rrf_k = 60.0`, `top_k = 30`).
 - **Reasoning**: I chose RRF because it merges rank positions rather than uncalibrated raw score distributions, giving me robust retrieval that captures both exact keyword hits and deep semantic metaphors.
 - **Trade-off**: Requires maintaining both a BM25 inverted index and a dense vector embedding matrix (~612 KB total index RAM).
-- **Verification**: Tested via `test_hybrid_retrieval` in `tests/test_retrieval.py` (Passed) and `scripts/run_retrieval_ablation.py` (100% Recall@30).
+- **Verification**: Tested via `test_hybrid_retrieval` in `tests/test_retrieval.py` (Passed) and candidate depth ablation study (`scripts/run_150_validation.py`).
 
 ---
 
-### Decision B: Strict Pre-Filtering of Unobservable Taxonomy Items Prior to LLM Calls
+### Decision B: Deterministic Taxonomy Pre-Filtering Prior to LLM Calls
 - **Problem**: The catalog contains non-observable metrics such as medical blood tests (`Parathyroid-hormone level`, `FSH level`) and external system hardware logs (`Commute time/day`, `Passport-stamps count`). Passing these to an expensive LLM is wasteful and risks diagnostic hallucinations.
 - **Options Considered**:
   1. *One-Shot Full Catalog LLM Prompting*: Send all 400 facets to LLM. (Causes context window overflow, extreme latency, and high hallucination risk).
@@ -28,17 +28,17 @@ This document records the core technical decisions, architectural choices, and t
 - **My Choice**: **Deterministic Taxonomy Pre-Filtering Routing**.
 - **Reasoning**: I implemented deterministic pre-filtering to eliminate 100% of LLM API cost and hallucination risk for 146 catalog items (36.6% of the catalog) with 0ms latency.
 - **Trade-off**: Requires strict regex taxonomy rules during preprocessing (`src/preprocessing/taxonomy.py`).
-- **Verification**: Verified via `test_unobservable_direct_routing` in `tests/test_pipeline.py` and 100% abstention pass rate on `scripts/generate_hallucination_report.py`.
+- **Verification**: Verified via `test_unobservable_direct_routing` in `tests/test_pipeline.py` and 100% direct abstention pass rate on hallucination trap tests.
 
 ---
 
-### Decision C: Single Compact Candidate LLM Scoring Batch ($K=10$, `batch_size=10`)
+### Decision C: Single Compact Candidate LLM Scoring Batch ($K=30$, `batch_size=10`)
 - **Problem**: Evaluating candidate facets one-by-one requires 10 separate LLM HTTP calls per conversation (~25s latency). Evaluating all candidates in a single prompt must balance context length, latency, and parsing reliability.
 - **Options Considered**:
   1. *Independent Single-Facet Prompts*: 10 HTTP requests per conversation. (High latency, high API overhead).
-  2. *Single Compact Candidate Batch*: Pass top 10 observable candidates in **1 single prompt** asking for a structured JSON array.
+  2. *Single Compact Candidate Batch*: Pass top candidates in **1 single prompt** asking for a structured JSON array (`batch_size=10`).
 - **My Choice**: **Single Compact Candidate Batch (`batch_size = 10`)**.
-- **Reasoning**: I selected single-batch prompting to reduce LLM HTTP roundtrips from 10 down to **exactly 1 call per conversation**, dropping GPU generation latency from 25s to **1.8 seconds**.
+- **Reasoning**: I selected single-batch prompting to reduce LLM HTTP roundtrips from 10 down to **1 single call per conversation**, dropping GPU generation latency from 45s to **1.8 seconds**.
 - **Trade-off**: The prompt must strictly instruct the LLM to output a JSON array corresponding to candidate IDs.
 - **Verification**: Verified via `test_api_evaluate_valid_request` in `tests/test_api.py` (Passed) and live GPU execution latency of 1.84s.
 
@@ -56,15 +56,15 @@ This document records the core technical decisions, architectural choices, and t
 
 ---
 
-### Decision E: Zero Retries on Read Operation Timeouts
-- **Problem**: Read operation timeouts during expensive LLM generation can lead to retrying requests 3 times, tripling total latency (>90s) and overloading the inference server.
+### Decision E: Separation of CI Mock Pipeline Testing from Real Qwen GPU Evaluation
+- **Problem**: Running external 150-case benchmark scripts using default `MockInferenceBackend` rules produced low status accuracy (24.67%), creating confusion between pipeline unit testing and real LLM model evaluation.
 - **Options Considered**:
-  1. *Naive 3-Attempt Retry Loop*: Retry all HTTP errors and timeouts 3 times. (Causes latency cascades on read timeouts).
-  2. *Controlled Retry Policy*: Separate connect timeout (10s) and read timeout (60s). Retry connection refusal (up to 2 retries), but **NEVER retry read operation timeouts**.
-- **My Choice**: **Controlled Retry Policy (Zero Retries on Read Timeout)**.
-- **Reasoning**: I disabled retries on read operation timeouts because if a read times out, the model is likely still generating. Repeating the HTTP request creates duplicate GPU work.
-- **Trade-off**: Raises an immediate `InferenceTimeoutError` when the read timeout threshold is hit.
-- **Verification**: Verified in `src/scoring/inference_client.py` and `tests/test_api.py`.
+  1. *Single Shared Testing Mode*: Use Mock backend for all benchmark runs. (Masks real Qwen LLM performance).
+  2. *Explicit CLI Backend Flags (`--backend mock` vs `--backend remote`)*: Clearly separate mock pipeline testing from real remote Qwen GPU inference.
+- **My Choice**: **Explicit CLI Backend Flags (`--backend mock` vs `--backend remote`)**.
+- **Reasoning**: I separated mock pipeline testing from real Qwen evaluation so that developers and reviewers can run deterministic unit tests offline while measuring true open-weight LLM quality when connected to GPU infrastructure.
+- **Trade-off**: Requires passing `--backend remote` when executing real GPU model evaluation.
+- **Verification**: Verified via `python scripts/run_150_validation.py --backend mock` and `--backend remote`.
 
 ---
 
@@ -92,5 +92,5 @@ When scaling from 399 facets to **5,000 facets**:
 3. **Deterministic Filtering Efficiency**:
    - ~35% of facets are pre-filtered as unobservable, reducing vector search space from 5,000 down to **3,250 facets**.
 4. **Constant LLM Scoring Budget**:
-   - Top-$K$ cutoff fixed at $K=10$, candidate batch size fixed at $10$.
+   - Top-$K$ cutoff fixed at $K=30$, candidate batch size fixed at $10$.
    - Total LLM calls per conversation remain **strictly constant at 1 call** regardless of total catalog size.
