@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first for layer caching
-COPY requirements.txt .
+COPY requirements-docker.txt requirements.txt
 
 # Install CPU PyTorch first (180 MB instead of 2.8 GB CUDA wheel), then requirements
 RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && \
