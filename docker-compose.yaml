@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  facet-evaluator-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: facet_evaluator_api
+    ports:
+      - "8000:8000"
+    environment:
+      - INFERENCE_URL=${INFERENCE_URL:-https://salvaging-ardently-late.ngrok-free.dev}
+      - INFERENCE_MODEL=${INFERENCE_MODEL:-Qwen/Qwen2.5-7B-Instruct}
+      - INFERENCE_TIMEOUT=${INFERENCE_TIMEOUT:-30}
+      - BACKEND_MODE=${BACKEND_MODE:-remote}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173}
+    restart: unless-stopped
