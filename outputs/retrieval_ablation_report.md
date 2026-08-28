@@ -8,9 +8,9 @@ This report compares **BM25 Lexical Search**, **Dense Vector Embedding Search**,
 
 | Retrieval Strategy | Recall @ 5 | Recall @ 10 | Recall @ 30 | Avg Latency (ms) | Key Strength |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| **BM25 Lexical Only** | `19.05%` | `30.95%` | `50.0%` | `0.58 ms` | Fast exact keyword matching. |
+| **BM25 Lexical Only** | `19.05%` | `30.95%` | `50.0%` | `0.8 ms` | Fast exact keyword matching. |
 | **Dense Vector Only** | `0.0%` | `0.0%` | `0.0%` | `0.0 ms` | Captures semantic paraphrases & synonyms. |
-| **Hybrid BM25 + Dense (RRF)** | **`19.05%`** | **`30.95%`** | **`50.0%`** | `0.83 ms` | **Optimal recall & precision balance.** |
+| **Hybrid BM25 + Dense (RRF)** | **`19.05%`** | **`30.95%`** | **`50.0%`** | `0.63 ms` | **Optimal recall & precision balance.** |
 
 ---
 

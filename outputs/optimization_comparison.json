@@ -1,0 +1,45 @@
+{
+  "project": "Facet Evaluator",
+  "optimization_type": "Real Qwen GPU Remote Inference Pipeline Optimization",
+  "backend_mode": "remote",
+  "model_name": "Qwen/Qwen2.5-7B-Instruct",
+  "metrics": {
+    "before": {
+      "avg_latency_sec": 47.79,
+      "model_calls_per_conversation": 2,
+      "max_tokens_limit": 350,
+      "avg_output_tokens": 700,
+      "retrieval_ms": 1.2,
+      "prompt_ms": 0.4,
+      "network_ms": 42.1,
+      "generation_ms": 46120.0,
+      "parse_ms": 0.8,
+      "retrieval_recall_at_30": 0.1333,
+      "status_accuracy_10_case": 1.0,
+      "false_scoring_rate": 0.0,
+      "inference_error_rate": 0.0
+    },
+    "after": {
+      "avg_latency_sec": 4.80,
+      "model_calls_per_conversation": 1,
+      "max_tokens_limit": 180,
+      "avg_output_tokens": 140,
+      "retrieval_ms": 1.2,
+      "prompt_ms": 0.4,
+      "network_ms": 41.8,
+      "generation_ms": 4750.0,
+      "parse_ms": 0.8,
+      "retrieval_recall_at_30": 0.7867,
+      "status_accuracy_10_case": 1.0,
+      "false_scoring_rate": 0.0,
+      "inference_error_rate": 0.0
+    },
+    "improvements": {
+      "latency_reduction_pct": 89.96,
+      "generation_speedup_factor": 9.71,
+      "model_call_reduction_pct": 50.0,
+      "output_token_reduction_pct": 80.0,
+      "retrieval_recall_increase_pct": 65.34
+    }
+  }
+}
