@@ -6,9 +6,12 @@ import os
 from typing import List
 from pydantic import BaseModel
 
+from pathlib import Path
+
+env_file = Path(__file__).resolve().parent.parent.parent / ".env"
 try:
     from dotenv import load_dotenv
-    load_dotenv(override=True)
+    load_dotenv(dotenv_path=env_file, override=True)
 except ImportError:
     pass
 

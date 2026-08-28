@@ -16,7 +16,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 try:
     from dotenv import load_dotenv
-    load_dotenv(override=True)
+    load_dotenv(dotenv_path=PROJECT_ROOT / ".env", override=True)
 except ImportError:
     pass
 
