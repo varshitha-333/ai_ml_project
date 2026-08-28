@@ -22,7 +22,7 @@ import {
   type EvaluateResponse,
   type FacetScoreResult,
   type HealthResponse
-} from '@/lib/api'
+} from '../lib/api'
 
 // Predefined demo snippets covering all benchmark cases
 const DEMO_SNIPPETS = [
