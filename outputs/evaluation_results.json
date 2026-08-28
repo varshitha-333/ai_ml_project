@@ -1,0 +1,1962 @@
+{
+  "SCENARIO_001": {
+    "scenario_description": "Medical Symptom Query (Diabetes/Blood test hallucination trap)",
+    "conversation_text": "I have been having frequent headaches and feeling thirsty all the time.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_142",
+        "facet": "Arts and Humanities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Arts and Humanities'."
+      },
+      {
+        "facet_id": "FACET_149",
+        "facet": "General Mood and Attitude",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'General Mood and Attitude'."
+      },
+      {
+        "facet_id": "FACET_166",
+        "facet": "Cooking and Culinary Arts",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Cooking and Culinary Arts'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Hesitation'."
+      },
+      {
+        "facet_id": "FACET_007",
+        "facet": "Discontentment",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Discontentment'."
+      },
+      {
+        "facet_id": "FACET_008",
+        "facet": "Overprotectiveness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Overprotectiveness'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_002": {
+    "scenario_description": "External Biographical Car Ownership Trap (Traffic statement)",
+    "conversation_text": "I spent two hours stuck in terrible bumper-to-bumper traffic on Highway 101 today.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_151",
+        "facet": "Contribution to Group Goals",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Contribution to Group Goals'."
+      },
+      {
+        "facet_id": "FACET_331",
+        "facet": "Desire to influence others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Desire to influence others'."
+      },
+      {
+        "facet_id": "FACET_389",
+        "facet": "Patience: Resistance to anger",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Patience: Resistance to anger'."
+      },
+      {
+        "facet_id": "FACET_172",
+        "facet": "Creativity in solutions",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Creativity in solutions'."
+      },
+      {
+        "facet_id": "FACET_364",
+        "facet": "Trust in others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Trust in others'."
+      },
+      {
+        "facet_id": "FACET_274",
+        "facet": "Participation in Community Activities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Participation in Community Activities'."
+      },
+      {
+        "facet_id": "FACET_377",
+        "facet": "Connectedness: Belief in interconnections",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Connectedness: Belief in interconnections'."
+      },
+      {
+        "facet_id": "FACET_232",
+        "facet": "Significance: Desire to make an impact",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Significance: Desire to make an impact'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_283",
+        "facet": "Reliance on context",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Reliance on context'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_003": {
+    "scenario_description": "Emotional Mood vs Clinical Construct (Depression scale trap)",
+    "conversation_text": "I am feeling really blue and down in the dumps today because it's raining.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_172",
+        "facet": "Creativity in solutions",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Creativity in solutions'."
+      },
+      {
+        "facet_id": "FACET_364",
+        "facet": "Trust in others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Trust in others'."
+      },
+      {
+        "facet_id": "FACET_274",
+        "facet": "Participation in Community Activities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Participation in Community Activities'."
+      },
+      {
+        "facet_id": "FACET_377",
+        "facet": "Connectedness: Belief in interconnections",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Connectedness: Belief in interconnections'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_142",
+        "facet": "Arts and Humanities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Arts and Humanities'."
+      },
+      {
+        "facet_id": "FACET_149",
+        "facet": "General Mood and Attitude",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'General Mood and Attitude'."
+      },
+      {
+        "facet_id": "FACET_166",
+        "facet": "Cooking and Culinary Arts",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Cooking and Culinary Arts'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_004": {
+    "scenario_description": "Metaphorical Job Risk & Decisiveness",
+    "conversation_text": "I took a huge leap of faith and submitted my resignation letter without having another job lined up!",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_306",
+        "facet": "Use of Nature as a Stress Reliever",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Use of Nature as a Stress Reliever'."
+      },
+      {
+        "facet_id": "FACET_085",
+        "facet": "Synthesis of information",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Synthesis of information'."
+      },
+      {
+        "facet_id": "FACET_093",
+        "facet": "Precision of Movements",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Precision of Movements'."
+      },
+      {
+        "facet_id": "FACET_142",
+        "facet": "Arts and Humanities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Arts and Humanities'."
+      },
+      {
+        "facet_id": "FACET_058",
+        "facet": "Sense-of-coherence score",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Sense-of-coherence score'."
+      },
+      {
+        "facet_id": "FACET_149",
+        "facet": "General Mood and Attitude",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'General Mood and Attitude'."
+      },
+      {
+        "facet_id": "FACET_166",
+        "facet": "Cooking and Culinary Arts",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Cooking and Culinary Arts'."
+      },
+      {
+        "facet_id": "FACET_179",
+        "facet": "Depth of Emotional Connections",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Depth of Emotional Connections'."
+      },
+      {
+        "facet_id": "FACET_194",
+        "facet": "Use of Mathematical Formulas",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Use of Mathematical Formulas'."
+      },
+      {
+        "facet_id": "FACET_214",
+        "facet": "Comprehension of spoken information",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Comprehension of spoken information'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_005": {
+    "scenario_description": "Passive-Aggressive Interpersonal Posture",
+    "conversation_text": "Fine, do whatever you want. It's not like my opinion ever mattered to anyone here anyway.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_151",
+        "facet": "Contribution to Group Goals",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Contribution to Group Goals'."
+      },
+      {
+        "facet_id": "FACET_331",
+        "facet": "Desire to influence others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Desire to influence others'."
+      },
+      {
+        "facet_id": "FACET_389",
+        "facet": "Patience: Resistance to anger",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Patience: Resistance to anger'."
+      },
+      {
+        "facet_id": "FACET_232",
+        "facet": "Significance: Desire to make an impact",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Significance: Desire to make an impact'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_005",
+        "facet": "Common-sense",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Common-sense'."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Hesitation'."
+      },
+      {
+        "facet_id": "FACET_007",
+        "facet": "Discontentment",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Discontentment'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_006": {
+    "scenario_description": "Spiritual Retreat vs Esoteric I Ching Hexagram Trap",
+    "conversation_text": "I spent the weekend quietly meditating at a peaceful retreat in the mountains.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_306",
+        "facet": "Use of Nature as a Stress Reliever",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Use of Nature as a Stress Reliever'."
+      },
+      {
+        "facet_id": "FACET_172",
+        "facet": "Creativity in solutions",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Creativity in solutions'."
+      },
+      {
+        "facet_id": "FACET_364",
+        "facet": "Trust in others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Trust in others'."
+      },
+      {
+        "facet_id": "FACET_274",
+        "facet": "Participation in Community Activities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Participation in Community Activities'."
+      },
+      {
+        "facet_id": "FACET_377",
+        "facet": "Connectedness: Belief in interconnections",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Connectedness: Belief in interconnections'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_005",
+        "facet": "Common-sense",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Common-sense'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_007": {
+    "scenario_description": "Mental Math Claim vs Standardized Cognitive Test Trap",
+    "conversation_text": "I can calculate 15% tip in my head in two seconds flat!",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_172",
+        "facet": "Creativity in solutions",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Creativity in solutions'."
+      },
+      {
+        "facet_id": "FACET_364",
+        "facet": "Trust in others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Trust in others'."
+      },
+      {
+        "facet_id": "FACET_274",
+        "facet": "Participation in Community Activities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Participation in Community Activities'."
+      },
+      {
+        "facet_id": "FACET_377",
+        "facet": "Connectedness: Belief in interconnections",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Connectedness: Belief in interconnections'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_005",
+        "facet": "Common-sense",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Common-sense'."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Hesitation'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_008": {
+    "scenario_description": "Digital Nomad Lifestyle vs External Passport Log Trap",
+    "conversation_text": "I've been working remotely from coffee shops in Bali and Bangkok for the last six months.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_172",
+        "facet": "Creativity in solutions",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Creativity in solutions'."
+      },
+      {
+        "facet_id": "FACET_364",
+        "facet": "Trust in others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Trust in others'."
+      },
+      {
+        "facet_id": "FACET_274",
+        "facet": "Participation in Community Activities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Participation in Community Activities'."
+      },
+      {
+        "facet_id": "FACET_377",
+        "facet": "Connectedness: Belief in interconnections",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Connectedness: Belief in interconnections'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_079",
+        "facet": "Memory for Sounds",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Memory for Sounds'."
+      },
+      {
+        "facet_id": "FACET_118",
+        "facet": "Desire for excellence",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Desire for excellence'."
+      },
+      {
+        "facet_id": "FACET_142",
+        "facet": "Arts and Humanities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Arts and Humanities'."
+      },
+      {
+        "facet_id": "FACET_140",
+        "facet": "Need for social interaction",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Need for social interaction'."
+      },
+      {
+        "facet_id": "FACET_149",
+        "facet": "General Mood and Attitude",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'General Mood and Attitude'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_009": {
+    "scenario_description": "Financial Risk & Cryptocurrency Impulsivity",
+    "conversation_text": "I put my entire life savings into a high-volatility meme cryptocurrency yesterday.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_088",
+        "facet": "High-spiritedness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'High-spiritedness'."
+      },
+      {
+        "facet_id": "FACET_182",
+        "facet": "Activator: Turning thoughts into action",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Activator: Turning thoughts into action'."
+      },
+      {
+        "facet_id": "FACET_306",
+        "facet": "Use of Nature as a Stress Reliever",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Use of Nature as a Stress Reliever'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_005",
+        "facet": "Common-sense",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Common-sense'."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Hesitation'."
+      },
+      {
+        "facet_id": "FACET_007",
+        "facet": "Discontentment",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Discontentment'."
+      },
+      {
+        "facet_id": "FACET_008",
+        "facet": "Overprotectiveness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Overprotectiveness'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_010": {
+    "scenario_description": "Extreme Brevity & Laconic Directness",
+    "conversation_text": "No.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_005",
+        "facet": "Common-sense",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Common-sense'."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Hesitation'."
+      },
+      {
+        "facet_id": "FACET_007",
+        "facet": "Discontentment",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Discontentment'."
+      },
+      {
+        "facet_id": "FACET_008",
+        "facet": "Overprotectiveness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Overprotectiveness'."
+      },
+      {
+        "facet_id": "FACET_009",
+        "facet": "Merriness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Merriness'."
+      },
+      {
+        "facet_id": "FACET_010",
+        "facet": "Emotionalism",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Emotionalism'."
+      },
+      {
+        "facet_id": "FACET_011",
+        "facet": "Self-improvement",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Self-improvement'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_011": {
+    "scenario_description": "Overprotectiveness vs Home Security Hardware Log Trap",
+    "conversation_text": "I installed five security cameras, three locks, and I track my daughter's GPS location 24/7.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_128",
+        "facet": "Big Five facet Openness – Artistic Interests",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Big Five facet Openness – Artistic Interests'."
+      },
+      {
+        "facet_id": "FACET_142",
+        "facet": "Arts and Humanities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Arts and Humanities'."
+      },
+      {
+        "facet_id": "FACET_149",
+        "facet": "General Mood and Attitude",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'General Mood and Attitude'."
+      },
+      {
+        "facet_id": "FACET_166",
+        "facet": "Cooking and Culinary Arts",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Cooking and Culinary Arts'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Hesitation'."
+      },
+      {
+        "facet_id": "FACET_007",
+        "facet": "Discontentment",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Discontentment'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_012": {
+    "scenario_description": "Sarcasm, Acidity & Civility",
+    "conversation_text": "Oh sure, I'd just LOVE to stay past midnight fixing your typos for free again!",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_151",
+        "facet": "Contribution to Group Goals",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Contribution to Group Goals'."
+      },
+      {
+        "facet_id": "FACET_331",
+        "facet": "Desire to influence others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Desire to influence others'."
+      },
+      {
+        "facet_id": "FACET_389",
+        "facet": "Patience: Resistance to anger",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Patience: Resistance to anger'."
+      },
+      {
+        "facet_id": "FACET_232",
+        "facet": "Significance: Desire to make an impact",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Significance: Desire to make an impact'."
+      },
+      {
+        "facet_id": "FACET_079",
+        "facet": "Memory for Sounds",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Memory for Sounds'."
+      },
+      {
+        "facet_id": "FACET_118",
+        "facet": "Desire for excellence",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Desire for excellence'."
+      },
+      {
+        "facet_id": "FACET_140",
+        "facet": "Need for social interaction",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Need for social interaction'."
+      },
+      {
+        "facet_id": "FACET_244",
+        "facet": "Preference for Home-Cooked vs Restaurant Meals",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Preference for Home-Cooked vs Restaurant Meals'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_013": {
+    "scenario_description": "Religious Self-Reflection vs Memorization Count Trap",
+    "conversation_text": "I read scripture every single morning before starting my day.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_265",
+        "facet": "Ideas generated/day",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Ideas generated/day'."
+      },
+      {
+        "facet_id": "FACET_287",
+        "facet": "Scripture memorization verses",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Scripture memorization verses'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_005",
+        "facet": "Common-sense",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Common-sense'."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Hesitation'."
+      },
+      {
+        "facet_id": "FACET_007",
+        "facet": "Discontentment",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Discontentment'."
+      },
+      {
+        "facet_id": "FACET_008",
+        "facet": "Overprotectiveness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Overprotectiveness'."
+      },
+      {
+        "facet_id": "FACET_009",
+        "facet": "Merriness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Merriness'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_014": {
+    "scenario_description": "Dietary Habit Claim vs Biological Macronutrient Ratio Trap",
+    "conversation_text": "I haven't eaten processed food or sugar in over three years.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_340",
+        "facet": "Control over situations",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Control over situations'."
+      },
+      {
+        "facet_id": "FACET_278",
+        "facet": "Tendency Toward Compromise or Confrontation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Tendency Toward Compromise or Confrontation'."
+      },
+      {
+        "facet_id": "FACET_172",
+        "facet": "Creativity in solutions",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Creativity in solutions'."
+      },
+      {
+        "facet_id": "FACET_364",
+        "facet": "Trust in others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Trust in others'."
+      },
+      {
+        "facet_id": "FACET_274",
+        "facet": "Participation in Community Activities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Participation in Community Activities'."
+      },
+      {
+        "facet_id": "FACET_377",
+        "facet": "Connectedness: Belief in interconnections",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Connectedness: Belief in interconnections'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_015": {
+    "scenario_description": "High Hesitation & Cognitive Deliberation",
+    "conversation_text": "Um... well... I guess maybe we could... wait, let me think... maybe option B?",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_139",
+        "facet": "Well-being component: Engagement",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Well-being component: Engagement'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_005",
+        "facet": "Common-sense",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Common-sense'."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Hesitation'."
+      },
+      {
+        "facet_id": "FACET_007",
+        "facet": "Discontentment",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Discontentment'."
+      },
+      {
+        "facet_id": "FACET_008",
+        "facet": "Overprotectiveness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Overprotectiveness'."
+      },
+      {
+        "facet_id": "FACET_009",
+        "facet": "Merriness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Merriness'."
+      },
+      {
+        "facet_id": "FACET_010",
+        "facet": "Emotionalism",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Emotionalism'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_016": {
+    "scenario_description": "Chivalry & Warmheartedness",
+    "conversation_text": "I held the elevator door for an elderly stranger and carried their heavy groceries up the stairs.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_232",
+        "facet": "Significance: Desire to make an impact",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Significance: Desire to make an impact'."
+      },
+      {
+        "facet_id": "FACET_079",
+        "facet": "Memory for Sounds",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Memory for Sounds'."
+      },
+      {
+        "facet_id": "FACET_118",
+        "facet": "Desire for excellence",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Desire for excellence'."
+      },
+      {
+        "facet_id": "FACET_142",
+        "facet": "Arts and Humanities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Arts and Humanities'."
+      },
+      {
+        "facet_id": "FACET_140",
+        "facet": "Need for social interaction",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Need for social interaction'."
+      },
+      {
+        "facet_id": "FACET_149",
+        "facet": "General Mood and Attitude",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'General Mood and Attitude'."
+      },
+      {
+        "facet_id": "FACET_166",
+        "facet": "Cooking and Culinary Arts",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Cooking and Culinary Arts'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_244",
+        "facet": "Preference for Home-Cooked vs Restaurant Meals",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Preference for Home-Cooked vs Restaurant Meals'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_017": {
+    "scenario_description": "Direct Confrontation vs Non-Conformity",
+    "conversation_text": "I directly confronted my manager about the unfair budget cuts during our team meeting.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_109",
+        "facet": "Meeting Deadlines",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Meeting Deadlines'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      },
+      {
+        "facet_id": "FACET_003",
+        "facet": "Acidity",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Acidity'."
+      },
+      {
+        "facet_id": "FACET_005",
+        "facet": "Common-sense",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Common-sense'."
+      },
+      {
+        "facet_id": "FACET_006",
+        "facet": "Hesitation",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Hesitation'."
+      },
+      {
+        "facet_id": "FACET_007",
+        "facet": "Discontentment",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Discontentment'."
+      },
+      {
+        "facet_id": "FACET_008",
+        "facet": "Overprotectiveness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Overprotectiveness'."
+      },
+      {
+        "facet_id": "FACET_009",
+        "facet": "Merriness",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Merriness'."
+      },
+      {
+        "facet_id": "FACET_010",
+        "facet": "Emotionalism",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Emotionalism'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_018": {
+    "scenario_description": "Emotional Burnout & Exhaustion",
+    "conversation_text": "I am completely exhausted, emotionally drained, and I can barely force myself to open my laptop.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_151",
+        "facet": "Contribution to Group Goals",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Contribution to Group Goals'."
+      },
+      {
+        "facet_id": "FACET_331",
+        "facet": "Desire to influence others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Desire to influence others'."
+      },
+      {
+        "facet_id": "FACET_389",
+        "facet": "Patience: Resistance to anger",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Patience: Resistance to anger'."
+      },
+      {
+        "facet_id": "FACET_232",
+        "facet": "Significance: Desire to make an impact",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Significance: Desire to make an impact'."
+      },
+      {
+        "facet_id": "FACET_142",
+        "facet": "Arts and Humanities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Arts and Humanities'."
+      },
+      {
+        "facet_id": "FACET_149",
+        "facet": "General Mood and Attitude",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'General Mood and Attitude'."
+      },
+      {
+        "facet_id": "FACET_166",
+        "facet": "Cooking and Culinary Arts",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Cooking and Culinary Arts'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      },
+      {
+        "facet_id": "FACET_002",
+        "facet": "Naivety",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Naivety'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_019": {
+    "scenario_description": "Creative DIY Activity vs Pet Tracking Sensor Trap",
+    "conversation_text": "I built a custom agility obstacle course in my backyard for my Golden Retriever.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_306",
+        "facet": "Use of Nature as a Stress Reliever",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Use of Nature as a Stress Reliever'."
+      },
+      {
+        "facet_id": "FACET_172",
+        "facet": "Creativity in solutions",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Creativity in solutions'."
+      },
+      {
+        "facet_id": "FACET_364",
+        "facet": "Trust in others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Trust in others'."
+      },
+      {
+        "facet_id": "FACET_274",
+        "facet": "Participation in Community Activities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Participation in Community Activities'."
+      },
+      {
+        "facet_id": "FACET_377",
+        "facet": "Connectedness: Belief in interconnections",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Connectedness: Belief in interconnections'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_079",
+        "facet": "Memory for Sounds",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Memory for Sounds'."
+      },
+      {
+        "facet_id": "FACET_118",
+        "facet": "Desire for excellence",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Desire for excellence'."
+      },
+      {
+        "facet_id": "FACET_140",
+        "facet": "Need for social interaction",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Need for social interaction'."
+      },
+      {
+        "facet_id": "FACET_244",
+        "facet": "Preference for Home-Cooked vs Restaurant Meals",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Preference for Home-Cooked vs Restaurant Meals'."
+      }
+    ],
+    "abstained_results": []
+  },
+  "SCENARIO_020": {
+    "scenario_description": "Hypothetical Counterfactual Threat Posture",
+    "conversation_text": "If I were ever in a robbery, I would probably freeze and give them all my money.",
+    "total_candidates_retrieved": 10,
+    "evaluated_results": [
+      {
+        "facet_id": "FACET_306",
+        "facet": "Use of Nature as a Stress Reliever",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Use of Nature as a Stress Reliever'."
+      },
+      {
+        "facet_id": "FACET_172",
+        "facet": "Creativity in solutions",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Creativity in solutions'."
+      },
+      {
+        "facet_id": "FACET_364",
+        "facet": "Trust in others",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Trust in others'."
+      },
+      {
+        "facet_id": "FACET_274",
+        "facet": "Participation in Community Activities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Participation in Community Activities'."
+      },
+      {
+        "facet_id": "FACET_377",
+        "facet": "Connectedness: Belief in interconnections",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Connectedness: Belief in interconnections'."
+      },
+      {
+        "facet_id": "FACET_013",
+        "facet": "Assertiveness and control in relationships",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Assertiveness and control in relationships'."
+      },
+      {
+        "facet_id": "FACET_142",
+        "facet": "Arts and Humanities",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Arts and Humanities'."
+      },
+      {
+        "facet_id": "FACET_149",
+        "facet": "General Mood and Attitude",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'General Mood and Attitude'."
+      },
+      {
+        "facet_id": "FACET_166",
+        "facet": "Cooking and Culinary Arts",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Cooking and Culinary Arts'."
+      },
+      {
+        "facet_id": "FACET_001",
+        "facet": "Risktaking",
+        "status": "insufficient_evidence",
+        "score": null,
+        "confidence": 0.85,
+        "evidence": null,
+        "reason": "Conversational text does not express sufficient evidence for trait 'Risktaking'."
+      }
+    ],
+    "abstained_results": []
+  }
+}
