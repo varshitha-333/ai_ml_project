@@ -19,6 +19,39 @@ The **Facet Evaluator Engine** solves both challenges by enforcing a strict **Tw
 
 ## 🏗️ 2. Full Current System Architecture & Control Flow
 
+```mermaid
+flowchart TD
+    Client([User / Browser]) -->|HTTP POST /evaluate| Frontend[Next.js 16 Web Frontend Console - Port 3000]
+    Frontend -->|REST API Request| Backend[FastAPI Application Backend - Docker Container Port 8000]
+    
+    subgraph FastAPI Application Container
+        Backend --> PreFilter[Stage 1: Deterministic Taxonomy Pre-Filter]
+        PreFilter -->|Unobservable Labs / Hardware Logs| Abstain[Return not_observable Status]
+        PreFilter -->|Observable Facets| HybridEngine[Stage 2: Hybrid Candidate Retrieval Engine]
+        
+        subgraph Hybrid Candidate Retrieval Engine
+            HybridEngine --> BM25[BM25 Lexical Indexer - Bigram N-grams]
+            HybridEngine --> Dense[Dense Vector Indexer - Solution 1 Multi-Example Vectors]
+            BM25 --> RRF[Reciprocal Rank Fusion - RRF k=60.0, K=10]
+            Dense --> RRF
+        end
+        
+        RRF --> InfClient[InferenceClient Layer - Monotonic Timing & Retries]
+    end
+    
+    InfClient -->|HTTP / JSON via Ngrok Tunnel| GPU[OpenAI-Compatible GPU Inference Server - Colab / Kaggle]
+    
+    subgraph Hosted GPU Server
+        GPU --> Qwen[Qwen2.5-7B-Instruct Model - 4-bit Quantization]
+        Qwen --> JSONRecovery[Fault-Tolerant JSON Recovery Engine]
+    end
+    
+    JSONRecovery -->|Validated JSON Array| InfClient
+    InfClient --> Backend
+    Backend -->|JSON Response| Frontend
+    Frontend -->|Render Badges & Evidence Drawer| Client
+```
+
 ```text
                                ┌────────────────────────────────────────────────────────┐
                                │           Next.js 16 Web Frontend Console              │
