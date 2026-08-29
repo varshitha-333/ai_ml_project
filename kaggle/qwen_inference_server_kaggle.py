@@ -21,6 +21,7 @@ import requests
 # 1. Install required dependencies on Kaggle
 os.system("pip install -q fastapi uvicorn pyngrok bitsandbytes transformers accelerate")
 
+import uvicorn
 from fastapi import FastAPI, Request
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from pyngrok import ngrok
