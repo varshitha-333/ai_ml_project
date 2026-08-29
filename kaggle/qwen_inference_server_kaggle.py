@@ -31,27 +31,41 @@ os.makedirs(CACHE_DIR, exist_ok=True)
 os.environ["HF_HOME"] = CACHE_DIR
 print(f"✅ Kaggle Model Cache Directory: {CACHE_DIR}")
 
-# Clear any existing process on port 8000
-os.system("fuser -k 8000/tcp || true")
+# 2. Check GPU Architecture & Configure Model Loading (Prevents P100 sm_60 crash)
+gpu_name = torch.cuda.get_device_name(0) if torch.cuda.is_available() else "CPU"
+is_p100 = "P100" in gpu_name
 
 MODEL_ID = "Qwen/Qwen2.5-7B-Instruct"
-print(f"🚀 Loading {MODEL_ID} onto Kaggle GPU VRAM...")
+print(f"🚀 Loading {MODEL_ID} onto Kaggle GPU ({gpu_name})...")
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True, cache_dir=CACHE_DIR)
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_compute_dtype=torch.float16,
-    llm_int8_enable_fp32_cpu_offload=True
-)
 
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_ID,
-    quantization_config=bnb_config,
-    device_map="auto",
-    low_cpu_mem_usage=True,
-    trust_remote_code=True,
-    cache_dir=CACHE_DIR
-)
+if is_p100:
+    print(f"Detected P100 GPU ({gpu_name}). Using torch.float16 precision to avoid PyTorch sm_60 bitsandbytes crash...")
+    model = AutoModelForCausalLM.from_pretrained(
+        MODEL_ID,
+        torch_dtype=torch.float16,
+        device_map="auto",
+        low_cpu_mem_usage=True,
+        trust_remote_code=True,
+        cache_dir=CACHE_DIR
+    )
+else:
+    print(f"Detected T4 GPU ({gpu_name}). Using 4-bit bitsandbytes quantization...")
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=torch.float16,
+        llm_int8_enable_fp32_cpu_offload=True
+    )
+    model = AutoModelForCausalLM.from_pretrained(
+        MODEL_ID,
+        quantization_config=bnb_config,
+        device_map="auto",
+        low_cpu_mem_usage=True,
+        trust_remote_code=True,
+        cache_dir=CACHE_DIR
+    )
+
 print("✅ SUCCESS: Qwen2.5-7B Model Loaded onto Kaggle GPU!")
 
 # 3. FastAPI Application Setup
