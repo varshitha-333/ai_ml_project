@@ -93,6 +93,29 @@ This document records the core technical decisions, architectural choices, and t
 
 ---
 
+### Decision H: Multi-Example Conversational Utterance Indexing (Solution 1)
+- **Problem**: Asymmetry Gap between user speech (*"checking whether my friend is safe"*) and abstract trait titles (`Overprotectiveness`). Standard sentence transformers embed raw user utterances far away from isolated title strings.
+- **Options Considered**:
+  1. *Title-Only Indexing*: Index only trait titles and definitions. (Recall@1 = 3.33%).
+  2. *LLM Query Expansion*: Expand query text with LLM synonyms. (Introduces 1,500ms latency without Recall gain).
+  3. *Multi-Example Conversational Utterance Indexing*: Enrich each catalog trait with 3–5 concrete conversational dialogue utterances.
+- **My Choice**: **Multi-Example Conversational Utterance Indexing**.
+- **Reasoning**: Transforms vector search from utterance-to-title into utterance-to-utterance, bridging the semantic gap.
+- **Verification**: **Recall@1 jumped from 3.33% to 16.67% (+400% gain)**, **Recall@5 jumped from 40.0% to 50.0% (+25% gain)**, and **MRR jumped from 0.1706 to 0.3078 (+80.4% gain)** (`outputs/experiments/solution1_results.md`).
+
+---
+
+### Decision I: Fault-Tolerant Truncated Array Recovery Engine for Qwen Inference
+- **Problem**: When LLMs output structured JSON arrays, output token limits (`max_tokens`) or verbose reasoning can cut off text mid-generation, causing standard `json.loads()` to crash with `JSONDecodeError`.
+- **Options Considered**:
+  1. *Strict JSON Parsing*: Crash or default to `score = 0.0` whenever closing `]` is missing. (Causes false `PARSER_FAILURE`).
+  2. *Truncated Array Object Recovery Engine*: Regex object extraction (`r'\{\s*"facet_id".*?\}'`) to parse all complete JSON objects prior to any token cutoff.
+- **My Choice**: **Truncated Array Object Recovery Engine + `max_tokens: 2048`**.
+- **Reasoning**: Preserves 100% of successfully generated trait evaluations even if a stream is truncated.
+- **Verification**: Verified via Pytest (`tests/test_qwen_harness.py`) and 20-run stability test (`outputs/experiments/phase7/phase7_stability_20_runs.csv`).
+
+---
+
 ## 🚀 2. Scalability Architecture Analysis ($\ge$5,000 Facets)
 
 ### Catalog Scaling Metrics:
