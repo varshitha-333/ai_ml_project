@@ -150,13 +150,13 @@ if NGROK_TOKEN != "YOUR_NGROK_AUTHTOKEN_HERE":
 
 print("\n=======================================================")
 try:
-    tunnel = ngrok.connect("127.0.0.1:8000", bind_tls=True)
+    tunnel = ngrok.connect(addr="http://127.0.0.1:8000", proto="http", bind_tls=True)
 except Exception as err:
     print(f"Retrying clean Ngrok connection... ({err})")
     os.system("pkill -f ngrok || true")
     ngrok.kill()
     time.sleep(2)
-    tunnel = ngrok.connect("127.0.0.1:8000", bind_tls=True)
+    tunnel = ngrok.connect(addr="http://127.0.0.1:8000", proto="http", bind_tls=True)
 
 print(f"  INFERENCE_URL = {tunnel.public_url}")
 print("=======================================================\n")
