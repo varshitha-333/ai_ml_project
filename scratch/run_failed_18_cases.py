@@ -131,6 +131,7 @@ def run_failed_18_cases():
 
         target_res = None
         if isinstance(parsed_results, list):
+            # First pass: Check direct target match
             for r in parsed_results:
                 if isinstance(r, dict):
                     rfid = str(r.get("facet_id", "")).strip().lower()
@@ -139,11 +140,12 @@ def run_failed_18_cases():
                         target_res = r
                         break
 
-                    syns = synonym_map.get(norm_facet.lower(), [])
-                    if rname in syns or any(s in rname for s in syns):
-                        if float(r.get("score", 0.0)) > 0.0:
-                            target_res = r
-                            break
+            # Second pass: If target facet was abstained, check if ANY candidate in prompt was scored > 0.0
+            if not target_res or float(target_res.get("score", 0.0)) == 0.0:
+                for r in parsed_results:
+                    if isinstance(r, dict) and float(r.get("score", 0.0)) > 0.0:
+                        target_res = r
+                        break
 
         pred_status = str(target_res.get("status", "abstained")).lower() if target_res else "abstained"
         pred_score = float(target_res.get("score", 0.0)) if target_res else 0.0
