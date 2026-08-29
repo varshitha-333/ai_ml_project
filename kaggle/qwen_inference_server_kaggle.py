@@ -133,11 +133,14 @@ for _ in range(30):
     except Exception:
         time.sleep(1)
 
-# 6. Ngrok Public Tunneling
+# 6. Ngrok Public Tunneling (Fault-Tolerant ERR_NGROK_334 Fix)
+os.system("pkill -f ngrok || true")
+time.sleep(1)
+
 try:
+    ngrok.kill()
     for t in ngrok.get_tunnels():
         ngrok.disconnect(t.public_url)
-    ngrok.kill()
 except Exception:
     pass
 
@@ -147,13 +150,13 @@ if NGROK_TOKEN != "YOUR_NGROK_AUTHTOKEN_HERE":
 
 print("\n=======================================================")
 try:
-    tunnel = ngrok.connect(8000)
+    tunnel = ngrok.connect(8000, bind_tls=True)
 except Exception as err:
-    print(f"Ngrok connection note: {err}. Retrying clean connection...")
+    print(f"Retrying clean Ngrok connection... ({err})")
+    os.system("pkill -f ngrok || true")
     ngrok.kill()
     time.sleep(2)
-    tunnel = ngrok.connect(8000)
+    tunnel = ngrok.connect(8000, bind_tls=True)
 
 print(f"  INFERENCE_URL = {tunnel.public_url}")
-print("  Copy this INFERENCE_URL into your Docker command!")
 print("=======================================================\n")
