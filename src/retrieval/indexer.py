@@ -78,7 +78,7 @@ class DenseVectorIndexer:
 
     def _prepare_text_representation(self, facet: Dict[str, Any]) -> str:
         """
-        Enriched Representation: normalized_facet + raw_facet + facet_type + scoring_definition + keywords
+        Enriched Representation (Solution 1): normalized_facet + raw_facet + facet_type + scoring_definition + keywords + conversational_examples
         """
         name = facet.get("normalized_facet", "")
         raw_name = facet.get("raw_facet", "")
@@ -86,7 +86,9 @@ class DenseVectorIndexer:
         desc = facet.get("scoring_definition", "")
         reason = facet.get("abstention_reason", "")
         keywords_str = " ".join(facet.get("keywords", []))
-        return f"Facet Name: {name} | Raw Facet: {raw_name} | Category: {ftype} | Definition: {desc} | Keywords: {keywords_str} {reason}"
+        examples = facet.get("conversational_examples", facet.get("examples", []))
+        examples_str = " ".join(examples) if isinstance(examples, list) else str(examples)
+        return f"Facet Name: {name} | Raw Facet: {raw_name} | Category: {ftype} | Definition: {desc} | Keywords: {keywords_str} | Conversational Utterance Examples: {examples_str} {reason}"
 
     def fit(self, facet_docs: List[Dict[str, Any]]) -> "DenseVectorIndexer":
         self.facet_docs = facet_docs
