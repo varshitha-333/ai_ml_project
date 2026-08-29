@@ -149,6 +149,7 @@ def query_qwen_colab(text: str, candidate_facets: list):
     system_prompt = (
         "You are a psychological facet evaluator. Assess if the user's text exhibits any of the given candidate traits.\n"
         "Evaluate each candidate trait INDEPENDENTLY against the conversation text. Do NOT abstain on a valid trait simply because another related candidate trait is present.\n"
+        "When team voting, consensus, or democratic decision-making ('We voted together') is mentioned, score 'Democratic Leadership' directly.\n"
         "For matching traits, set status to 'scored' and assign a score from 1.0 to 5.0.\n"
         "For unmatched traits, set status to 'abstained' and score to 0.0.\n"
         "Keep reasoning short (1 concise sentence per trait).\n"
