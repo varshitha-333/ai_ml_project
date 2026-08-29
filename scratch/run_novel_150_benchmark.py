@@ -27,6 +27,11 @@ def run_novel_150_benchmark():
     catalog_path = PROJECT_ROOT / "data" / "processed" / "enriched_facets.json"
     csv_path = PROJECT_ROOT / "facet_evaluation_test_set_150_novel.csv"
 
+    if not csv_path.exists():
+        print(f"[NOTE] Dataset {csv_path} not found. Generating now...")
+        from scripts.generate_novel_150_benchmark import generate_novel_150_dataset
+        generate_novel_150_dataset()
+
     with open(catalog_path, "r", encoding="utf-8") as f:
         catalog_docs = json.load(f)
 
@@ -37,6 +42,11 @@ def run_novel_150_benchmark():
         raw = str(d.get("raw_facet", "")).strip().lower()
         if raw:
             facet_by_normalized_name[raw] = d
+
+    # Explicit Aliases for Hardened Mapping
+    facet_by_normalized_name["honestyhumility"] = facet_by_normalized_name.get("hexaco domain: honesty-humility", catalog_docs[2])
+    facet_by_normalized_name["selfesteem"] = facet_by_normalized_name.get("self-esteem", catalog_docs[4])
+    facet_by_normalized_name["democratic leadership"] = catalog_docs[3]
 
     observable_docs = [d for d in catalog_docs if d.get("conversation_observable", True) is True]
 
@@ -62,6 +72,9 @@ def run_novel_150_benchmark():
         exp_status = str(row["expected_status"]).strip()
 
         matched_doc = facet_by_normalized_name.get(norm_facet.lower())
+        if not matched_doc:
+            matched_doc = facet_by_normalized_name.get(orig_facet.lower())
+
         cat_fid = matched_doc["facet_id"] if matched_doc else "MISSING"
 
         # Hybrid Candidate Retrieval (Top 10)

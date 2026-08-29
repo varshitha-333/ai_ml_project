@@ -115,14 +115,14 @@ async def chat_completions(request: Request):
         print(f"❌ [KAGGLE GPU ERROR]: {e}")
         return {"choices": [{"message": {"role": "assistant", "content": "[]"}}]}
 
-# 4. Start Uvicorn Server
+# 5. Start Uvicorn Server on 0.0.0.0 (Supports both IPv4 and IPv6)
 def run_uvicorn():
-    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
+    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
 
 server_thread = threading.Thread(target=run_uvicorn, daemon=True)
 server_thread.start()
 
-# 5. Verify local server online
+# 6. Verify local server online
 print("Waiting for Kaggle local server to come online...")
 for _ in range(30):
     try:
@@ -133,7 +133,7 @@ for _ in range(30):
     except Exception:
         time.sleep(1)
 
-# 6. Ngrok Public Tunneling (Fault-Tolerant ERR_NGROK_334 Fix)
+# 7. Ngrok Public Tunneling (Binds explicitly to 127.0.0.1:8000)
 os.system("pkill -f ngrok || true")
 time.sleep(1)
 
@@ -150,13 +150,13 @@ if NGROK_TOKEN != "YOUR_NGROK_AUTHTOKEN_HERE":
 
 print("\n=======================================================")
 try:
-    tunnel = ngrok.connect(8000, bind_tls=True)
+    tunnel = ngrok.connect("127.0.0.1:8000", bind_tls=True)
 except Exception as err:
     print(f"Retrying clean Ngrok connection... ({err})")
     os.system("pkill -f ngrok || true")
     ngrok.kill()
     time.sleep(2)
-    tunnel = ngrok.connect(8000, bind_tls=True)
+    tunnel = ngrok.connect("127.0.0.1:8000", bind_tls=True)
 
 print(f"  INFERENCE_URL = {tunnel.public_url}")
 print("=======================================================\n")
