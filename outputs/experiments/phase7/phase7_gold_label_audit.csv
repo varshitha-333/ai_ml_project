@@ -1,0 +1,31 @@
+test_id,text,expected_facet,canonical_facet,resolved_facet_id,label_validity,reason
+TEST_001,I signed up for a solo skydiving trip even though I had never tried it before.,Risktaking,Risktaking,FACET_001,VALID,Valid canonical observable facet
+TEST_002,He immediately believed the stranger who promised to double his money.,Naivety,Naivety,FACET_002,VALID,Valid canonical observable facet
+TEST_003,We voted together and chose the option supported by most of the team.,Democratic Leadership,Democratic Leadership,FACET_004,TAXONOMY_HEADER,Taxonomy pre-filtered (Header / Medical Non-Observable Marker)
+TEST_004,I tend to pause for a long time before making an important decision.,Hesitation,Hesitation,FACET_006,VALID,Valid canonical observable facet
+TEST_005,I keep complaining that nothing at work is ever good enough.,Discontentment,Discontentment,FACET_007,VALID,Valid canonical observable facet
+TEST_006,"Whenever my friend goes out, I keep checking whether they are safe.",Overprotectiveness,Overprotectiveness,FACET_008,VALID,Valid canonical observable facet
+TEST_007,That was hilarious—I couldn't stop laughing for ten minutes.,Merriness,Merriness,FACET_009,VALID,Valid canonical observable facet
+TEST_008,I got so emotional during the movie that I had to take a break.,Emotionalism,Emotionalism,FACET_010,VALID,Valid canonical observable facet
+TEST_009,I started a course because I want to improve my Python skills.,Self-improvement,Self-improvement,FACET_011,VALID,Valid canonical observable facet
+TEST_010,"The sample mean is 18.4, but the median is 12, so the distribution is probably skewed.",Statistical Reasoning,Statistical Reasoning,FACET_012,VALID,Valid canonical observable facet
+TEST_011,I told my teammate firmly that the deadline cannot be moved again.,Assertiveness and control in relationships,Assertiveness and control in relationships,FACET_013,VALID,Valid canonical observable facet
+TEST_012,I quietly changed the plan so that the other person would agree without noticing.,Cunningness,Cunningness,FACET_014,VALID,Valid canonical observable facet
+TEST_013,Next month I want to try rock climbing and a multi-day trek.,Adventure-Seeking Behavior,Adventure-Seeking Behavior,FACET_015,VALID,Valid canonical observable facet
+TEST_014,"After helping customers all day, I feel emotionally drained and have little empathy left.",Compassion Fatigue,Compassion Fatigue,FACET_016,VALID,Valid canonical observable facet
+TEST_015,"Everything feels gloomy lately, and I don't expect much to improve.",Moroseness,Moroseness,FACET_017,VALID,Valid canonical observable facet
+TEST_016,I have worked mainly on database optimization for six years.,Specialist,Specialist,FACET_018,VALID,Valid canonical observable facet
+TEST_017,I prefer to keep my distance at parties rather than join conversations.,Aloofness,Aloofness,FACET_019,VALID,Valid canonical observable facet
+TEST_018,"I made a mistake, admitted it immediately, and apologized.",Genuine,Genuine,FACET_020,VALID,Valid canonical observable facet
+TEST_019,"The project failed twice, but I kept working until I found the bug.",Determinedness,Determinedness,FACET_021,VALID,Valid canonical observable facet
+TEST_020,I returned the extra change because keeping it would be dishonest.,HonestyHumility,HonestyHumility,MISSING,TAXONOMY_HEADER,Trailing colon or non-evaluable category header
+TEST_021,I try to learn what matters to people before building a long-term relationship with them.,Relationship Building Themes,Relationship Building Themes,FACET_023,TAXONOMY_HEADER,Taxonomy pre-filtered (Header / Medical Non-Observable Marker)
+TEST_022,I enjoy difficult problems even when there is no reward for solving them.,Pure Challenge,Pure Challenge,FACET_024,VALID,Valid canonical observable facet
+TEST_023,"If 3 out of 5 experiments improve, I would not call that proof without considering the sample size.",Numerical Reasoning Subcomponents,Numerical Reasoning Subcomponents,FACET_025,TAXONOMY_HEADER,Taxonomy pre-filtered (Header / Medical Non-Observable Marker)
+TEST_024,I am comfortable discussing an opinion that is different from mine.,Openness,Openness,FACET_026,VALID,Valid canonical observable facet
+TEST_025,I trust myself to handle a difficult presentation.,SelfEsteem,SelfEsteem,MISSING,TAXONOMY_HEADER,Trailing colon or non-evaluable category header
+TEST_026,"I sorted the IDs 100A, 20B, 3C by the specified alphanumeric order.",Comparing alphanumeric data,Comparing alphanumeric data,FACET_028,TAXONOMY_HEADER,Taxonomy pre-filtered (Header / Medical Non-Observable Marker)
+TEST_027,I donated part of my bonus to help a colleague who was struggling.,Big-heartedness,Big-heartedness,FACET_029,VALID,Valid canonical observable facet
+TEST_028,I keep checking the same lock repeatedly even after I know it is locked.,Compulsive activities,Compulsive activities,FACET_030,VALID,Valid canonical observable facet
+TEST_029,Calling someone stupid because they asked a basic question is disrespectful.,Disrespect,Disrespect,FACET_031,VALID,Valid canonical observable facet
+TEST_030,I do not have a laboratory result available for this value.,FSH level,FSH level,FACET_032,TAXONOMY_HEADER,Taxonomy pre-filtered (Header / Medical Non-Observable Marker)

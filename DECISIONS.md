@@ -69,6 +69,30 @@ This document records the core technical decisions, architectural choices, and t
 
 ---
 
+### Decision F: Empirical Rejection of Cross-Encoder Reranker (`ms-marco-MiniLM-L6-v2`)
+- **Problem**: Hybrid BM25 + Dense RRF retrieval occasionally ranks generic facets above semantically specific facets for short dialogue queries. We evaluated whether adding a lightweight Cross-Encoder reranker (`cross-encoder/ms-marco-MiniLM-L6-v2`) would improve retrieval MRR.
+- **Options Considered**:
+  1. *Default Baseline (Hybrid BM25 + Dense RRF)*: Fast sub-millisecond retrieval, MRR = 0.1950, Recall@30 = 50.0%.
+  2. *Cross-Encoder Rerank (N=30 Pool -> Top K=10)*: Full attention reranking over candidate pool.
+- **My Choice**: **REJECT Cross-Encoder Reranker (`RERANKER_ENABLED=false` by default)**.
+- **Reasoning**: Empirical evaluation on `experiment/cross-encoder-reranker` branch proved that `ms-marco-MiniLM-L6-v2` **degraded retrieval MRR from 0.1950 down to 0.0960 (-50.8%)** and **Recall@10 from 28.57% down to 9.52% (-66.7%)**, while adding **+679.09 ms latency overhead** per query. Web search QA Cross-Encoders penalize structured catalog definitions compared to generic prose, making them unsuitable for structured behavioral catalog retrieval without custom fine-tuning.
+- **Trade-off**: Retains the fast, proven Hybrid BM25 + Dense RRF baseline without adding 45 MB RAM or +679 ms latency.
+- **Verification**: Empirical 4-configuration ablation study documented in `docs/RERANKER_EXPERIMENT.md` (`python scripts/run_retrieval_ablation.py`).
+
+---
+
+### Decision G: Candidate Prompt Window Optimization ($K=10$ vs $K=30$ Root Cause Fix)
+- **Problem**: In initial real-Qwen evaluation, setting candidate retrieval depth to $K=30$ caused `SCORED: 0` and `ABSTENTIONS: 150` (3.33% Status Accuracy).
+- **Options Considered**:
+  1. *Unrestricted $K=30$ Prompting*: Send 30 long candidate definitions in 1 single LLM prompt. (Bloats prompt to ~2,500 input tokens, causing Qwen2.5-7B to over-abstain and return `insufficient_evidence` for all items).
+  2. *Optimized Candidate Window ($K=10$)*: Restrict scoring candidate pool to Top 10 items ($K=10$).
+- **My Choice**: **Optimized Candidate Window ($K=10$)**.
+- **Reasoning**: Phase 1 audit (`outputs/curated_30_audit.md`) proved that 70.0% of target facets are present in the Top 10 candidate list. Reducing candidate depth to $K=10$ reduces prompt token length by 66%, eliminating over-abstention and boosting Status Accuracy from 3.33% up to 20.0%+ while maintaining a **`0.0% False Scoring Rate`**.
+- **Trade-off**: Requires precise RRF candidate ranking so target facets appear in the Top 10 list.
+- **Verification**: Empirical evaluation documented in `outputs/curated_30_audit.md` and `outputs/retrieval_evaluation_comparison.md`.
+
+---
+
 ## 🚀 2. Scalability Architecture Analysis ($\ge$5,000 Facets)
 
 ### Catalog Scaling Metrics:

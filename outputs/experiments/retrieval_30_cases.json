@@ -1,0 +1,272 @@
+[
+  {
+    "case_id": "TEST_001",
+    "input_text": "I signed up for a solo skydiving trip even though I had never tried it before.",
+    "original_target_facet": "Risktaking",
+    "normalized_target_facet": "Risktaking",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_001"
+  },
+  {
+    "case_id": "TEST_002",
+    "input_text": "He immediately believed the stranger who promised to double his money.",
+    "original_target_facet": "Naivety",
+    "normalized_target_facet": "Naivety",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_002"
+  },
+  {
+    "case_id": "TEST_003",
+    "input_text": "We voted together and chose the option supported by most of the team.",
+    "original_target_facet": "Democratic Leadership:",
+    "normalized_target_facet": "Democratic Leadership",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_004"
+  },
+  {
+    "case_id": "TEST_004",
+    "input_text": "I tend to pause for a long time before making an important decision.",
+    "original_target_facet": "Hesitation",
+    "normalized_target_facet": "Hesitation",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_006"
+  },
+  {
+    "case_id": "TEST_005",
+    "input_text": "I keep complaining that nothing at work is ever good enough.",
+    "original_target_facet": "Discontentment",
+    "normalized_target_facet": "Discontentment",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_007"
+  },
+  {
+    "case_id": "TEST_006",
+    "input_text": "Whenever my friend goes out, I keep checking whether they are safe.",
+    "original_target_facet": "Overprotectiveness",
+    "normalized_target_facet": "Overprotectiveness",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_008"
+  },
+  {
+    "case_id": "TEST_007",
+    "input_text": "That was hilarious\u2014I couldn't stop laughing for ten minutes.",
+    "original_target_facet": "Merriness",
+    "normalized_target_facet": "Merriness",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_009"
+  },
+  {
+    "case_id": "TEST_008",
+    "input_text": "I got so emotional during the movie that I had to take a break.",
+    "original_target_facet": "Emotionalism",
+    "normalized_target_facet": "Emotionalism",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_010"
+  },
+  {
+    "case_id": "TEST_009",
+    "input_text": "I started a course because I want to improve my Python skills.",
+    "original_target_facet": "Self-improvement",
+    "normalized_target_facet": "Self-improvement",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_011"
+  },
+  {
+    "case_id": "TEST_010",
+    "input_text": "The sample mean is 18.4, but the median is 12, so the distribution is probably skewed.",
+    "original_target_facet": "Statistical Reasoning",
+    "normalized_target_facet": "Statistical Reasoning",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_012"
+  },
+  {
+    "case_id": "TEST_011",
+    "input_text": "I told my teammate firmly that the deadline cannot be moved again.",
+    "original_target_facet": "Assertiveness and control in relationships",
+    "normalized_target_facet": "Assertiveness and control in relationships",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_013"
+  },
+  {
+    "case_id": "TEST_012",
+    "input_text": "I quietly changed the plan so that the other person would agree without noticing.",
+    "original_target_facet": "Cunningness",
+    "normalized_target_facet": "Cunningness",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_014"
+  },
+  {
+    "case_id": "TEST_013",
+    "input_text": "Next month I want to try rock climbing and a multi-day trek.",
+    "original_target_facet": "Adventure-Seeking Behavior",
+    "normalized_target_facet": "Adventure-Seeking Behavior",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_015"
+  },
+  {
+    "case_id": "TEST_014",
+    "input_text": "After helping customers all day, I feel emotionally drained and have little empathy left.",
+    "original_target_facet": "Compassion Fatigue",
+    "normalized_target_facet": "Compassion Fatigue",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_016"
+  },
+  {
+    "case_id": "TEST_015",
+    "input_text": "Everything feels gloomy lately, and I don't expect much to improve.",
+    "original_target_facet": "Moroseness",
+    "normalized_target_facet": "Moroseness",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_017"
+  },
+  {
+    "case_id": "TEST_016",
+    "input_text": "I have worked mainly on database optimization for six years.",
+    "original_target_facet": "Specialist",
+    "normalized_target_facet": "Specialist",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_018"
+  },
+  {
+    "case_id": "TEST_017",
+    "input_text": "I prefer to keep my distance at parties rather than join conversations.",
+    "original_target_facet": "Aloofness",
+    "normalized_target_facet": "Aloofness",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_019"
+  },
+  {
+    "case_id": "TEST_018",
+    "input_text": "I made a mistake, admitted it immediately, and apologized.",
+    "original_target_facet": "Genuine",
+    "normalized_target_facet": "Genuine",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_020"
+  },
+  {
+    "case_id": "TEST_019",
+    "input_text": "The project failed twice, but I kept working until I found the bug.",
+    "original_target_facet": "Determinedness",
+    "normalized_target_facet": "Determinedness",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_021"
+  },
+  {
+    "case_id": "TEST_020",
+    "input_text": "I returned the extra change because keeping it would be dishonest.",
+    "original_target_facet": "HonestyHumility:",
+    "normalized_target_facet": "HonestyHumility",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_022"
+  },
+  {
+    "case_id": "TEST_021",
+    "input_text": "I try to learn what matters to people before building a long-term relationship with them.",
+    "original_target_facet": "Relationship Building Themes:",
+    "normalized_target_facet": "Relationship Building Themes",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_023"
+  },
+  {
+    "case_id": "TEST_022",
+    "input_text": "I enjoy difficult problems even when there is no reward for solving them.",
+    "original_target_facet": "Pure Challenge",
+    "normalized_target_facet": "Pure Challenge",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_024"
+  },
+  {
+    "case_id": "TEST_023",
+    "input_text": "If 3 out of 5 experiments improve, I would not call that proof without considering the sample size.",
+    "original_target_facet": "Numerical Reasoning Subcomponents:",
+    "normalized_target_facet": "Numerical Reasoning Subcomponents",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_025"
+  },
+  {
+    "case_id": "TEST_024",
+    "input_text": "I am comfortable discussing an opinion that is different from mine.",
+    "original_target_facet": "Openness",
+    "normalized_target_facet": "Openness",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_026"
+  },
+  {
+    "case_id": "TEST_025",
+    "input_text": "I trust myself to handle a difficult presentation.",
+    "original_target_facet": "SelfEsteem",
+    "normalized_target_facet": "SelfEsteem",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_027"
+  },
+  {
+    "case_id": "TEST_026",
+    "input_text": "I sorted the IDs 100A, 20B, 3C by the specified alphanumeric order.",
+    "original_target_facet": "Comparing alphanumeric data",
+    "normalized_target_facet": "Comparing alphanumeric data",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_028"
+  },
+  {
+    "case_id": "TEST_027",
+    "input_text": "I donated part of my bonus to help a colleague who was struggling.",
+    "original_target_facet": "Big-heartedness",
+    "normalized_target_facet": "Big-heartedness",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_029"
+  },
+  {
+    "case_id": "TEST_028",
+    "input_text": "I keep checking the same lock repeatedly even after I know it is locked.",
+    "original_target_facet": "Compulsive activities",
+    "normalized_target_facet": "Compulsive activities",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_030"
+  },
+  {
+    "case_id": "TEST_029",
+    "input_text": "Calling someone stupid because they asked a basic question is disrespectful.",
+    "original_target_facet": "Disrespect",
+    "normalized_target_facet": "Disrespect",
+    "expected_status": "scored",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_031"
+  },
+  {
+    "case_id": "TEST_030",
+    "input_text": "I do not have a laboratory result available for this value.",
+    "original_target_facet": "FSH level",
+    "normalized_target_facet": "FSH level",
+    "expected_status": "not_observable",
+    "target_facet_exists_in_catalog": true,
+    "catalog_facet_id": "FACET_032"
+  }
+]

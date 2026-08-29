@@ -1,0 +1,31 @@
+test_id,original_label,normalized_label,semantic_validity,notes
+TEST_001,Risktaking,Risktaking,VALID,Valid canonical facet
+TEST_002,Naivety,Naivety,VALID,Valid canonical facet
+TEST_003,Democratic Leadership:,Democratic Leadership,VALID,Valid canonical facet
+TEST_004,Hesitation,Hesitation,VALID,Valid canonical facet
+TEST_005,Discontentment,Discontentment,VALID,Valid canonical facet
+TEST_006,Overprotectiveness,Overprotectiveness,VALID,Valid canonical facet
+TEST_007,Merriness,Merriness,VALID,Valid canonical facet
+TEST_008,Emotionalism,Emotionalism,VALID,Valid canonical facet
+TEST_009,Self-improvement,Self-improvement,VALID,Valid canonical facet
+TEST_010,Statistical Reasoning,Statistical Reasoning,VALID,Valid canonical facet
+TEST_011,Assertiveness and control in relationships,Assertiveness and control in relationships,VALID,Valid canonical facet
+TEST_012,Cunningness,Cunningness,VALID,Valid canonical facet
+TEST_013,Adventure-Seeking Behavior,Adventure-Seeking Behavior,VALID,Valid canonical facet
+TEST_014,Compassion Fatigue,Compassion Fatigue,VALID,Valid canonical facet
+TEST_015,Moroseness,Moroseness,VALID,Valid canonical facet
+TEST_016,Specialist,Specialist,VALID,Valid canonical facet
+TEST_017,Aloofness,Aloofness,VALID,Valid canonical facet
+TEST_018,Genuine,Genuine,VALID,Valid canonical facet
+TEST_019,Determinedness,Determinedness,VALID,Valid canonical facet
+TEST_020,HonestyHumility:,HonestyHumility,VALID,Valid canonical facet
+TEST_021,Relationship Building Themes:,Relationship Building Themes,VALID,Valid canonical facet
+TEST_022,Pure Challenge,Pure Challenge,VALID,Valid canonical facet
+TEST_023,Numerical Reasoning Subcomponents:,Numerical Reasoning Subcomponents,VALID,Valid canonical facet
+TEST_024,Openness,Openness,VALID,Valid canonical facet
+TEST_025,SelfEsteem,SelfEsteem,VALID,Valid canonical facet
+TEST_026,Comparing alphanumeric data,Comparing alphanumeric data,VALID,Valid canonical facet
+TEST_027,Big-heartedness,Big-heartedness,VALID,Valid canonical facet
+TEST_028,Compulsive activities,Compulsive activities,VALID,Valid canonical facet
+TEST_029,Disrespect,Disrespect,VALID,Valid canonical facet
+TEST_030,FSH level,FSH level,VALID,Valid canonical facet

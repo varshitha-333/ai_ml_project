@@ -75,7 +75,9 @@ def test_run_retrieval_ablation():
     with open(ablation_json, "r", encoding="utf-8") as f:
         ab_data = json.load(f)
 
-    assert "bm25_only" in ab_data
-    assert "dense_only" in ab_data
-    assert "hybrid_rrf" in ab_data
-    assert ab_data["hybrid_rrf"]["recall_at_30_pct"] >= 25.0
+    strategies = ab_data.get("strategies", ab_data)
+    assert "bm25_only" in strategies
+    assert "dense_only" in strategies
+    assert ("hybrid_rrf" in strategies) or ("hybrid_rrf_baseline" in strategies)
+    hybrid_key = "hybrid_rrf_baseline" if "hybrid_rrf_baseline" in strategies else "hybrid_rrf"
+    assert strategies[hybrid_key]["recall_at_30_pct"] >= 25.0

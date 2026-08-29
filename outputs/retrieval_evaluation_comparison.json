@@ -1,0 +1,46 @@
+{
+  "total_test_queries": 55,
+  "avg_reranking_overhead_ms": 934.78,
+  "strategies": {
+    "bm25_only": {
+      "recall_at_5_pct": 7.88,
+      "recall_at_10_pct": 16.67,
+      "recall_at_20_pct": 39.09,
+      "recall_at_30_pct": 51.82,
+      "mrr": 0.0892,
+      "top1_accuracy_pct": 3.64,
+      "avg_latency_ms": 0.71,
+      "p95_latency_ms": 1.55
+    },
+    "dense_only": {
+      "recall_at_5_pct": 26.06,
+      "recall_at_10_pct": 29.7,
+      "recall_at_20_pct": 33.94,
+      "recall_at_30_pct": 41.21,
+      "mrr": 0.175,
+      "top1_accuracy_pct": 10.91,
+      "avg_latency_ms": 575.21,
+      "p95_latency_ms": 23.47
+    },
+    "hybrid_rrf": {
+      "recall_at_5_pct": 29.7,
+      "recall_at_10_pct": 44.85,
+      "recall_at_20_pct": 57.27,
+      "recall_at_30_pct": 57.27,
+      "mrr": 0.1779,
+      "top1_accuracy_pct": 7.27,
+      "avg_latency_ms": 19.57,
+      "p95_latency_ms": 22.73
+    },
+    "hybrid_rrf_crossencoder": {
+      "recall_at_5_pct": 20.61,
+      "recall_at_10_pct": 26.67,
+      "recall_at_20_pct": 43.94,
+      "recall_at_30_pct": 50.0,
+      "mrr": 0.1619,
+      "top1_accuracy_pct": 9.09,
+      "avg_latency_ms": 934.78,
+      "p95_latency_ms": 506.64
+    }
+  }
+}

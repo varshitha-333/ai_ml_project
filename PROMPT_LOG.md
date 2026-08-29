@@ -27,6 +27,7 @@ This document truthfulness records material AI assistance provided by Antigravit
 | **2026-08-27** | Part 2 (Antigravity AI) | Build hybrid BM25 + Dense vector retrieval and LLM scoring engine. | Generated BM25, Dense Vector indexer, RRF searcher, batched prompt templates, and Pydantic schemas. | Added `PurePythonTFVectorizer` zero-dependency fallback when ML libs are missing. | `pytest tests/test_retrieval.py test_scoring.py -v` (14/14 passed). |
 | **2026-08-27** | Part 3 (Antigravity AI) | Build human reference benchmark and anti-hallucination trap tests. | Generated benchmark evaluation script, ablation runner, hallucination report, and checklist mappings. | Created human-reviewed reference labels (`benchmark_reference_set.json`) and verified ablation metrics. | `pytest tests/test_benchmark.py -v` (4/4 passed). |
 | **2026-08-28** | Part 4 (Antigravity AI) | Build FastAPI application layer, Docker container, and Colab GPU notebook. | Generated FastAPI app (`main.py`, `config.py`, `schemas.py`, `routes.py`), `InferenceClient`, Colab notebook (`colab/qwen_inference_server.ipynb`), and `Dockerfile`. | Updated API response schemas to match frontend contract, added CORS origins, and verified Docker CPU wheel build context. | `pytest tests/test_api.py -v` (31/31 passed). |
+| **2026-08-28** | Experimental Branch | Implement and benchmark Cross-Encoder Reranker (`cross-encoder/ms-marco-MiniLM-L6-v2`). | Generated `CrossEncoderReranker` class, feature flag, 4-config ablation script, and Pytest suite. | Conducted empirical ablation study on `experiment/cross-encoder-reranker` branch; REJECTED reranker due to -50.8% MRR drop and +679ms latency overhead. Maintained default `RERANKER_ENABLED=false`. | `python scripts/run_retrieval_ablation.py` & `pytest tests/ -v` (48/48 passed). |
 | **2026-08-28** | Part 5 (Antigravity AI) | Build Next.js 16 frontend console and typed API client layer. | Generated `frontend/lib/api.ts` API client, `frontend/components/facet-console.tsx` UI console with evidence drawer, status badges, and 5 benchmark snippets. | Enforced strict backend-only API calls (frontend NEVER calls Colab directly). Configured `NEXT_PUBLIC_API_BASE_URL`. | `cd frontend; npm run build` (Build succeeded). |
 
 ---
@@ -62,3 +63,11 @@ This document truthfulness records material AI assistance provided by Antigravit
 - **Failure Cause**: Violates architecture isolation guidelines and exposes Colab inference tokens/endpoints directly to client browsers.
 - **Human Correction**: Enforced strict proxy pattern: Frontend talks ONLY to local FastAPI (`http://localhost:8000`), and FastAPI forwards requests to Colab via `InferenceClient`.
 - **Verification**: Checked network requests in `frontend/lib/api.ts` — all calls point to `NEXT_PUBLIC_API_BASE_URL`.
+
+---
+
+### Example 5: Cross-Encoder Reranker Domain Misalignment Assumption
+- **AI Suggestion**: The AI hypothesized that adding a pre-trained Cross-Encoder (`ms-marco-MiniLM-L6-v2`) would automatically improve candidate facet ranking over BM25 + Dense RRF.
+- **Failure Cause**: Web search QA Cross-Encoders penalize structured catalog definitions (`Facet Name: ... | Category: ... | Definition: ...`) compared to generic prose, causing candidate MRR to drop from `0.1950` down to `0.0960` (-50.8%) and Recall@10 to drop from `28.57%` down to `9.52%` (-66.7%), while adding +679.09 ms per-query latency overhead.
+- **Human Correction**: Rejected the Cross-Encoder reranker based on empirical metrics, isolated the feature behind `RERANKER_ENABLED=false`, and documented the rejection in `docs/RERANKER_EXPERIMENT.md` and `DECISIONS.md`.
+- **Verification**: Verified via 4-configuration ablation study (`python scripts/run_retrieval_ablation.py`) and Pytest suite (`pytest tests/ -v`).

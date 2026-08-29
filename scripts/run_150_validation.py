@@ -35,16 +35,16 @@ def load_facet_catalog():
 def run_150_validation():
     parser = argparse.ArgumentParser(description="150-Case External Validation Runner")
     parser.add_argument("--backend", choices=["mock", "remote"], default="remote", help="Inference backend mode (default: remote)")
-    parser.add_argument("--retrieval-k", type=int, choices=[10, 20, 30], default=30, help="Retrieval candidate depth K")
-    parser.add_argument("--limit", type=int, default=150, help="Maximum number of test cases to evaluate")
+    parser.add_argument("--retrieval-k", type=int, choices=[10, 20, 30], default=10, help="Retrieval candidate depth K")
+    parser.add_argument("--limit", type=int, default=50, help="Maximum number of test cases to evaluate (default: 50)")
     parser.add_argument("--run-ablation", action="store_true", help="Run retrieval candidate depth ablation")
 
     args = parser.parse_args()
 
-    csv_path = PROJECT_ROOT / "facet_evaluation_test_set_150.csv"
-    output_json = PROJECT_ROOT / "outputs" / "external_150_predictions.json"
-    output_csv = PROJECT_ROOT / "outputs" / "external_150_results.csv"
-    output_md = PROJECT_ROOT / "outputs" / "external_150_test_report.md"
+    csv_path = PROJECT_ROOT / "facet_evaluation_test_set_50.csv"
+    output_json = PROJECT_ROOT / "outputs" / "external_50_predictions.json"
+    output_csv = PROJECT_ROOT / "outputs" / "external_50_results.csv"
+    output_md = PROJECT_ROOT / "outputs" / "external_50_test_report.md"
     ablation_json = PROJECT_ROOT / "outputs" / "retrieval_ablation_report.json"
     ablation_md = PROJECT_ROOT / "outputs" / "retrieval_ablation_report.md"
 
@@ -53,8 +53,11 @@ def run_150_validation():
         sys.exit(1)
 
     df_test = pd.read_csv(csv_path)
-    if args.limit and args.limit < len(df_test):
-        df_test = df_test.iloc[:args.limit]
+    # STRICT HARD CEILING: Never evaluate more than 50 test cases
+    max_cases = min(len(df_test), 50)
+    if args.limit:
+        max_cases = min(max_cases, args.limit)
+    df_test = df_test.iloc[:max_cases].copy()
 
     all_facets, cat_by_id, cat_by_norm, cat_by_raw = load_facet_catalog()
     settings = get_settings()

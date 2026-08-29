@@ -1,20 +1,51 @@
 {
-  "bm25_only": {
-    "recall_at_5_pct": 19.05,
-    "recall_at_10_pct": 30.95,
-    "recall_at_30_pct": 50.0,
-    "avg_latency_ms": 0.8
+  "cross_encoder_load_ms": 20159.48,
+  "micro_timing": {
+    "avg_bm25_latency_ms": 0.86,
+    "avg_dense_latency_ms": 2704.97,
+    "avg_rrf_fusion_ms": 2323.95,
+    "avg_crossencoder_inference_ms": 460.09
   },
-  "dense_only": {
-    "recall_at_5_pct": 0.0,
-    "recall_at_10_pct": 0.0,
-    "recall_at_30_pct": 0.0,
-    "avg_latency_ms": 0.0
-  },
-  "hybrid_rrf": {
-    "recall_at_5_pct": 19.05,
-    "recall_at_10_pct": 30.95,
-    "recall_at_30_pct": 50.0,
-    "avg_latency_ms": 0.63
+  "strategies": {
+    "bm25_only": {
+      "recall_at_5_pct": 19.05,
+      "recall_at_10_pct": 30.95,
+      "recall_at_30_pct": 50.0,
+      "mrr": 0.1133,
+      "avg_latency_ms": 0.86,
+      "p95_latency_ms": 2.22
+    },
+    "dense_only": {
+      "recall_at_5_pct": 4.76,
+      "recall_at_10_pct": 4.76,
+      "recall_at_30_pct": 9.52,
+      "mrr": 0.1429,
+      "avg_latency_ms": 2704.97,
+      "p95_latency_ms": 13176.68
+    },
+    "hybrid_rrf_baseline": {
+      "recall_at_5_pct": 19.05,
+      "recall_at_10_pct": 28.57,
+      "recall_at_30_pct": 50.0,
+      "mrr": 0.195,
+      "avg_latency_ms": 2323.95,
+      "p95_latency_ms": 11302.76
+    },
+    "hybrid_rrf_crossencoder_n30": {
+      "recall_at_5_pct": 4.76,
+      "recall_at_10_pct": 9.52,
+      "recall_at_30_pct": 50.0,
+      "mrr": 0.096,
+      "avg_latency_ms": 482.04,
+      "p95_latency_ms": 521.18
+    },
+    "hybrid_rrf_crossencoder_n50": {
+      "recall_at_5_pct": 4.76,
+      "recall_at_10_pct": 4.76,
+      "recall_at_30_pct": 45.24,
+      "mrr": 0.0868,
+      "avg_latency_ms": 776.06,
+      "p95_latency_ms": 815.16
+    }
   }
 }

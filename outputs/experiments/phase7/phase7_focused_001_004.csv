@@ -1,0 +1,5 @@
+test_id,expected_facet,resolved_facet_id,status,score,latency_ms,parse_state,failure_mode,is_pass
+TEST_001,Risktaking,FACET_001,scored,4.0,22248.07,truncated_recovery,NONE,True
+TEST_002,Naivety,FACET_002,abstained,0.0,22444.94,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_003,Democratic Leadership,FACET_004,abstained,0.0,22592.97,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_004,Hesitation,FACET_006,scored,4.0,11978.96,valid_array,NONE,True

@@ -1,0 +1,1078 @@
+{
+  "summary": {
+    "total_audited_cases": 59,
+    "present_in_399_catalog_pct": 100.0,
+    "recall_at_10_pct": 44.07,
+    "recall_at_30_pct": 61.02,
+    "retrieval_misses": 23,
+    "key_diagnoses": {
+      "top10_retrieved": 26,
+      "top30_retrieved": 36,
+      "retrieval_miss": 23
+    }
+  },
+  "audit_cases": [
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_001",
+      "text_snippet": "I am taking a wild risk by going skydiving without a backup parachute!...",
+      "expected_facet_id": "FACET_001",
+      "expected_facet_name": "Risktaking",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 1,
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Creative risk-taking tendency",
+        "Hesitation"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_001",
+      "text_snippet": "I am taking a wild risk by going skydiving without a backup parachute!...",
+      "expected_facet_id": "FACET_015",
+      "expected_facet_name": "Adventure-Seeking Behavior",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 6,
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Creative risk-taking tendency",
+        "Hesitation"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_001",
+      "text_snippet": "I am taking a wild risk by going skydiving without a backup parachute!...",
+      "expected_facet_id": "FACET_005",
+      "expected_facet_name": "Common-sense",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 8,
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Creative risk-taking tendency",
+        "Hesitation"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_002",
+      "text_snippet": "I submitted my resignation letter without having another job lined up,...",
+      "expected_facet_id": "FACET_001",
+      "expected_facet_name": "Risktaking",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 14,
+      "top3_retrieved_facets": [
+        "Volunteer Work",
+        "Discontentment",
+        "Work Styles"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_003",
+      "text_snippet": "I claim to be fearless and dauntless, yet my knees were knocking in sh...",
+      "expected_facet_id": "FACET_201",
+      "expected_facet_name": "Concreteness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Patience: Resistance to anger",
+        "Risktaking",
+        "Overprotectiveness"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_003",
+      "text_snippet": "I claim to be fearless and dauntless, yet my knees were knocking in sh...",
+      "expected_facet_id": "FACET_268",
+      "expected_facet_name": "Dance rehearsal hours/week",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Patience: Resistance to anger",
+        "Risktaking",
+        "Overprotectiveness"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_005",
+      "text_snippet": "Oh sure, I'd just LOVE to stay past midnight fixing your typos for fre...",
+      "expected_facet_id": "FACET_003",
+      "expected_facet_name": "Acidity",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 23,
+      "top3_retrieved_facets": [
+        "Patience: Resistance to anger",
+        "Merriness",
+        "Contribution to Group Goals"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_005",
+      "text_snippet": "Oh sure, I'd just LOVE to stay past midnight fixing your typos for fre...",
+      "expected_facet_id": "FACET_337",
+      "expected_facet_name": "Civility",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Patience: Resistance to anger",
+        "Merriness",
+        "Contribution to Group Goals"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_006",
+      "text_snippet": "I was feeling super tired and con flojera today, so I just stayed in b...",
+      "expected_facet_id": "FACET_114",
+      "expected_facet_name": "Slothfulness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Discontentment",
+        "Enthusiasm",
+        "Acidity"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_007",
+      "text_snippet": "Could you please pass me the salt from across the table?...",
+      "expected_facet_id": "FACET_337",
+      "expected_facet_name": "Civility",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Acidity",
+        "Common-sense"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "benchmark_reference_set",
+      "id": "CONV_010",
+      "text_snippet": "I am feeling really blue and down in the dumps today because it's rain...",
+      "expected_facet_id": "FACET_017",
+      "expected_facet_name": "Moroseness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 4,
+      "top3_retrieved_facets": [
+        "Acidity",
+        "Discontentment",
+        "Connectedness: Belief in interconnections"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_001",
+      "text_snippet": "I signed up for a solo skydiving trip even though I had never tried it...",
+      "expected_facet_id": "FACET_001",
+      "expected_facet_name": "Risktaking",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 1,
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Hesitation",
+        "Use of Nature as a Stress Reliever"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_002",
+      "text_snippet": "He immediately believed the stranger who promised to double his money....",
+      "expected_facet_id": "FACET_002",
+      "expected_facet_name": "Naivety",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 3,
+      "top3_retrieved_facets": [
+        "Desire to influence others",
+        "Cunningness",
+        "Naivety"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_003",
+      "text_snippet": "We voted together and chose the option supported by most of the team....",
+      "expected_facet_id": "FACET_004",
+      "expected_facet_name": "Democratic Leadership:",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Collaboration",
+        "Risktaking",
+        "Determinedness"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_004",
+      "text_snippet": "I tend to pause for a long time before making an important decision....",
+      "expected_facet_id": "FACET_006",
+      "expected_facet_name": "Hesitation",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 6,
+      "top3_retrieved_facets": [
+        "Decision-making decisiveness",
+        "Decision-making speed",
+        "Decision-Making Confidence"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_005",
+      "text_snippet": "I keep complaining that nothing at work is ever good enough....",
+      "expected_facet_id": "FACET_007",
+      "expected_facet_name": "Discontentment",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 3,
+      "top3_retrieved_facets": [
+        "Volunteer Work",
+        "Work Styles",
+        "Discontentment"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_006",
+      "text_snippet": "Whenever my friend goes out, I keep checking whether they are safe....",
+      "expected_facet_id": "FACET_008",
+      "expected_facet_name": "Overprotectiveness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 3,
+      "top3_retrieved_facets": [
+        "Eating Habits (Home-Cooked vs. Eating Out)",
+        "Risktaking",
+        "Overprotectiveness"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_007",
+      "text_snippet": "That was hilarious\u2014I couldn't stop laughing for ten minutes....",
+      "expected_facet_id": "FACET_009",
+      "expected_facet_name": "Merriness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 13,
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Cunningness",
+        "Dignity"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_008",
+      "text_snippet": "I got so emotional during the movie that I had to take a break....",
+      "expected_facet_id": "FACET_010",
+      "expected_facet_name": "Emotionalism",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 4,
+      "top3_retrieved_facets": [
+        "Emotional Boundaries",
+        "Depth of Emotional Connections",
+        "Emotional-intelligence measure: Impulsiveness"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_009",
+      "text_snippet": "I started a course because I want to improve my Python skills....",
+      "expected_facet_id": "FACET_011",
+      "expected_facet_name": "Self-improvement",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 5,
+      "top3_retrieved_facets": [
+        "Delegation skills",
+        "Risktaking",
+        "Social Interaction Skills"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_010",
+      "text_snippet": "The sample mean is 18.4, but the median is 12, so the distribution is ...",
+      "expected_facet_id": "FACET_012",
+      "expected_facet_name": "Statistical Reasoning",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 3,
+      "top3_retrieved_facets": [
+        "Common-sense",
+        "Psychological construct: Social Desirability tendency",
+        "Statistical Reasoning"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_011",
+      "text_snippet": "I told my teammate firmly that the deadline cannot be moved again....",
+      "expected_facet_id": "FACET_013",
+      "expected_facet_name": "Assertiveness and control in relationships",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 8,
+      "top3_retrieved_facets": [
+        "Hesitation",
+        "Pure Challenge",
+        "Compassion Fatigue"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_012",
+      "text_snippet": "I quietly changed the plan so that the other person would agree withou...",
+      "expected_facet_id": "FACET_014",
+      "expected_facet_name": "Cunningness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 4,
+      "top3_retrieved_facets": [
+        "Hesitation",
+        "Discontentment",
+        "Naivety"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_013",
+      "text_snippet": "Next month I want to try rock climbing and a multi-day trek....",
+      "expected_facet_id": "FACET_015",
+      "expected_facet_name": "Adventure-Seeking Behavior",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 9,
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Ideas generated/day",
+        "Use of Nature as a Stress Reliever"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_014",
+      "text_snippet": "After helping customers all day, I feel emotionally drained and have l...",
+      "expected_facet_id": "FACET_016",
+      "expected_facet_name": "Compassion Fatigue",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 13,
+      "top3_retrieved_facets": [
+        "Social-cognition variable: Cognitive Empathy",
+        "Desperation",
+        "Discontentment"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_015",
+      "text_snippet": "Everything feels gloomy lately, and I don't expect much to improve....",
+      "expected_facet_id": "FACET_017",
+      "expected_facet_name": "Moroseness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 4,
+      "top3_retrieved_facets": [
+        "Discontentment",
+        "Patience: Resistance to anger",
+        "Happiness"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_016",
+      "text_snippet": "I have worked mainly on database optimization for six years....",
+      "expected_facet_id": "FACET_018",
+      "expected_facet_name": "Specialist",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 4,
+      "top3_retrieved_facets": [
+        "Hardworking",
+        "Risktaking",
+        "Inefficiency"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_017",
+      "text_snippet": "I prefer to keep my distance at parties rather than join conversations...",
+      "expected_facet_id": "FACET_019",
+      "expected_facet_name": "Aloofness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 24,
+      "top3_retrieved_facets": [
+        "Desire to influence others",
+        "Contribution to Group Goals",
+        "Naivety"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_018",
+      "text_snippet": "I made a mistake, admitted it immediately, and apologized....",
+      "expected_facet_id": "FACET_020",
+      "expected_facet_name": "Genuine",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 3,
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Hesitation",
+        "Genuine"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_019",
+      "text_snippet": "The project failed twice, but I kept working until I found the bug....",
+      "expected_facet_id": "FACET_021",
+      "expected_facet_name": "Determinedness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Pure Challenge",
+        "Hesitation"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_020",
+      "text_snippet": "I returned the extra change because keeping it would be dishonest....",
+      "expected_facet_id": "FACET_022",
+      "expected_facet_name": "HonestyHumility:",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Self-improvement",
+        "Naivety"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_021",
+      "text_snippet": "I try to learn what matters to people before building a long-term rela...",
+      "expected_facet_id": "FACET_023",
+      "expected_facet_name": "Relationship Building Themes:",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Desire to influence others",
+        "Assertiveness and control in relationships",
+        "Contribution to Group Goals"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_022",
+      "text_snippet": "I enjoy difficult problems even when there is no reward for solving th...",
+      "expected_facet_id": "FACET_024",
+      "expected_facet_name": "Pure Challenge",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 10,
+      "top3_retrieved_facets": [
+        "Discontentment",
+        "Hardworking",
+        "Risktaking"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_023",
+      "text_snippet": "If 3 out of 5 experiments improve, I would not call that proof without...",
+      "expected_facet_id": "FACET_025",
+      "expected_facet_name": "Numerical Reasoning Subcomponents:",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Acidity",
+        "Inefficiency",
+        "Risktaking"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_024",
+      "text_snippet": "I am comfortable discussing an opinion that is different from mine....",
+      "expected_facet_id": "FACET_026",
+      "expected_facet_name": "Openness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 8,
+      "top3_retrieved_facets": [
+        "Naivety",
+        "Self Perspective",
+        "Determinedness"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_025",
+      "text_snippet": "I trust myself to handle a difficult presentation....",
+      "expected_facet_id": "FACET_027",
+      "expected_facet_name": "SelfEsteem",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 17,
+      "top3_retrieved_facets": [
+        "Trust in others",
+        "Risktaking",
+        "Discontentment"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_026",
+      "text_snippet": "I sorted the IDs 100A, 20B, 3C by the specified alphanumeric order....",
+      "expected_facet_id": "FACET_028",
+      "expected_facet_name": "Comparing alphanumeric data",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Acidity",
+        "Risktaking",
+        "Orderliness"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_027",
+      "text_snippet": "I donated part of my bonus to help a colleague who was struggling....",
+      "expected_facet_id": "FACET_029",
+      "expected_facet_name": "Big-heartedness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Contribution to Group Goals",
+        "Discontentment",
+        "Significance: Desire to make an impact"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_028",
+      "text_snippet": "I keep checking the same lock repeatedly even after I know it is locke...",
+      "expected_facet_id": "FACET_030",
+      "expected_facet_name": "Compulsive activities",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 29,
+      "top3_retrieved_facets": [
+        "Assertiveness and control in relationships",
+        "Mindfulness facet: Observing",
+        "Openness"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_029",
+      "text_snippet": "Calling someone stupid because they asked a basic question is disrespe...",
+      "expected_facet_id": "FACET_031",
+      "expected_facet_name": "Disrespect",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 3,
+      "top3_retrieved_facets": [
+        "Naivety",
+        "Acidity",
+        "Disrespect"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_031",
+      "text_snippet": "I tend to reflect on what I did well and what I should change....",
+      "expected_facet_id": "FACET_033",
+      "expected_facet_name": "Self Perspective",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 14,
+      "top3_retrieved_facets": [
+        "Significance: Desire to make an impact",
+        "Contribution to Group Goals",
+        "Desire to influence others"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_032",
+      "text_snippet": "I am desperate to get this job; I would accept almost any condition....",
+      "expected_facet_id": "FACET_034",
+      "expected_facet_name": "Desperation",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 2,
+      "top3_retrieved_facets": [
+        "Pure Challenge",
+        "Desperation",
+        "Risktaking"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_033",
+      "text_snippet": "I like meeting new people and becoming part of a group....",
+      "expected_facet_id": "FACET_035",
+      "expected_facet_name": "Affiliation Motivation:",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Contribution to Group Goals",
+        "Meeting Deadlines",
+        "Naivety"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_034",
+      "text_snippet": "I can explain what the femur and tibia are and where they are located....",
+      "expected_facet_id": "FACET_036",
+      "expected_facet_name": "Anatomy knowledge",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Moroseness",
+        "Merriness",
+        "Structure"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_035",
+      "text_snippet": "Fine, do whatever you want. Clearly my opinion doesn't matter anyway....",
+      "expected_facet_id": "FACET_037",
+      "expected_facet_name": "Passive-Aggressive",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Self Perspective",
+        "Naivety",
+        "Orderliness"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_036",
+      "text_snippet": "I feel a deep spiritual emptiness that I cannot easily explain....",
+      "expected_facet_id": "FACET_038",
+      "expected_facet_name": "Presence of Spiritual Pain",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Compassion Fatigue",
+        "Moroseness",
+        "Discontentment"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_037",
+      "text_snippet": "I regularly organize community meals through my spiritual group....",
+      "expected_facet_id": "FACET_039",
+      "expected_facet_name": "Role of Spirituality in Community Involvement",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Participation in Community Activities",
+        "Preference for Home-Cooked vs Restaurant Meals",
+        "Contribution to Group Goals"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_038",
+      "text_snippet": "I keep my workspace organized and follow a consistent routine....",
+      "expected_facet_id": "FACET_040",
+      "expected_facet_name": "Structure",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 8,
+      "top3_retrieved_facets": [
+        "Organized lifestyle",
+        "Risktaking",
+        "Hardworking"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_039",
+      "text_snippet": "I chose a train instead of a car because I wanted to reduce my environ...",
+      "expected_facet_id": "FACET_074",
+      "expected_facet_name": "Sustainable-transport usage",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Use of Nature as a Stress Reliever",
+        "Significance: Desire to make an impact",
+        "Risktaking"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_040",
+      "text_snippet": "I waited until everyone had boarded before taking the last seat....",
+      "expected_facet_id": "FACET_042",
+      "expected_facet_name": "Chivalrousness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Risktaking",
+        "Hesitation",
+        "Common-sense"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_042",
+      "text_snippet": "When I meditate, I deliberately notice sounds, sensations, and thought...",
+      "expected_facet_id": "FACET_044",
+      "expected_facet_name": "Mindfulness facet: Observing",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 16,
+      "top3_retrieved_facets": [
+        "Memory for Sounds",
+        "Activator: Turning thoughts into action",
+        "Inattentiveness"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_043",
+      "text_snippet": "I usually let the other person make the final decision, even when I ha...",
+      "expected_facet_id": "FACET_045",
+      "expected_facet_name": "Submissiveness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 12,
+      "top3_retrieved_facets": [
+        "Preference for Home-Cooked vs Restaurant Meals",
+        "Decision-making decisiveness",
+        "Decision-Making Confidence"
+      ],
+      "diagnosis": "Retrieved Top 30"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_044",
+      "text_snippet": "My current training cycle lasts twelve weeks....",
+      "expected_facet_id": "FACET_046",
+      "expected_facet_name": "Training-cycle length",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 1,
+      "top3_retrieved_facets": [
+        "Training-cycle length",
+        "Risktaking",
+        "Self-improvement"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_045",
+      "text_snippet": "I notice quickly when someone's tone changes and I become concerned ab...",
+      "expected_facet_id": "FACET_047",
+      "expected_facet_name": "Sensitiveness",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 6,
+      "top3_retrieved_facets": [
+        "Discontentment",
+        "Moroseness",
+        "Acidity"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_046",
+      "text_snippet": "I have been feeling anxious or irritated several times every day this ...",
+      "expected_facet_id": "FACET_048",
+      "expected_facet_name": "Negative Affect Frequency",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Discontentment",
+        "Compassion Fatigue",
+        "Hesitation"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_047",
+      "text_snippet": "I generated three different ways to solve the same problem....",
+      "expected_facet_id": "FACET_049",
+      "expected_facet_name": "Innovation and Creativity Components:",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Ideas generated/day",
+        "Contribution to Group Goals",
+        "Statistical Reasoning"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_048",
+      "text_snippet": "I set a difficult target and track my progress toward it every week....",
+      "expected_facet_id": "FACET_050",
+      "expected_facet_name": "Achievement Motivation:",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Attitude toward learning",
+        "Risktaking",
+        "Tendency Toward Compromise or Confrontation"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_049",
+      "text_snippet": "I ask teammates for feedback after most presentations....",
+      "expected_facet_id": "FACET_051",
+      "expected_facet_name": "Feedback-giving frequency",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": false,
+      "retrieved_in_top30": false,
+      "retrieval_rank": ">30",
+      "top3_retrieved_facets": [
+        "Discontentment",
+        "Hesitation",
+        "Enthusiasm"
+      ],
+      "diagnosis": "Retrieval Miss"
+    },
+    {
+      "dataset": "facet_evaluation_test_set_50",
+      "id": "TEST_050",
+      "text_snippet": "I do dance-cardio twice a week....",
+      "expected_facet_id": "FACET_052",
+      "expected_facet_name": "Dance-cardio sessions",
+      "expected_status": "scored",
+      "present_in_399_catalog": true,
+      "retrieved_in_top10": true,
+      "retrieved_in_top30": true,
+      "retrieval_rank": 1,
+      "top3_retrieved_facets": [
+        "Dance-cardio sessions",
+        "Dance-style mastery diversity",
+        "Adventure-Seeking Behavior"
+      ],
+      "diagnosis": "Retrieved Top 10"
+    }
+  ]
+}

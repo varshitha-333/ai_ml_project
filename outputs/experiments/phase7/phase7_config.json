@@ -1,0 +1,7 @@
+{
+  "rrf_k": 60.0,
+  "top_k_pool": 100,
+  "top_k_final": 30,
+  "reranker_model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "dense_model": "all-MiniLM-L6-v2"
+}

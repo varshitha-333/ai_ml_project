@@ -141,7 +141,10 @@ class DenseVectorIndexer:
             return []
 
         # Encode query
-        if self.backend_type == "sentence_transformers" and self.model is not None:
+        if self.backend_type == "sentence_transformers":
+            if self.model is None:
+                from sentence_transformers import SentenceTransformer
+                self.model = SentenceTransformer(self.model_name)
             q_emb = self.model.encode([query], convert_to_numpy=True)[0]
         elif self.backend_type == "sklearn_tfidf" and self.tfidf_vectorizer is not None:
             q_emb = self.tfidf_vectorizer.transform([query]).toarray()[0]

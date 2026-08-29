@@ -13,9 +13,20 @@ class RetrievalPipeline:
     Pipeline manager for candidate facet retrieval.
     """
 
-    def __init__(self, data_path: Optional[Path] = None, top_k: int = 30):
+    def __init__(
+        self,
+        data_path: Optional[Path] = None,
+        top_k: int = 30,
+        reranker_enabled: bool = False,
+        rerank_initial_pool_size: int = 30
+    ):
         self.top_k = top_k
-        self.retriever = HybridFacetRetriever(default_top_k=top_k)
+        self.reranker_enabled = reranker_enabled
+        self.retriever = HybridFacetRetriever(
+            default_top_k=top_k,
+            reranker_enabled=reranker_enabled,
+            rerank_initial_pool_size=rerank_initial_pool_size
+        )
         self.is_initialized = False
 
         if data_path is None:
@@ -43,10 +54,15 @@ class RetrievalPipeline:
         self.is_initialized = True
         return self
 
-    def retrieve(self, conversation_text: str, top_k: Optional[int] = None) -> List[Dict[str, Any]]:
+    def retrieve(
+        self,
+        conversation_text: str,
+        top_k: Optional[int] = None,
+        use_reranker: Optional[bool] = None
+    ) -> List[Dict[str, Any]]:
         """
         Retrieves top candidate observable facets for a conversation text.
         """
         if not self.is_initialized:
             self.initialize()
-        return self.retriever.retrieve_candidates(conversation_text, top_k=top_k)
+        return self.retriever.retrieve_candidates(conversation_text, top_k=top_k, use_reranker=use_reranker)

@@ -1,0 +1,21 @@
+run_number,test_id,expected_facet,catalog_facet_id,status,score,latency_ms,parse_state,is_pass
+1,TEST_001,Risktaking,FACET_001,scored,4.0,22322.42,truncated_recovery,True
+1,TEST_002,Naivety,FACET_002,abstained,0.0,21515.89,truncated_recovery,False
+1,TEST_003,Democratic Leadership,FACET_004,abstained,0.0,22269.29,truncated_recovery,False
+1,TEST_004,Hesitation,FACET_006,scored,4.0,12633.78,valid_array,True
+2,TEST_001,Risktaking,FACET_001,scored,4.0,22179.35,truncated_recovery,True
+2,TEST_002,Naivety,FACET_002,abstained,0.0,21487.72,truncated_recovery,False
+2,TEST_003,Democratic Leadership,FACET_004,abstained,0.0,21482.34,truncated_recovery,False
+2,TEST_004,Hesitation,FACET_006,scored,4.0,12385.58,valid_array,True
+3,TEST_001,Risktaking,FACET_001,scored,4.0,22164.74,truncated_recovery,True
+3,TEST_002,Naivety,FACET_002,abstained,0.0,21579.66,truncated_recovery,False
+3,TEST_003,Democratic Leadership,FACET_004,abstained,0.0,21428.51,truncated_recovery,False
+3,TEST_004,Hesitation,FACET_006,scored,4.0,12456.59,valid_array,True
+4,TEST_001,Risktaking,FACET_001,scored,4.0,22289.57,truncated_recovery,True
+4,TEST_002,Naivety,FACET_002,abstained,0.0,21870.65,truncated_recovery,False
+4,TEST_003,Democratic Leadership,FACET_004,abstained,0.0,21304.5,truncated_recovery,False
+4,TEST_004,Hesitation,FACET_006,scored,4.0,12433.5,valid_array,True
+5,TEST_001,Risktaking,FACET_001,scored,4.0,22171.65,truncated_recovery,True
+5,TEST_002,Naivety,FACET_002,abstained,0.0,22239.9,truncated_recovery,False
+5,TEST_003,Democratic Leadership,FACET_004,abstained,0.0,21377.88,truncated_recovery,False
+5,TEST_004,Hesitation,FACET_006,scored,4.0,12651.7,valid_array,True

@@ -29,6 +29,8 @@ class APISettings(BaseModel):
     allowed_origins_raw: str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000,http://127.0.0.1:5173").strip('"\'')
     log_level: str = os.getenv("LOG_LEVEL", "INFO").strip('"\'')
     backend_mode: str = os.getenv("BACKEND_MODE", "remote").strip('"\'')  # 'remote', 'huggingface', 'mock'
+    reranker_enabled: bool = os.getenv("RERANKER_ENABLED", "false").lower() == "true"
+    rerank_initial_pool_size: int = int(os.getenv("RERANK_INITIAL_POOL_SIZE", "30"))
 
     @property
     def allowed_origins(self) -> List[str]:
