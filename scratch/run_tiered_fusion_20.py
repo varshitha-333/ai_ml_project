@@ -92,8 +92,26 @@ def run_tiered_fusion_validation():
 
         retrieval_target_ranks.append(target_rank)
 
-        # Real Qwen Inference on Fused Candidates (K <= 20)
-        parsed_results, raw_output, lat_ms, parse_state, _ = query_qwen_colab(text, fused_cands)
+        # 2-Pass Batched Qwen Inference (2 x 10 candidates max per prompt to eliminate competition decay)
+        parsed_results = []
+        lat_ms = 0.0
+
+        batch1 = fused_cands[:10]
+        batch2 = fused_cands[10:20]
+
+        p1, _, l1, s1, _ = query_qwen_colab(text, batch1)
+        lat_ms += l1
+        if isinstance(p1, list):
+            parsed_results.extend(p1)
+
+        s2 = "valid_array"
+        if batch2:
+            p2, _, l2, s2, _ = query_qwen_colab(text, batch2)
+            lat_ms += l2
+            if isinstance(p2, list):
+                parsed_results.extend(p2)
+
+        parse_state = s1 if s1 in ["valid_array", "wrapped_object", "single_object", "truncated_recovery"] else s2
         latencies_ms.append(lat_ms)
 
         if parse_state in ["valid_array", "wrapped_object", "single_object", "truncated_recovery"]:
