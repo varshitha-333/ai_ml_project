@@ -1,0 +1,31 @@
+test_id,text,expected_facet,resolved_facet_id,target_rank,predicted_status,predicted_score,latency_ms,parse_state,failure_category,is_pass
+TEST_001,I decided to invest my savings into a risky crypto startup without a backup plan.,Risktaking,FACET_001,7,scored,4.0,21626.57,truncated_recovery,NONE,True
+TEST_002,He believed the fake email claiming he won a million dollars and clicked the link.,Naivety,FACET_002,3,scored,4.0,21536.81,truncated_recovery,NONE,True
+TEST_003,Our team took a vote to choose our new logo design together.,Democratic Leadership,FACET_004,999,scored,4.0,22114.37,truncated_recovery,NONE,True
+TEST_004,I paused for 2 minutes before choosing which job offer to accept.,Hesitation,FACET_006,8,scored,3.0,22245.35,truncated_recovery,NONE,True
+TEST_005,I keep feeling that my current salary is never good enough despite my raise.,Discontentment,FACET_007,6,abstained,0.0,21896.71,truncated_recovery,MODEL_SEMANTIC_FAILURE,False
+TEST_006,I constantly call my teenage daughter every 10 minutes to check if she is safe.,Overprotectiveness,FACET_008,999,scored,2.0,21849.95,truncated_recovery,NONE,True
+TEST_007,We spent the entire evening telling jokes and laughing hysterically.,Merriness,FACET_009,7,scored,4.0,9176.0,valid_array,NONE,True
+TEST_008,I got teary-eyed watching the hero reunite with his family in the movie.,Emotionalism,FACET_010,999,abstained,0.0,21454.92,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_009,I enrolled in an online Python course to improve my backend coding skills.,Self-improvement,FACET_011,999,abstained,0.0,21620.17,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_010,"The sample mean is 50 with a high standard deviation, showing wide spread.",Statistical Reasoning,FACET_012,999,scored,2.0,23308.1,truncated_recovery,NONE,True
+TEST_011,I told my manager firmly that I cannot take on extra projects this month.,Assertiveness and control in relationships,FACET_013,999,scored,2.0,21967.85,truncated_recovery,NONE,True
+TEST_012,I strategically changed the conversation topic so they would agree with me.,Cunningness,FACET_014,999,abstained,0.0,21395.6,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_013,Next month I am going white-water rafting down a steep canyon.,Adventure-Seeking Behavior,FACET_015,999,scored,4.0,21504.13,truncated_recovery,NONE,True
+TEST_014,Handling intense customer complaints all day has left me emotionally exhausted.,Compassion Fatigue,FACET_016,999,scored,4.0,9208.81,valid_array,NONE,True
+TEST_015,"Everything feels depressing lately, and I doubt things will improve.",Moroseness,FACET_017,10,scored,4.0,21617.55,truncated_recovery,NONE,True
+TEST_016,I have worked exclusively as a PostgreSQL database architect for 7 years.,Specialist,FACET_018,999,abstained,0.0,21285.07,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_017,I prefer standing alone near the doorway during office parties.,Aloofness,FACET_019,999,abstained,0.0,22276.86,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_018,I acknowledged my bug immediately during standup and apologized.,Genuine,FACET_020,999,abstained,0.0,21663.66,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_019,"The server crashed twice, but I stayed up until 3 AM to fix it.",Determinedness,FACET_021,999,scored,4.0,21994.53,truncated_recovery,NONE,True
+TEST_020,I returned the dropped wallet with all its cash to the security guard.,HEXACO domain: Honesty-Humility,FACET_373,999,abstained,0.0,22344.93,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_021,I took time to learn about my coworker's interests before starting our project.,Relationship Building Themes,FACET_023,999,abstained,0.0,22031.71,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_022,I love solving complex math riddles just for the fun of it.,Pure Challenge,FACET_024,999,abstained,0.0,22025.66,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_023,We need a 95% confidence interval before drawing conclusions from this data.,Numerical Reasoning Subcomponents,FACET_025,999,abstained,0.0,21465.39,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_024,I am happy to listen to your opinion even when we disagree.,Openness,FACET_026,999,abstained,0.0,21967.15,truncated_recovery,RETRIEVAL_FAILURE,False
+TEST_025,I do not have a laboratory report available for my FSH level.,FSH level,FACET_032,999,abstained,0.0,23096.94,truncated_recovery,NONE,True
+TEST_026,I do not have medical lab records for my Parathyroid-hormone level.,Parathyroid-hormone level,FACET_125,999,abstained,0.0,21681.55,truncated_recovery,NONE,True
+TEST_027,I do not have system log counts for my Passport-stamps count.,Passport-stamps count,FACET_239,999,abstained,0.0,21159.94,truncated_recovery,NONE,True
+TEST_028,I do not have laboratory documentation for blood glucose levels.,Acidity,FACET_003,4,abstained,0.0,21692.24,truncated_recovery,NONE,True
+TEST_029,I do not have hardware log records for subscription count.,Subscription count,FACET_060,999,abstained,0.0,22084.62,truncated_recovery,NONE,True
+TEST_030,I do not have clinical data for cell endorsement counts.,Skill-endorsements count,FACET_098,999,abstained,0.0,21249.06,truncated_recovery,NONE,True
