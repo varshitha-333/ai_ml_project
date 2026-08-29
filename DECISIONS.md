@@ -116,6 +116,17 @@ This document records the core technical decisions, architectural choices, and t
 
 ---
 
+### Decision J: Tiered Multi-Model Candidate Fusion ($K \le 20$)
+- **Problem**: Short unigram trait titles (`Naivety`, `Aloofness`, `Moroseness`) perform best under unigram lexical search, whereas long complex phrases (`assertiveness and control in relationships`, `Comparing alphanumeric data`) perform best under dense multi-example vector embeddings. Single retriever setups compromise between unigrams and long phrases.
+- **Options Considered**:
+  1. *Single Retriever Window ($K=10$)*: Use only 1 retriever for all query types. (Misses unigram ranks when phrase candidates dominate).
+  2. *Tiered Multi-Model Candidate Fusion ($K \le 20$)*: Retrieve Top 10 short/unigram candidates from Model 1 (Lexical Engine) + Top 10 phrase candidates from Model 2 (Dense Multi-Example Engine), merging into a deduplicated candidate pool of $\le 20$ items for Qwen scoring.
+- **My Choice**: **Tiered Multi-Model Candidate Fusion ($K \le 20$)**.
+- **Reasoning**: Maximizes candidate coverage across both unigram titles and long multi-word phrases while keeping Qwen's prompt under 1,000 tokens to maintain fast sub-25s execution latency.
+- **Verification**: Evaluated via `scratch/run_tiered_fusion_20.py` and documented in `outputs/experiments/tiered_fusion_20_results.md`.
+
+---
+
 ## 🚀 2. Scalability Architecture Analysis ($\ge$5,000 Facets)
 
 ### Catalog Scaling Metrics:

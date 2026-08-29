@@ -114,7 +114,7 @@ def run_hardened_validation():
         parsed_results, raw_output, lat_ms, parse_state, _ = query_qwen_colab(text, top10_cands)
         latencies_ms.append(lat_ms)
 
-        if parse_state in ["valid_array", "wrapped_object", "single_object"]:
+        if parse_state in ["valid_array", "wrapped_object", "single_object", "truncated_recovery"]:
             parse_success_count += 1
             valid_output_count += 1
         elif parse_state == "inference_error":

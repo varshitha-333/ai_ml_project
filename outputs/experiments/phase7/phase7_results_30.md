@@ -3,13 +3,13 @@
 ---
 
 ## 🏆 Executive Summary Metrics
-- **End-to-End Accuracy**: **`30.0%`**
-- **Model-Only Semantic Accuracy**: **`69.23%`**
+- **End-to-End Accuracy**: **`16.67%`**
+- **Model-Only Semantic Accuracy**: **`38.46%`**
 - **Retrieval Recall@10**: **`33.33%`**
 - **Retrieval Recall@30**: **`33.33%`**
 - **Retrieval MRR**: **`0.1159`**
-- **Parse Success Rate**: **`40.0%`** (`12/30`)
-- **Mean Latency**: **`17965.45 ms`** | P50: **`21777.58 ms`** | P95: **`22831.05 ms`** | P99: **`24510.63 ms`**
+- **Parse Success Rate**: **`13.3%`** (`4/30`)
+- **Mean Latency**: **`9619.62 ms`** | P50: **`4951.76 ms`** | P95: **`22318.43 ms`** | P99: **`22628.45 ms`**
 
 ---
 
