@@ -29,16 +29,20 @@ class BM25Indexer:
     @staticmethod
     def _tokenize(text: str) -> List[str]:
         """
-        Robust tokenizer splitting camelCase, hyphens, underscores, and trailing symbols.
+        Robust tokenizer splitting camelCase, hyphens, n-grams, and trailing symbols for multi-word phrase matching.
         """
         if not text:
             return []
         # Split camelCase: "HonestyHumility" -> "Honesty Humility"
         expanded_text = re.sub(r'([a-z])([A-Z])', r'\1 \2', text)
-        raw_tokens = re.findall(r'\b[a-z0-9]+\b', expanded_text.lower())
-        # Include original concatenated lowercase token if different
+        clean_text = expanded_text.lower().replace("-", " ")
+        raw_tokens = re.findall(r'\b[a-z0-9]+\b', clean_text)
+
+        # Generate Bigram n-grams for multi-word phrase matching
+        bigrams = [f"{raw_tokens[i]}_{raw_tokens[i+1]}" for i in range(len(raw_tokens)-1)]
+
         orig_tokens = re.findall(r'\b[a-z0-9]+\b', text.lower())
-        return list(dict.fromkeys(raw_tokens + orig_tokens))
+        return list(dict.fromkeys(raw_tokens + orig_tokens + bigrams))
 
     def fit(self, documents: List[Dict[str, Any]]) -> "BM25Indexer":
         """
