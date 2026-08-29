@@ -70,3 +70,15 @@ This log records real technical issues, failed assumptions, root causes, and ver
   1. Conducted Phase 1 candidate audit (`outputs/curated_30_audit.md`) proving that 70.0% of target facets are present in the Top 10 candidate list.
   2. Reduced candidate prompt scoring depth to $K=10$ (or batch size 10), cutting prompt token length by 66%.
 - **Verification**: Re-evaluating with $K=10$ eliminated over-abstention, scoring target facets accurately (`Status Accuracy = 20.0%+`) with **`0.0% False Scoring Rate`**.
+
+---
+
+## Real Incident 7: Token Limit Output Truncation (`max_tokens: 512`) & Partial Array Recovery
+- **Symptom**: `scratch/run_solution1_qwen_30.py` and `scratch/debug_qwen_cases.py` reported `[Parse Notice]: No JSON array parsed from response text` and defaulted to `PARSER_FAILURE`.
+- **Diagnosis**: Fetching raw un-truncated HTTP output strings showed Qwen responses ending abruptly at `"facet_id": "FACET_3'` without closing brackets `}` or `]`.
+- **Root Cause**: `max_tokens` was capped at 512 tokens. Qwen generating 10 candidate traits with multi-sentence reasoning paragraphs required ~1,200 tokens. The output hit token #512 right at item 5 and Colab cut off the stream. Standard `json.loads()` threw a `JSONDecodeError` on the incomplete string.
+- **Fix**:
+  1. Increased `max_tokens` to `2048` in inference payloads.
+  2. Added prompt instruction: `"Keep reasoning short (1 concise sentence per trait)."`.
+  3. Created `truncated_recovery` fallback regex engine in `extract_json_results()` to extract and parse all complete JSON objects prior to any cutoff point.
+- **Verification**: Verified via Pytest (`tests/test_qwen_harness.py::test_truncated_response` PASSED), 20-run stability test (`outputs/experiments/phase7/phase7_stability_20_runs.csv` 100% deterministic), and complete 30-case validation (`outputs/experiments/phase7/phase7_results_30.md`).
