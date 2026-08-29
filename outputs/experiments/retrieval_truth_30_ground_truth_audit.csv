@@ -1,0 +1,31 @@
+case_id,original_expected_facet,normalized_expected_facet,catalog_match,catalog_facet_id,catalog_facet_name,notes
+TEST_001,Risktaking,Risktaking,EXACT_MATCH,FACET_001,Risktaking,Canonical observable catalog item
+TEST_002,Naivety,Naivety,EXACT_MATCH,FACET_002,Naivety,Canonical observable catalog item
+TEST_003,Democratic Leadership,Democratic Leadership,EXACT_MATCH,FACET_004,Democratic Leadership,Canonical observable catalog item
+TEST_004,Hesitation,Hesitation,EXACT_MATCH,FACET_006,Hesitation,Canonical observable catalog item
+TEST_005,Discontentment,Discontentment,EXACT_MATCH,FACET_007,Discontentment,Canonical observable catalog item
+TEST_006,Overprotectiveness,Overprotectiveness,EXACT_MATCH,FACET_008,Overprotectiveness,Canonical observable catalog item
+TEST_007,Merriness,Merriness,EXACT_MATCH,FACET_009,Merriness,Canonical observable catalog item
+TEST_008,Emotionalism,Emotionalism,EXACT_MATCH,FACET_010,Emotionalism,Canonical observable catalog item
+TEST_009,Self-improvement,Self-improvement,EXACT_MATCH,FACET_011,Self-improvement,Canonical observable catalog item
+TEST_010,Statistical Reasoning,Statistical Reasoning,EXACT_MATCH,FACET_012,Statistical Reasoning,Canonical observable catalog item
+TEST_011,Assertiveness and control in relationships,Assertiveness and control in relationships,EXACT_MATCH,FACET_013,Assertiveness and control in relationships,Canonical observable catalog item
+TEST_012,Cunningness,Cunningness,EXACT_MATCH,FACET_014,Cunningness,Canonical observable catalog item
+TEST_013,Adventure-Seeking Behavior,Adventure-Seeking Behavior,EXACT_MATCH,FACET_015,Adventure-Seeking Behavior,Canonical observable catalog item
+TEST_014,Compassion Fatigue,Compassion Fatigue,EXACT_MATCH,FACET_016,Compassion Fatigue,Canonical observable catalog item
+TEST_015,Moroseness,Moroseness,EXACT_MATCH,FACET_017,Moroseness,Canonical observable catalog item
+TEST_016,Specialist,Specialist,EXACT_MATCH,FACET_018,Specialist,Canonical observable catalog item
+TEST_017,Aloofness,Aloofness,EXACT_MATCH,FACET_019,Aloofness,Canonical observable catalog item
+TEST_018,Genuine,Genuine,EXACT_MATCH,FACET_020,Genuine,Canonical observable catalog item
+TEST_019,Determinedness,Determinedness,EXACT_MATCH,FACET_021,Determinedness,Canonical observable catalog item
+TEST_020,HonestyHumility,HonestyHumility,UNMATCHED,MISSING,MISSING,Target not in 399 catalog
+TEST_021,Relationship Building Themes,Relationship Building Themes,EXACT_MATCH,FACET_023,Relationship Building Themes,Canonical observable catalog item
+TEST_022,Pure Challenge,Pure Challenge,EXACT_MATCH,FACET_024,Pure Challenge,Canonical observable catalog item
+TEST_023,Numerical Reasoning Subcomponents,Numerical Reasoning Subcomponents,EXACT_MATCH,FACET_025,Numerical Reasoning Subcomponents,Canonical observable catalog item
+TEST_024,Openness,Openness,EXACT_MATCH,FACET_026,Openness,Canonical observable catalog item
+TEST_025,SelfEsteem,SelfEsteem,UNMATCHED,MISSING,MISSING,Target not in 399 catalog
+TEST_026,Comparing alphanumeric data,Comparing alphanumeric data,EXACT_MATCH,FACET_028,Comparing alphanumeric data,Canonical observable catalog item
+TEST_027,Big-heartedness,Big-heartedness,EXACT_MATCH,FACET_029,Big-heartedness,Canonical observable catalog item
+TEST_028,Compulsive activities,Compulsive activities,EXACT_MATCH,FACET_030,Compulsive activities,Canonical observable catalog item
+TEST_029,Disrespect,Disrespect,EXACT_MATCH,FACET_031,Disrespect,Canonical observable catalog item
+TEST_030,FSH level,FSH level,EXACT_MATCH,FACET_032,FSH level,Canonical observable catalog item

@@ -1,0 +1,512 @@
+[
+  {
+    "case_id": "TEST_001",
+    "conversation": "I signed up for a solo skydiving trip even though I had never tried it before.",
+    "expected_facet": "Risktaking",
+    "catalog_facet_id": "FACET_001",
+    "bm25_rank": 2,
+    "dense_rank": 5,
+    "rrf_rank": 1,
+    "solution1_rank": 5,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Risktaking",
+      "Use of Nature as a Stress Reliever",
+      "Travel-companions diversity"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_002",
+    "conversation": "He immediately believed the stranger who promised to double his money.",
+    "expected_facet": "Naivety",
+    "catalog_facet_id": "FACET_002",
+    "bm25_rank": 6,
+    "dense_rank": 19,
+    "rrf_rank": 3,
+    "solution1_rank": 19,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Desire to influence others",
+      "Cunningness",
+      "Naivety"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_003",
+    "conversation": "We voted together and chose the option supported by most of the team.",
+    "expected_facet": "Democratic Leadership",
+    "catalog_facet_id": "FACET_004",
+    "bm25_rank": 999,
+    "dense_rank": 999,
+    "rrf_rank": 999,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Risktaking",
+      "Contribution to Group Goals",
+      "Naivety"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_004",
+    "conversation": "I tend to pause for a long time before making an important decision.",
+    "expected_facet": "Hesitation",
+    "catalog_facet_id": "FACET_006",
+    "bm25_rank": 13,
+    "dense_rank": 2,
+    "rrf_rank": 6,
+    "solution1_rank": 2,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Decision-making decisiveness",
+      "Decision-making speed",
+      "Decision-Making Confidence"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_005",
+    "conversation": "I keep complaining that nothing at work is ever good enough.",
+    "expected_facet": "Discontentment",
+    "catalog_facet_id": "FACET_007",
+    "bm25_rank": 8,
+    "dense_rank": 5,
+    "rrf_rank": 3,
+    "solution1_rank": 5,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Volunteer Work",
+      "Work Styles",
+      "Discontentment"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_006",
+    "conversation": "Whenever my friend goes out, I keep checking whether they are safe.",
+    "expected_facet": "Overprotectiveness",
+    "catalog_facet_id": "FACET_008",
+    "bm25_rank": 8,
+    "dense_rank": 4,
+    "rrf_rank": 3,
+    "solution1_rank": 4,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Eating Habits (Home-Cooked vs. Eating Out)",
+      "Risktaking",
+      "Overprotectiveness"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_007",
+    "conversation": "That was hilarious\u2014I couldn't stop laughing for ten minutes.",
+    "expected_facet": "Merriness",
+    "catalog_facet_id": "FACET_009",
+    "bm25_rank": 7,
+    "dense_rank": 999,
+    "rrf_rank": 14,
+    "solution1_rank": 999,
+    "failure_type": "RANKING_FAILURE",
+    "competing_top3_facets": [
+      "Risktaking",
+      "Cunningness",
+      "HEXACO domain: Honesty-Humility"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_008",
+    "conversation": "I got so emotional during the movie that I had to take a break.",
+    "expected_facet": "Emotionalism",
+    "catalog_facet_id": "FACET_010",
+    "bm25_rank": 18,
+    "dense_rank": 4,
+    "rrf_rank": 4,
+    "solution1_rank": 4,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Emotional Boundaries",
+      "Depth of Emotional Connections",
+      "Emotional-intelligence measure: Impulsiveness"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_009",
+    "conversation": "I started a course because I want to improve my Python skills.",
+    "expected_facet": "Self-improvement",
+    "catalog_facet_id": "FACET_011",
+    "bm25_rank": 18,
+    "dense_rank": 15,
+    "rrf_rank": 5,
+    "solution1_rank": 15,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Delegation skills",
+      "Risktaking",
+      "Social Interaction Skills"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_010",
+    "conversation": "The sample mean is 18.4, but the median is 12, so the distribution is probably skewed.",
+    "expected_facet": "Statistical Reasoning",
+    "catalog_facet_id": "FACET_012",
+    "bm25_rank": 11,
+    "dense_rank": 24,
+    "rrf_rank": 1,
+    "solution1_rank": 24,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Statistical Reasoning",
+      "Risktaking",
+      "Psychological construct: Social Desirability tendency"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_011",
+    "conversation": "I told my teammate firmly that the deadline cannot be moved again.",
+    "expected_facet": "Assertiveness and control in relationships",
+    "catalog_facet_id": "FACET_013",
+    "bm25_rank": 12,
+    "dense_rank": 999,
+    "rrf_rank": 24,
+    "solution1_rank": 999,
+    "failure_type": "RANKING_FAILURE",
+    "competing_top3_facets": [
+      "Hesitation",
+      "Pure Challenge",
+      "Compassion Fatigue"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_012",
+    "conversation": "I quietly changed the plan so that the other person would agree without noticing.",
+    "expected_facet": "Cunningness",
+    "catalog_facet_id": "FACET_014",
+    "bm25_rank": 13,
+    "dense_rank": 25,
+    "rrf_rank": 3,
+    "solution1_rank": 25,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Hesitation",
+      "Discontentment",
+      "Cunningness"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_013",
+    "conversation": "Next month I want to try rock climbing and a multi-day trek.",
+    "expected_facet": "Adventure-Seeking Behavior",
+    "catalog_facet_id": "FACET_015",
+    "bm25_rank": 999,
+    "dense_rank": 1,
+    "rrf_rank": 4,
+    "solution1_rank": 1,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Risktaking",
+      "Enthusiasm",
+      "Ideas generated/day"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_014",
+    "conversation": "After helping customers all day, I feel emotionally drained and have little empathy left.",
+    "expected_facet": "Compassion Fatigue",
+    "catalog_facet_id": "FACET_016",
+    "bm25_rank": 999,
+    "dense_rank": 1,
+    "rrf_rank": 5,
+    "solution1_rank": 1,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Social-cognition variable: Cognitive Empathy",
+      "Desperation",
+      "Sensitiveness"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_015",
+    "conversation": "Everything feels gloomy lately, and I don't expect much to improve.",
+    "expected_facet": "Moroseness",
+    "catalog_facet_id": "FACET_017",
+    "bm25_rank": 14,
+    "dense_rank": 26,
+    "rrf_rank": 3,
+    "solution1_rank": 26,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Discontentment",
+      "Patience: Resistance to anger",
+      "Moroseness"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_016",
+    "conversation": "I have worked mainly on database optimization for six years.",
+    "expected_facet": "Specialist",
+    "catalog_facet_id": "FACET_018",
+    "bm25_rank": 11,
+    "dense_rank": 999,
+    "rrf_rank": 22,
+    "solution1_rank": 999,
+    "failure_type": "RANKING_FAILURE",
+    "competing_top3_facets": [
+      "Hardworking",
+      "Inefficiency",
+      "Risktaking"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_017",
+    "conversation": "I prefer to keep my distance at parties rather than join conversations.",
+    "expected_facet": "Aloofness",
+    "catalog_facet_id": "FACET_019",
+    "bm25_rank": 22,
+    "dense_rank": 999,
+    "rrf_rank": 41,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Desire to influence others",
+      "Contribution to Group Goals",
+      "Connectedness: Belief in interconnections"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_018",
+    "conversation": "I made a mistake, admitted it immediately, and apologized.",
+    "expected_facet": "Genuine",
+    "catalog_facet_id": "FACET_020",
+    "bm25_rank": 14,
+    "dense_rank": 3,
+    "rrf_rank": 3,
+    "solution1_rank": 3,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Risktaking",
+      "Hesitation",
+      "Genuine"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_019",
+    "conversation": "The project failed twice, but I kept working until I found the bug.",
+    "expected_facet": "Determinedness",
+    "catalog_facet_id": "FACET_021",
+    "bm25_rank": 20,
+    "dense_rank": 999,
+    "rrf_rank": 39,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Pure Challenge",
+      "Compassion Fatigue",
+      "Risktaking"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_020",
+    "conversation": "I returned the extra change because keeping it would be dishonest.",
+    "expected_facet": "HonestyHumility",
+    "catalog_facet_id": "MISSING",
+    "bm25_rank": 999,
+    "dense_rank": 999,
+    "rrf_rank": 999,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Risktaking",
+      "Self-improvement",
+      "Naivety"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_021",
+    "conversation": "I try to learn what matters to people before building a long-term relationship with them.",
+    "expected_facet": "Relationship Building Themes",
+    "catalog_facet_id": "FACET_023",
+    "bm25_rank": 999,
+    "dense_rank": 999,
+    "rrf_rank": 999,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Desire to influence others",
+      "Assertiveness and control in relationships",
+      "Contribution to Group Goals"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_022",
+    "conversation": "I enjoy difficult problems even when there is no reward for solving them.",
+    "expected_facet": "Pure Challenge",
+    "catalog_facet_id": "FACET_024",
+    "bm25_rank": 999,
+    "dense_rank": 2,
+    "rrf_rank": 9,
+    "solution1_rank": 2,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Discontentment",
+      "Hardworking",
+      "Desperation"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_023",
+    "conversation": "If 3 out of 5 experiments improve, I would not call that proof without considering the sample size.",
+    "expected_facet": "Numerical Reasoning Subcomponents",
+    "catalog_facet_id": "FACET_025",
+    "bm25_rank": 999,
+    "dense_rank": 999,
+    "rrf_rank": 999,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Acidity",
+      "Inefficiency",
+      "Determinedness"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_024",
+    "conversation": "I am comfortable discussing an opinion that is different from mine.",
+    "expected_facet": "Openness",
+    "catalog_facet_id": "FACET_026",
+    "bm25_rank": 23,
+    "dense_rank": 999,
+    "rrf_rank": 43,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Naivety",
+      "Self Perspective",
+      "Determinedness"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_025",
+    "conversation": "I trust myself to handle a difficult presentation.",
+    "expected_facet": "SelfEsteem",
+    "catalog_facet_id": "MISSING",
+    "bm25_rank": 999,
+    "dense_rank": 999,
+    "rrf_rank": 999,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Trust in others",
+      "Risktaking",
+      "Discontentment"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_026",
+    "conversation": "I sorted the IDs 100A, 20B, 3C by the specified alphanumeric order.",
+    "expected_facet": "Comparing alphanumeric data",
+    "catalog_facet_id": "FACET_028",
+    "bm25_rank": 999,
+    "dense_rank": 999,
+    "rrf_rank": 999,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Acidity",
+      "Risktaking",
+      "Orderliness"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_027",
+    "conversation": "I donated part of my bonus to help a colleague who was struggling.",
+    "expected_facet": "Big-heartedness",
+    "catalog_facet_id": "FACET_029",
+    "bm25_rank": 999,
+    "dense_rank": 999,
+    "rrf_rank": 999,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Contribution to Group Goals",
+      "Discontentment",
+      "Enthusiasm"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_028",
+    "conversation": "I keep checking the same lock repeatedly even after I know it is locked.",
+    "expected_facet": "Compulsive activities",
+    "catalog_facet_id": "FACET_030",
+    "bm25_rank": 25,
+    "dense_rank": 999,
+    "rrf_rank": 47,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Assertiveness and control in relationships",
+      "Openness",
+      "Risktaking"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  },
+  {
+    "case_id": "TEST_029",
+    "conversation": "Calling someone stupid because they asked a basic question is disrespectful.",
+    "expected_facet": "Disrespect",
+    "catalog_facet_id": "FACET_031",
+    "bm25_rank": 27,
+    "dense_rank": 2,
+    "rrf_rank": 3,
+    "solution1_rank": 2,
+    "failure_type": "TARGET_RETRIEVED",
+    "competing_top3_facets": [
+      "Naivety",
+      "Acidity",
+      "Disrespect"
+    ],
+    "primary_cause": "NONE"
+  },
+  {
+    "case_id": "TEST_030",
+    "conversation": "I do not have a laboratory result available for this value.",
+    "expected_facet": "FSH level",
+    "catalog_facet_id": "FACET_032",
+    "bm25_rank": 999,
+    "dense_rank": 999,
+    "rrf_rank": 999,
+    "solution1_rank": 999,
+    "failure_type": "RETRIEVAL_MISS",
+    "competing_top3_facets": [
+      "Acidity",
+      "Value orientation: Universalism",
+      "Merriness"
+    ],
+    "primary_cause": "UTTERANCE_TO_TITLE_ASYMMETRY"
+  }
+]
