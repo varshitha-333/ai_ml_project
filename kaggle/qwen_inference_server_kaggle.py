@@ -42,10 +42,10 @@ print(f"🚀 Loading {MODEL_ID} onto Kaggle GPU ({gpu_name})...")
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True, cache_dir=CACHE_DIR)
 
 if is_p100:
-    print(f"Detected P100 GPU ({gpu_name}). Using torch.bfloat16 precision to avoid sm_60 CUDA kernel image error...")
+    print(f"Detected P100 GPU ({gpu_name}). Using torch.float32 precision to guarantee CUDA sm_60 execution...")
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_ID,
-        torch_dtype=torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float32,
+        torch_dtype=torch.float32,
         device_map="auto",
         low_cpu_mem_usage=True,
         trust_remote_code=True,
