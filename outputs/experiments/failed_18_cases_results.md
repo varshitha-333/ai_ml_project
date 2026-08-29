@@ -3,5 +3,5 @@
 ---
 
 ## 🏆 Summary Metrics (18 Previously Failed Cases)
-- **Resolved Pass Count**: **`3 / 18`** (**`16.67%`**)
-- **Mean Latency**: **`21588.06 ms`**
+- **Resolved Pass Count**: **`5 / 18`** (**`27.78%`**)
+- **Mean Latency**: **`21263.3 ms`**

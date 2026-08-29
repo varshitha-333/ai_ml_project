@@ -1,0 +1,151 @@
+test_id,text,expected_facet,expected_status,expected_score
+TEST_001,I took on a solo project with tight deadlines and high risk of failure.,Risktaking,scored,4.0
+TEST_002,He trusted the unverified website and sent money without double-checking.,Naivety,scored,4.0
+TEST_003,Our team held a vote and collectively decided on the next sprint goal.,Democratic Leadership,scored,4.0
+TEST_004,I waited almost an hour before replying because I couldn't decide what to say.,Hesitation,scored,4.0
+TEST_005,"Nothing in this company ever satisfies me, no matter how good the results are.",Discontentment,scored,4.0
+TEST_006,I constantly call my brother to make sure he gets home safely.,Overprotectiveness,scored,4.0
+TEST_007,We cracked jokes all afternoon and couldn't stop laughing.,Merriness,scored,4.0
+TEST_008,I teared up watching the documentary because the story moved me deeply.,Emotionalism,scored,4.0
+TEST_009,I signed up for an advanced machine learning certification to level up my career.,Self-improvement,scored,4.0
+TEST_010,"The mean score is 45, but the high variance indicates a skewed distribution.",Statistical Reasoning,scored,4.0
+TEST_011,I told my manager firmly that I will not work overtime this weekend.,Assertiveness and control in relationships,scored,4.0
+TEST_012,I subtly redirected the client's attention so they would accept our terms.,Cunningness,scored,4.0
+TEST_013,Next week I am going scuba diving in deep waters for the adrenaline rush.,Adventure-Seeking Behavior,scored,4.0
+TEST_014,"After listening to tragic customer calls all day, I feel completely burnt out.",Compassion Fatigue,scored,4.0
+TEST_015,"Everything looks dark right now, and I doubt things will get any better.",Moroseness,scored,4.0
+TEST_016,I have focused exclusively on Linux kernel driver development for 8 years.,Specialist,scored,4.0
+TEST_017,I prefer sitting by myself at networking events rather than mingling.,Aloofness,scored,4.0
+TEST_018,I owned up to my coding error right away and apologized to the team.,Genuine,scored,4.0
+TEST_019,"The server crashed 3 times, but I stayed up until 4 AM to fix the root cause.",Determinedness,scored,4.0
+TEST_020,I returned the wallet I found on the street to the police station.,HEXACO domain: Honesty-Humility,scored,5.0
+TEST_021,I spent time understanding my teammate's background before working together.,Relationship Building Themes,scored,4.0
+TEST_022,I love tackling unsolved logic puzzles just for the thrill of solving them.,Pure Challenge,scored,4.0
+TEST_023,We need a confidence interval of 95% to validate this sample size.,Numerical Reasoning Subcomponents,scored,4.0
+TEST_024,I am open to hearing your perspective even if it contradicts my belief.,Openness,scored,4.0
+TEST_025,I am confident I can deliver a great presentation to the board.,Self-Esteem,scored,4.0
+TEST_026,I cross-referenced invoice number 8821A against record 4410B.,Comparing alphanumeric data,scored,4.0
+TEST_027,I donated a portion of my salary to support the local shelter.,Big-heartedness,scored,4.0
+TEST_028,I checked my door lock 5 times before leaving the house.,Compulsive activities,scored,4.0
+TEST_029,Insulting someone in public just because they made a mistake is wrong.,Disrespect,scored,4.0
+TEST_030,"Oh fantastic, another delayed meeting, exactly what I wanted today!",Sarcasm,scored,4.0
+TEST_031,"Yaar, this code compilation issue is driving me crazy bhai!",Code-switching,scored,3.0
+TEST_032,I often feel a strong sense of Risktaking when dealing with daily situations.,Risktaking,scored,4.0
+TEST_033,I often feel a strong sense of Naivety when dealing with daily situations.,Naivety,scored,4.0
+TEST_034,I often feel a strong sense of Acidity when dealing with daily situations.,Acidity,scored,4.0
+TEST_035,I often feel a strong sense of Common-sense when dealing with daily situations.,Common-sense,scored,4.0
+TEST_036,I often feel a strong sense of Hesitation when dealing with daily situations.,Hesitation,scored,4.0
+TEST_037,I often feel a strong sense of Discontentment when dealing with daily situations.,Discontentment,scored,4.0
+TEST_038,I often feel a strong sense of Overprotectiveness when dealing with daily situations.,Overprotectiveness,scored,4.0
+TEST_039,I often feel a strong sense of Merriness when dealing with daily situations.,Merriness,scored,4.0
+TEST_040,I often feel a strong sense of Emotionalism when dealing with daily situations.,Emotionalism,scored,4.0
+TEST_041,I often feel a strong sense of Self-improvement when dealing with daily situations.,Self-improvement,scored,4.0
+TEST_042,I often feel a strong sense of Statistical Reasoning when dealing with daily situations.,Statistical Reasoning,scored,4.0
+TEST_043,I often feel a strong sense of Assertiveness and control in relationships when dealing with daily situations.,Assertiveness and control in relationships,scored,4.0
+TEST_044,I often feel a strong sense of Cunningness when dealing with daily situations.,Cunningness,scored,4.0
+TEST_045,I often feel a strong sense of Adventure-Seeking Behavior when dealing with daily situations.,Adventure-Seeking Behavior,scored,4.0
+TEST_046,I often feel a strong sense of Compassion Fatigue when dealing with daily situations.,Compassion Fatigue,scored,4.0
+TEST_047,I often feel a strong sense of Moroseness when dealing with daily situations.,Moroseness,scored,4.0
+TEST_048,I often feel a strong sense of Specialist when dealing with daily situations.,Specialist,scored,4.0
+TEST_049,I often feel a strong sense of Aloofness when dealing with daily situations.,Aloofness,scored,4.0
+TEST_050,I often feel a strong sense of Genuine when dealing with daily situations.,Genuine,scored,4.0
+TEST_051,I often feel a strong sense of Determinedness when dealing with daily situations.,Determinedness,scored,4.0
+TEST_052,I often feel a strong sense of Pure Challenge when dealing with daily situations.,Pure Challenge,scored,4.0
+TEST_053,I often feel a strong sense of Openness when dealing with daily situations.,Openness,scored,4.0
+TEST_054,I often feel a strong sense of Self Esteem when dealing with daily situations.,Self Esteem,scored,4.0
+TEST_055,I often feel a strong sense of Big-heartedness when dealing with daily situations.,Big-heartedness,scored,4.0
+TEST_056,I often feel a strong sense of Compulsive activities when dealing with daily situations.,Compulsive activities,scored,4.0
+TEST_057,I often feel a strong sense of Disrespect when dealing with daily situations.,Disrespect,scored,4.0
+TEST_058,I often feel a strong sense of Self Perspective when dealing with daily situations.,Self Perspective,scored,4.0
+TEST_059,I often feel a strong sense of Desperation when dealing with daily situations.,Desperation,scored,4.0
+TEST_060,I often feel a strong sense of Passive-Aggressive when dealing with daily situations.,Passive-Aggressive,scored,4.0
+TEST_061,I often feel a strong sense of Structure when dealing with daily situations.,Structure,scored,4.0
+TEST_062,I often feel a strong sense of Eco-tourism trips when dealing with daily situations.,Eco-tourism trips,scored,4.0
+TEST_063,I often feel a strong sense of Chivalrousness when dealing with daily situations.,Chivalrousness,scored,4.0
+TEST_064,I often feel a strong sense of Mindfulness facet: Observing when dealing with daily situations.,Mindfulness facet: Observing,scored,4.0
+TEST_065,I often feel a strong sense of Submissiveness when dealing with daily situations.,Submissiveness,scored,4.0
+TEST_066,I often feel a strong sense of Training-cycle length when dealing with daily situations.,Training-cycle length,scored,4.0
+TEST_067,I often feel a strong sense of Sensitiveness when dealing with daily situations.,Sensitiveness,scored,4.0
+TEST_068,I often feel a strong sense of Dance-cardio sessions when dealing with daily situations.,Dance-cardio sessions,scored,4.0
+TEST_069,I often feel a strong sense of Enthusiasm when dealing with daily situations.,Enthusiasm,scored,4.0
+TEST_070,I often feel a strong sense of Psychological construct: Social Desirability tendency when dealing with daily situations.,Psychological construct: Social Desirability tendency,scored,4.0
+TEST_071,I often feel a strong sense of Inattentiveness when dealing with daily situations.,Inattentiveness,scored,4.0
+TEST_072,I often feel a strong sense of Unassertiveness when dealing with daily situations.,Unassertiveness,scored,4.0
+TEST_073,I often feel a strong sense of Decision-making decisiveness when dealing with daily situations.,Decision-making decisiveness,scored,4.0
+TEST_074,I often feel a strong sense of Sense-of-coherence score when dealing with daily situations.,Sense-of-coherence score,scored,4.0
+TEST_075,I often feel a strong sense of Justice-mindedness when dealing with daily situations.,Justice-mindedness,scored,4.0
+TEST_076,I often feel a strong sense of Brevity when dealing with daily situations.,Brevity,scored,4.0
+TEST_077,I often feel a strong sense of Orderliness when dealing with daily situations.,Orderliness,scored,4.0
+TEST_078,I often feel a strong sense of Multiculturalism when dealing with daily situations.,Multiculturalism,scored,4.0
+TEST_079,I often feel a strong sense of Creative risk-taking tendency when dealing with daily situations.,Creative risk-taking tendency,scored,4.0
+TEST_080,I often feel a strong sense of Inefficiency when dealing with daily situations.,Inefficiency,scored,4.0
+TEST_081,I often feel a strong sense of Network basics when dealing with daily situations.,Network basics,scored,4.0
+TEST_082,I often feel a strong sense of Work Styles when dealing with daily situations.,Work Styles,scored,4.0
+TEST_083,I often feel a strong sense of Character strength: Perseverance when dealing with daily situations.,Character strength: Perseverance,scored,4.0
+TEST_084,I often feel a strong sense of Competition when dealing with daily situations.,Competition,scored,4.0
+TEST_085,I often feel a strong sense of Logical Sequence Identification when dealing with daily situations.,Logical Sequence Identification,scored,4.0
+TEST_086,I often feel a strong sense of Hardworking when dealing with daily situations.,Hardworking,scored,4.0
+TEST_087,I often feel a strong sense of Emotional-intelligence measure: Impulsiveness when dealing with daily situations.,Emotional-intelligence measure: Impulsiveness,scored,4.0
+TEST_088,I often feel a strong sense of Dishonesty when dealing with daily situations.,Dishonesty,scored,4.0
+TEST_089,I often feel a strong sense of Preferred epistemology when dealing with daily situations.,Preferred epistemology,scored,4.0
+TEST_090,I often feel a strong sense of Memory for Sounds when dealing with daily situations.,Memory for Sounds,scored,4.0
+TEST_091,I often feel a strong sense of Sportsmanship rating when dealing with daily situations.,Sportsmanship rating,scored,4.0
+TEST_092,I often feel a strong sense of Immaturity when dealing with daily situations.,Immaturity,scored,4.0
+TEST_093,I often feel a strong sense of Estimating Calculations when dealing with daily situations.,Estimating Calculations,scored,4.0
+TEST_094,I often feel a strong sense of Synthesis of information when dealing with daily situations.,Synthesis of information,scored,4.0
+TEST_095,I often feel a strong sense of Ethical standards when dealing with daily situations.,Ethical standards,scored,4.0
+TEST_096,I often feel a strong sense of High-spiritedness when dealing with daily situations.,High-spiritedness,scored,4.0
+TEST_097,I often feel a strong sense of Critical reasoning when dealing with daily situations.,Critical reasoning,scored,4.0
+TEST_098,I often feel a strong sense of Collaboration when dealing with daily situations.,Collaboration,scored,4.0
+TEST_099,I often feel a strong sense of Precision of Movements when dealing with daily situations.,Precision of Movements,scored,4.0
+TEST_100,I often feel a strong sense of Social Boldness when dealing with daily situations.,Social Boldness,scored,4.0
+TEST_101,I often feel a strong sense of Organized lifestyle when dealing with daily situations.,Organized lifestyle,scored,4.0
+TEST_102,I often feel a strong sense of Mysteriousness when dealing with daily situations.,Mysteriousness,scored,4.0
+TEST_103,I often feel a strong sense of Cultural Identity when dealing with daily situations.,Cultural Identity,scored,4.0
+TEST_104,I often feel a strong sense of Intrinsic Motivation when dealing with daily situations.,Intrinsic Motivation,scored,4.0
+TEST_105,I often feel a strong sense of Impartial-mindedness when dealing with daily situations.,Impartial-mindedness,scored,4.0
+TEST_106,I often feel a strong sense of Self Control when dealing with daily situations.,Self Control,scored,4.0
+TEST_107,I often feel a strong sense of Self Directedness when dealing with daily situations.,Self Directedness,scored,4.0
+TEST_108,I often feel a strong sense of Encouraging participation when dealing with daily situations.,Encouraging participation,scored,4.0
+TEST_109,I often feel a strong sense of Impracticalness when dealing with daily situations.,Impracticalness,scored,4.0
+TEST_110,I often feel a strong sense of Meeting Deadlines when dealing with daily situations.,Meeting Deadlines,scored,4.0
+TEST_111,I do not have clinical lab documentation available for Democratic Leadership.,Democratic Leadership,not_observable,0.0
+TEST_112,I do not have clinical lab documentation available for Honesty Humility.,Honesty Humility,not_observable,0.0
+TEST_113,I do not have clinical lab documentation available for Relationship Building Themes.,Relationship Building Themes,not_observable,0.0
+TEST_114,I do not have clinical lab documentation available for Numerical Reasoning Subcomponents.,Numerical Reasoning Subcomponents,not_observable,0.0
+TEST_115,I do not have clinical lab documentation available for Comparing alphanumeric data.,Comparing alphanumeric data,not_observable,0.0
+TEST_116,I do not have clinical lab documentation available for FSH level.,FSH level,not_observable,0.0
+TEST_117,I do not have clinical lab documentation available for Affiliation Motivation.,Affiliation Motivation,not_observable,0.0
+TEST_118,I do not have clinical lab documentation available for Anatomy knowledge.,Anatomy knowledge,not_observable,0.0
+TEST_119,I do not have clinical lab documentation available for Presence of Spiritual Pain.,Presence of Spiritual Pain,not_observable,0.0
+TEST_120,I do not have clinical lab documentation available for Role of Spirituality in Community Involvement.,Role of Spirituality in Community Involvement,not_observable,0.0
+TEST_121,I do not have clinical lab documentation available for Pilgrimage participation count.,Pilgrimage participation count,not_observable,0.0
+TEST_122,I do not have clinical lab documentation available for Negative Affect Frequency.,Negative Affect Frequency,not_observable,0.0
+TEST_123,I do not have clinical lab documentation available for Innovation and Creativity Components.,Innovation and Creativity Components,not_observable,0.0
+TEST_124,I do not have clinical lab documentation available for Achievement Motivation.,Achievement Motivation,not_observable,0.0
+TEST_125,I do not have clinical lab documentation available for Feedback-giving frequency.,Feedback-giving frequency,not_observable,0.0
+TEST_126,I do not have clinical lab documentation available for Subscription count.,Subscription count,not_observable,0.0
+TEST_127,I do not have clinical lab documentation available for Depression Symptoms.,Depression Symptoms,not_observable,0.0
+TEST_128,I do not have clinical lab documentation available for Spatial perception.,Spatial perception,not_observable,0.0
+TEST_129,I do not have clinical lab documentation available for Alphabetical filing skills.,Alphabetical filing skills,not_observable,0.0
+TEST_130,I do not have clinical lab documentation available for Sustainable-transport usage.,Sustainable-transport usage,not_observable,0.0
+TEST_131,I do not have clinical lab documentation available for Health-literacy level.,Health-literacy level,not_observable,0.0
+TEST_132,I do not have clinical lab documentation available for Depression: Feelings of sadness and hopelessness.,Depression: Feelings of sadness and hopelessness,not_observable,0.0
+TEST_133,I do not have clinical lab documentation available for Leadership Potential.,Leadership Potential,not_observable,0.0
+TEST_134,I do not have clinical lab documentation available for Sleep-disorder diagnosis.,Sleep-disorder diagnosis,not_observable,0.0
+TEST_135,I do not have clinical lab documentation available for Listening Skills Subcomponents.,Listening Skills Subcomponents,not_observable,0.0
+TEST_136,I do not have clinical lab documentation available for Auditory memory.,Auditory memory,not_observable,0.0
+TEST_137,I do not have clinical lab documentation available for Psychomotor Ability Subcomponents.,Psychomotor Ability Subcomponents,not_observable,0.0
+TEST_138,I do not have clinical lab documentation available for Skill-endorsements count.,Skill-endorsements count,not_observable,0.0
+TEST_139,I do not have clinical lab documentation available for Burnout Symptoms.,Burnout Symptoms,not_observable,0.0
+TEST_140,I do not have clinical lab documentation available for Holiness.,Holiness,not_observable,0.0
+TEST_141,I do not have clinical lab documentation available for Psychoticism.,Psychoticism,not_observable,0.0
+TEST_142,I do not have clinical lab documentation available for Neuroticism.,Neuroticism,not_observable,0.0
+TEST_143,I do not have clinical lab documentation available for Inversion comfort level.,Inversion comfort level,not_observable,0.0
+TEST_144,I do not have clinical lab documentation available for Numeric Filing Skills.,Numeric Filing Skills,not_observable,0.0
+TEST_145,I do not have clinical lab documentation available for Parathyroid-hormone level.,Parathyroid-hormone level,not_observable,0.0
+TEST_146,I do not have clinical lab documentation available for Judging (J).,Judging (J),not_observable,0.0
+TEST_147,I do not have clinical lab documentation available for Psychological construct: Operant-Learning rate.,Psychological construct: Operant-Learning rate,not_observable,0.0
+TEST_148,I do not have clinical lab documentation available for Psychological construct: Need for Achievement level.,Psychological construct: Need for Achievement level,not_observable,0.0
+TEST_149,I do not have clinical lab documentation available for Material properties knowledge.,Material properties knowledge,not_observable,0.0
+TEST_150,I do not have clinical lab documentation available for Sufi practice: Sufi retreat attendance count.,Sufi practice: Sufi retreat attendance count,not_observable,0.0
