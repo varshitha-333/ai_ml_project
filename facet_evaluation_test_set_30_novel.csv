@@ -1,0 +1,31 @@
+test_id,text,expected_facet,expected_status,expected_score
+TEST_001,I decided to invest my savings into a risky crypto startup without a backup plan.,Risktaking,scored,4.0
+TEST_002,He believed the fake email claiming he won a million dollars and clicked the link.,Naivety,scored,4.0
+TEST_003,Our team took a vote to choose our new logo design together.,Democratic Leadership,scored,4.0
+TEST_004,I paused for 2 minutes before choosing which job offer to accept.,Hesitation,scored,4.0
+TEST_005,I keep feeling that my current salary is never good enough despite my raise.,Discontentment,scored,4.0
+TEST_006,I constantly call my teenage daughter every 10 minutes to check if she is safe.,Overprotectiveness,scored,4.0
+TEST_007,We spent the entire evening telling jokes and laughing hysterically.,Merriness,scored,4.0
+TEST_008,I got teary-eyed watching the hero reunite with his family in the movie.,Emotionalism,scored,4.0
+TEST_009,I enrolled in an online Python course to improve my backend coding skills.,Self-improvement,scored,4.0
+TEST_010,"The sample mean is 50 with a high standard deviation, showing wide spread.",Statistical Reasoning,scored,4.0
+TEST_011,I told my manager firmly that I cannot take on extra projects this month.,Assertiveness and control in relationships,scored,4.0
+TEST_012,I strategically changed the conversation topic so they would agree with me.,Cunningness,scored,4.0
+TEST_013,Next month I am going white-water rafting down a steep canyon.,Adventure-Seeking Behavior,scored,4.0
+TEST_014,Handling intense customer complaints all day has left me emotionally exhausted.,Compassion Fatigue,scored,4.0
+TEST_015,"Everything feels depressing lately, and I doubt things will improve.",Moroseness,scored,4.0
+TEST_016,I have worked exclusively as a PostgreSQL database architect for 7 years.,Specialist,scored,4.0
+TEST_017,I prefer standing alone near the doorway during office parties.,Aloofness,scored,4.0
+TEST_018,I acknowledged my bug immediately during standup and apologized.,Genuine,scored,4.0
+TEST_019,"The server crashed twice, but I stayed up until 3 AM to fix it.",Determinedness,scored,4.0
+TEST_020,I returned the dropped wallet with all its cash to the security guard.,HEXACO domain: Honesty-Humility,scored,5.0
+TEST_021,I took time to learn about my coworker's interests before starting our project.,Relationship Building Themes,scored,4.0
+TEST_022,I love solving complex math riddles just for the fun of it.,Pure Challenge,scored,4.0
+TEST_023,We need a 95% confidence interval before drawing conclusions from this data.,Numerical Reasoning Subcomponents,scored,4.0
+TEST_024,I am happy to listen to your opinion even when we disagree.,Openness,scored,4.0
+TEST_025,I do not have a laboratory report available for my FSH level.,FSH level,not_observable,0.0
+TEST_026,I do not have medical lab records for my Parathyroid-hormone level.,Parathyroid-hormone level,not_observable,0.0
+TEST_027,I do not have system log counts for my Passport-stamps count.,Passport-stamps count,not_observable,0.0
+TEST_028,I do not have laboratory documentation for blood glucose levels.,Acidity,not_observable,0.0
+TEST_029,I do not have hardware log records for subscription count.,Subscription count,not_observable,0.0
+TEST_030,I do not have clinical data for cell endorsement counts.,Skill-endorsements count,not_observable,0.0
